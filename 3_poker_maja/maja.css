@@ -1,0 +1,156 @@
+.maja {
+    height: 515px;
+    width: 385px;
+    background-color: aqua;
+}
+
+
+/* 饼牌 */
+
+.dot_1 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/dot_1.png");
+}
+
+.dot_2 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/dot_2.png");
+}
+
+.dot_3 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/dot_3.png");
+}
+
+.dot_4 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/dot_4.png");
+}
+
+.dot_5 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/dot_5.png");
+}
+
+.dot_6 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/dot_6.png");
+}
+
+.dot_7 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/dot_7.png");
+}
+
+.dot_8 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/dot_8.png");
+}
+
+.dot_9 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/dot_9.png");
+}
+
+
+/* 条牌 */
+
+.bamboo_1 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/bamboo_1.png");
+}
+
+.bamboo_2 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/bamboo_2.png");
+}
+
+.bamboo_3 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/bamboo_3.png");
+}
+
+.bamboo_4 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/bamboo_4.png");
+}
+
+.bamboo_5 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/bamboo_5.png");
+}
+
+.bamboo_6 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/bamboo_6.png");
+}
+
+.bamboo_7 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/bamboo_7.png");
+}
+
+.bamboo_8 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/bamboo_8.png");
+}
+
+.bamboo_9 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/bamboo_9.png");
+}
+
+
+/* 万牌 */
+
+.character_1 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/character_1.png");
+}
+
+.character_2 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/character_2.png");
+}
+
+.character_3 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/character_3.png");
+}
+
+.character_4 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/character_4.png");
+}
+
+.character_5 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/character_5.png");
+}
+
+.character_6 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/character_6.png");
+}
+
+.character_7 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/character_7.png");
+}
+
+.character_8 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/character_8.png");
+}
+
+.character_9 {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/character_9.png");
+}
+
+
+/* 风牌 */
+
+.east_wind {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/east_wind.png");
+}
+
+.west_wind {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/west_wind.png");
+}
+
+.south_wind {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/south_wind.png");
+}
+
+.north_wind {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/north_wind.png");
+}
+
+
+/* 红中、发财、白板 */
+
+.red_dragon {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/red_dragon.png");
+}
+
+.green_dragon {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/green_dragon.png");
+}
+
+.white_dragon {
+    background-image: url("//res.cform.cn/unzip/1580781196728_6716304218749787/source/white_dragon.png");
+}

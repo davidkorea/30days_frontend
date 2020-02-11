@@ -1,0 +1,37 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./poker.css">
+    <style>
+
+    </style>
+    <script>
+        window.onload = function() {
+            var dealer = document.getElementsByClassName('dealer')[0];
+            var pool = document.getElementsByClassName('pool')[0];
+
+            dealer.onclick = function() {
+                if (pool.children.length >= 5) {
+                    var info = confirm('Already 5 cards. Refresh?');
+                    if (info) {
+                        pool.innerHTML = null;
+                    };
+                } else {
+                    var num = Math.floor(Math.random() * (14 - 1) + 1);
+                    cardList = ['f1', 'f2', 'f3', 'f4', 'f5', 'f6', 'f7', 'f8', 'f9', 'f10', 'f11', 'f12', 'f13'];
+                    console.log(pool.innerHTML);
+                    pool.innerHTML += '<div class="card ' + cardList[num] + '"></div>';
+                };
+            };
+
+        };
+    </script>
+</head>
+
+<body>
+    <div class="pool">
+    </div>
+    <div style="margin-top: 15px;" class="dealer card"></div>
+</body>
+
+</html>

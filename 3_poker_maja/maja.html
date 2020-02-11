@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="maja.css">
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .table {
+            height: 100vmin;
+            width: 100vmin;
+            background-color: #66ae00;
+            /* 边框阴影 ridge */
+            border: 15px ridge brown;
+            /* 边框圆角 */
+            border-radius: 2vmin;
+            /* 左右居中 */
+            justify-content: center;
+            /* 上下居中 */
+            align-items: center;
+            display: flex;
+        }
+        
+        .maja {
+            /* 515 385 / 10 * 2 */
+            height: 103px;
+            width: 77px;
+            /* background-color: whitesmoke; */
+            background-size: 100% 100%;
+            /* border: 10px ridge whitesmoke; */
+            /* border-right: 15px solid rgb(187, 248, 137);
+            border-bottom: 15px solid rgb(187, 248, 137); */
+            margin: 5px;
+            border-radius: 1vmin;
+            box-shadow: 1px 2px 0 #a1cc36, 2px 3px 0 #a1cc36, 3px 5px 0 #a1cc36, 4px 8px 0 #a1cc36, 5px 10px 0px #a1cc36;
+        }
+        
+        .face-down {
+            background: #a1cc36;
+            box-shadow: 1px 2px 0 white, 2px 3px 0 white, 3px 5px 0 white, 4px 8px 0 white, 5px 10px 0px white;
+        }
+    </style>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        window.onload = function() {
+            var majas = document.getElementsByClassName('maja');
+            for (i = 0; i < majas.length; i++) {
+                majas[i].onclick = function() {
+                    $(this).toggleClass('face-down');
+                }
+            }
+
+
+        };
+    </script>
+</head>
+
+<body>
+    <div class="table">
+        <div class="maja dot_3"></div>
+        <div class="maja dot_5"></div>
+        <div class="maja white_dragon"></div>
+        <div class="maja bamboo_1"></div>
+        <div class="maja red_dragon"></div>
+        <div class="maja bamboo_6"></div>
+    </div>
+</body>
+
+</html>
