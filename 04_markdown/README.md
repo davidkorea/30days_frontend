@@ -62,7 +62,7 @@ blockquote p {
 ```
 -----
 
-```css
+```html
 <style>
     .right {
         width: 50vw;
@@ -85,6 +85,7 @@ blockquote p {
         word-break: break-all;      // 不显示此div，只显示父元素的div
     }
 </style>
+
 <body>
     <div class="right">
         <div class="counter"></div>
