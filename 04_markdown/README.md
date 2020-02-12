@@ -62,36 +62,33 @@ blockquote p {
 ```
 -----
 
+```css
+.right {
+    width: 50vw;
+    height: 100%;
+    padding: 20px 40px;
+    background-color: #212A33;
+    color: aliceblue;
+    display: flex;              // flex默认水平摆放子元素
+    flex-direction: column;     // 变更水平摆放为竖直摆放
+}
+
+.counter {
+    height: 20px;               // 进设置高度，不设置宽度，当此div内没有文字时，网页不显示此div
+    font-size: 12px;            // 不显示此div，只显示父元素的div
+    color: aliceblue;
+    align-self: flex-end;       // 本元素相对于父元素.right的最后（最右）
+}
+
+.right-content * {              // 不显示宽高，当此div内没有文字时，网页不显示该div
+    word-break: break-all;      // 不显示此div，只显示父元素的div
+}
+```
 ```html
-<style>
-    .right {
-        width: 50vw;
-        height: 100%;
-        padding: 20px 40px;
-        background-color: #212A33;
-        color: aliceblue;
-        display: flex;              // flex默认水平摆放子元素
-        flex-direction: column;     // 变更水平摆放为竖直摆放
-    }
-
-    .counter {
-        height: 20px;               // 进设置高度，不设置宽度，当此div内没有文字时，网页不显示此div
-        font-size: 12px;            // 不显示此div，只显示父元素的div
-        color: aliceblue;
-        align-self: flex-end;       // 本元素相对于父元素.right的最后（最右）
-    }
-
-    .right-content * {              // 不显示宽高，当此div内没有文字时，网页不显示该div
-        word-break: break-all;      // 不显示此div，只显示父元素的div
-    }
-</style>
-
-<body>
-    <div class="right">
-        <div class="counter"></div>
-        <div class="right-content"></div>
-    </div>
-</body>
+<div class="right">
+    <div class="counter"></div>
+    <div class="right-content"></div>
+</div>
 ```
 
 <img width="826"  src="https://user-images.githubusercontent.com/26485327/74310132-63f37c00-4da7-11ea-899a-408908ffee60.png">
