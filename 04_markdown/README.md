@@ -1,4 +1,33 @@
-
+# JS
+```javascript
+window.onload = function() {
+    $('.left').sortable();              // jquery ui，可以拖拽元素位置顺序
+    
+    marked.setOptions({
+        breaks: true                    // 用于quote断行
+    });
+    
+    $('.left').keyup(function() {
+        var text = document.querySelector('.left').innerText;
+        $('.right-content').text(marked(text));
+        // .html 而不用.text，是因为marked返回的时带有样式的html代码
+        // 如果使用.text则会直接展示被marked转换后的裸html
+        var count = $('.left').text().length;
+        $('.count').text('Chars in total: ' + count);
+    })
+};
+```
+- sortable，拖拽
+    - 该方法来自jquery ui，之前也属于jquery，后被拆分出来，但需要依赖jquery库来运行
+    - **问题**：拖拽了之后，右边不跟随变化
+- 统计left字数，和获得left文字显示给right，用不一样的方式
+    - jquery的text()方法自动将文本中的换行\n取消掉了，导致右边显示时不能自动换行，即使开启了上见面时setOptions，也不能换行
+    - jquery text()方法的设计初衷就是获取一个干净的文本，因此需要使用原生js获取文本
+    - 而统计字数，用jquery是因为代码简洁
+-  右边显示时，用.html 而不用.text，是因为marked返回的时带有样式的html代码
+    - 如果使用.text则会直接展示被marked转换后的裸html
+    
+# CSS
 ```css
 width: 50vw;
 height: 50vh;
