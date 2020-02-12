@@ -31,9 +31,10 @@ height: 50%;
     align-self: flex-end;           // 针对自身，非针对子元素
 }
 ```
-- align-self，针对**自身元素相对于父元素**的位置，flex-end为元素本身与父元素右对齐摆放
+- align-self，针对**自身元素相对于父元素**的位置，flex-end为元素本身与父元素右对齐摆放（元素位于容器的结尾）
 
 ```html
+<style>
 .box2 {
     height: 50%;
     width: 100%;
@@ -41,6 +42,33 @@ height: 50%;
     word-break: break-all;    // 文字到达边框时换行，英文单词会在中间切断
     word-wrap: break-word;    // 文字到达边框时换行，以英文单词为单位，保证单词完整，换行
 }
+</style>
 
 <div class="box2" contenteditable="true"></div>
 ```
+
+```css
+blockquote p {
+    color: gainsboro;               // 元素内文字颜色
+    font-weight: 800;               // 元素内文字粗细
+    border-left: solid white 2px;
+    padding-left: 30px;
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
