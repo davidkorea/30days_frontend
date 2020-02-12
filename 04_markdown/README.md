@@ -1,13 +1,13 @@
 
 ```css
 width: 50vw;
-height 50vh;
+height: 50vh;
 ```
 - 相对于浏览器窗口可视区域的50%
 
 ```css
 width: 50%;
-height 50%;
+height: 50%;
 ```
 - 相对于父元素的50%
 
@@ -22,6 +22,16 @@ height 50%;
     align-items: center;      // 子元素上下居中
 }
 ```
+
+```css
+.box1 {
+    height: 50%;
+    width: 50%;
+    background-color: burlywood;
+    align-self: flex-end;           // 针对自身，非针对子元素
+}
+```
+- align-self，针对**自身元素相对于父元素**的位置，flex-end为元素本身与父元素右对齐摆放
 
 ```html
 .box2 {
