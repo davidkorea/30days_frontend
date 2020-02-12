@@ -92,10 +92,19 @@ blockquote p {
 -----
 
 ```css
+.left {
+    width: 50vw;
+    height: 100%;
+    padding: 40px;                  // 上下左右均40px！！
+    white-space: pre-wrap;
+    white-space: pre-line;
+    background-color: aliceblue;
+}
+
 .right {
     width: 50vw;
     height: 100%;
-    padding: 20px 40px;
+    padding: 20px 40px;             // 上下20px，左右40px！！
     background-color: #212A33;
     color: aliceblue;
     display: flex;              // flex默认水平摆放子元素
@@ -124,8 +133,30 @@ blockquote p {
 <img width="823" src="https://user-images.githubusercontent.com/26485327/74310144-681f9980-4da7-11ea-8112-c7ca238cc0ca.png">
 
 
+由于left和right的上下padding不一致，导致两个div无法在底端对齐
 
+<img width="781" alt="截屏2020-02-12下午4 12 56" src="https://user-images.githubusercontent.com/26485327/74315547-a1a9d200-4db2-11ea-98e6-c46ddcf1f00b.png">
+<img width="784" alt="截屏2020-02-12下午4 13 09" src="https://user-images.githubusercontent.com/26485327/74315557-a53d5900-4db2-11ea-87e7-759f6b45a648.png">
 
+因此，需要调整left和right的上下padding
+```css
+.left {
+    width: 50%;
+    height: 100%;
+    background-color: whitesmoke;
+    padding: 40px;
+}
+
+.right {
+    width: 50%;
+    height: 100%;
+    background-color: darkslategray;
+    color: whitesmoke;
+    padding: 10px 40px 70px 40px;       // 上左下右， 是的上下加总依然为40+40=80px
+    display: flex;
+    flex-direction: column;
+}
+```
 
 
 
