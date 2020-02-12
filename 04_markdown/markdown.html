@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: black;
+        }
+        
+        .pad {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+        }
+        
+        .left {
+            width: 50%;
+            height: 100%;
+            background-color: whitesmoke;
+            padding: 40px;
+        }
+        
+        .right {
+            width: 50%;
+            height: 100%;
+            background-color: darkslategray;
+            color: whitesmoke;
+            padding: 10px 40px 70px 40px;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .count {
+            height: 5%;
+            align-self: flex-end;
+            font-weight: 800;
+        }
+        
+        .right-content {
+            height: 100%;
+            word-wrap: break-word;
+        }
+        
+        blockquote p {
+            color: gainsboro;
+            font-weight: 800;
+            border-left: solid white 2px;
+            padding-left: 30px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.8.0/marked.min.js"></script>
+
+    <script>
+        window.onload = function() {
+            $('.left').sortable(); // jquery ui，
+            marked.setOptions({
+                breaks: true // 用于quote断行
+            });
+            $('.left').keyup(function() {
+                var text = document.querySelector('.left').innerText;
+                $('.right-content').text(marked(text));
+                // .html 而不用.text，是因为marked返回的时带有样式的html代码
+                // 如果使用.text则会直接展示被marked转换后的裸html
+                var count = $('.left').text().length;
+                $('.count').text('Chars in total: ' + count);
+            })
+        };
+    </script>
+</head>
+
+<body>
+    <div class="pad">
+        <div class="left" contenteditable="true"></div>
+        <div class="right">
+            <div class="count"></div>
+            <div class="right-content">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
