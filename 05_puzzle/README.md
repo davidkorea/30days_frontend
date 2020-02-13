@@ -1,9 +1,12 @@
-- given word乱序
+# 2. Pic puzzle
 
+
+
+# 1. Word puzzle
+> - given word乱序, underscore shuffle?
 
 ![Feb-13-2020 15-25-10](https://user-images.githubusercontent.com/26485327/74410953-2e1cc900-4e75-11ea-82c1-ea357b0508ab.gif)
 
-# Word puzzle
 1. given从list中取出单词显示，同时sink匹配字母长度
 2. 点击given中的字母元素后，given中删除该字母，并在sink中显示字母
 3. 单击submit，如果sink的文本和步骤一取出的文本一直，则在result div中显示结果
