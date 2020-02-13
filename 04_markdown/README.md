@@ -60,8 +60,9 @@ height: 50%;
     align-items: center;      // 子元素上下居中，不针对元素内文字
 }
 ```
-- align-items: center; 子元素上下居中，**不针对元素内文字**
-    - 文字位置text-align: right;
+- 四个是一个组合，display：flex，flex-direction，justify-content，align-items
+    - 元素内部子元素上下居中，**包括标签元素和文字元素**
+- 文字水平位置text-align: right / center;
 
 
 -----
