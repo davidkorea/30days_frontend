@@ -1,0 +1,133 @@
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: darkslateblue;
+        }
+        
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .frame {
+            /* 953 1125 */
+            height: 280px;
+            width: 210px;
+            background-image: url("//res.cform.cn/unzip/1581565864304_9053483119569032/frame.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+            padding: 48px;
+        }
+        
+        .piece {
+            height: 70px;
+            width: 70px;
+            /* background-color: yellowgreen; */
+            background-image: url('./source/1.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .fragment {
+            height: 70px;
+            display: flex;
+            margin: 40px;
+        }
+        
+        .result {
+            font-size: 30px;
+            font-weight: bold;
+            color: white;
+        }
+    </style>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <script>
+        $(function() {
+            var imgList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+            var $frame = $('.frame')
+            var $fragment = $('.fragment');
+            var $result = $('.result')
+
+
+            for (idx of imgList) { // 不是in
+                // console.log(idx);
+
+                var imgUrl = `url('./source/${idx}.png')`;
+                // console.log(imgUrl);
+                $fragment.append('<div class="piece" style="background-image:' + imgUrl + '" id="' + idx + '"></div>')
+            }
+
+            var $piece = $('.piece');
+            var pieceIdxList = []; // 放到click函数内部，每次都是新的列表，不能保存以前的值
+
+            $piece.click(function() {
+                var $parent = $(this).parent()[0].className;
+                // console.log(parent);
+                if ($parent == 'fragment') {
+                    $(this).appendTo($frame);
+                    var pieceIdx = Number($(this).attr('id'));
+                    pieceIdxList.push(pieceIdx);
+                    console.log(pieceIdxList);
+
+                } else {
+                    $(this).appendTo($fragment);
+                    // $result.hide(); 
+                    pieceIdxList.pop();
+                    console.log(pieceIdxList.length);
+                }
+
+
+                var flag = true;
+                if (pieceIdxList.length == imgList.length) {
+                    for (i = 0; i < pieceIdxList.length; i++) {
+                        if (pieceIdxList[i] != imgList[i]) {
+                            flag = false;
+                        }
+                    };
+                    // alert('Yes!');
+                    if (flag) {
+                        $result.text('Yes');
+                    } else {
+                        $result.text('Sorry...Try Again');
+                    }
+                } else {
+                    $result.text(""); // 必须要有，当元素从上面放回下面时，清空结果
+                    // 否则在上面判断直接hide了结果，就再也不显示结果了
+                }
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="frame">
+            <!-- <div class="piece"></div> -->
+
+        </div>
+        <div class="result"></div>
+        <div class="fragment">
+            <!-- <div class="piece"></div> -->
+
+        </div>
+    </div>
+</body>
+
+</html>
