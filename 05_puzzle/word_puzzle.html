@@ -1,0 +1,174 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            background-color: lightsteelblue;
+        }
+        
+        .outer {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .sink {
+            /* box-sizing: border-box; */
+            -webkit-box-shadow: inset 3px 2px 5px 1px rgba(0, 0, 0, 0.22);
+            -moz-box-shadow: inset 3px 2px 5px 1px rgba(0, 0, 0, 0.22);
+            box-shadow: inset 3px 2px 5px 1px rgba(0, 0, 0, 0.22);
+            -webkit-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.29);
+            -moz-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.29);
+            box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.29);
+            border-radius: 3px;
+            display: flex;
+            flex-direction: row;
+            background-color: #F3F3F3;
+            height: 60px;
+            border-width: 6px;
+            border-color: white;
+            border-style: solid;
+            margin: 20px;
+        }
+        
+        .given {
+            height: 60px;
+            /* border: 1px solid whitesmoke; */
+            /* 否则字母被取出后，还留下一个边框，丑 */
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+        
+        .char {
+            width: 60px;
+            height: 60px;
+            background-color: whitesmoke;
+            font-weight: 600;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid lightgray;
+        }
+        
+        .btn {
+            -webkit-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.29);
+            -moz-box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.29);
+            box-shadow: 0px 0px 13px 1px rgba(0, 0, 0, 0.29);
+            height: 30px;
+            border-radius: 3px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: lightskyblue;
+            border: 2px solid whitesmoke;
+            color: white;
+            font-weight: 800;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 5px;
+            margin: 10px;
+        }
+        
+        .result {
+            margin: 10px;
+            font-size: 30px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"></script>
+    <script src="congrats.js"></script>
+    <script>
+        $(function() {
+            var wordList = ['banana', 'pear', 'apple', 'kiwi'];
+
+            (function puzzle() {
+                var $sink = $('.sink');
+                var $given = $('.given')
+                var $submit = $('.submit');
+                var $reload = $('.reload');
+                var $result = $('.result');
+
+                // pop 返回列表最后一个元素，并将该元素在原列别中删除
+                var givenWord = wordList.pop();
+
+                $submit.show();
+                $reload.hide();
+                $sink.empty();
+                $result.empty();
+                $given.empty();
+                confetti.stop();
+
+
+                // 拿到一个单词后，立即根据单词长度，将上面的方框设置为与单词字母数等长
+                $sink.css('width', givenWord.length * 60)
+
+                for (char of givenWord) {
+                    // console.log(char);
+                    $given.append(`<div class="char">${char}</div>`);
+                    // 使用html方法只能增加到最后一个字母，因为没循环一个都会覆盖掉之前的
+                    // 表达式中的变量使用${ }
+                }
+                var $char = $('.char');
+                // 不能放在函数开头，是因为一开始还没有将字母填进去，获取不到.char元素
+
+                $char.one('click', function() { // 绑定所有.char的div单击事件
+                    // console.log($(this).text()); // 不能直接使用this，需要$(this)
+                    $(this).appendTo($sink);
+                })
+
+                $submit.one('click', function() {
+                    // console.log('sink: ' + $('.sink').text());
+                    if ($sink.text() == givenWord) {
+                        // alert('yes');
+                        $result.text('Congratulations！');
+                        confetti.start();
+                    } else {
+                        // alert('no');
+                        $result.text('Sorry...');
+                    }
+                    // 提交后，只显示reload，不显示submit
+                    $submit.hide();
+                    $reload.show();
+
+                    $reload.one('click', function() {
+                        // 清空sink，清空result，显示submit，不显示reload
+                        if (wordList.length == 0) {
+                            $result.text('Finished!');
+                            $submit.hide();
+                            $reload.hide();
+                            $sink.hide();
+                            $given.empty();
+                        } else {
+                            puzzle();
+                        }
+                    });
+                })
+
+            })();
+        })
+    </script>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="sink"></div>
+        <div class="result"></div>
+        <div class="submit btn">Submit</div>
+        <div class="reload btn">Reload</div>
+        <div class="given">
+            <!-- <div class="char">a</div>
+            <div class="char">a</div> -->
+        </div>
+    </div>
+</body>
+
+</html>
