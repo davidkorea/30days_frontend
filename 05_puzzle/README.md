@@ -1,6 +1,28 @@
 
 
 
+# JQuery
+window.onload()的三中jquery方式
+
+- 引用jquery库文件
+
+```javascript
+$(document).ready(function() {
+    alert('hi');
+})
+```
+```javascript
+$().ready(function() {
+    alert('hi');
+})
+```
+```javascript
+$(function() {
+    alert('hi');
+})
+```
+
+
 # CSS
 
 <img width="748" src="https://user-images.githubusercontent.com/26485327/74399462-dde23e80-4e55-11ea-9014-125e2adbce88.png">
