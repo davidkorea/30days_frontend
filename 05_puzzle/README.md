@@ -12,9 +12,9 @@
     - 清空 result，`$result.empty();`
     - 清空上一次的given，`$given.empty();`
     - 重新显示submit，隐藏reload
-
-![Feb-13-2020 13-21-32](https://user-images.githubusercontent.com/26485327/74403890-cca02e80-4e63-11ea-9887-aaee0c7aedc8.gif)
-
+    
+    ![](https://user-images.githubusercontent.com/26485327/74403890-cca02e80-4e63-11ea-9887-aaee0c7aedc8.gif)
+7. 
 
 # JQuery
 - 引用jquery库文件
