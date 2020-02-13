@@ -14,7 +14,12 @@
     - 重新显示submit，隐藏reload
     
     ![](https://user-images.githubusercontent.com/26485327/74403890-cca02e80-4e63-11ea-9887-aaee0c7aedc8.gif)
-7. 
+
+7. 将元素上的click事件更改为`one('click', function(){})`，执行完一次后，将事件与元素解绑
+
+8. 散花特效
+    - 提交成功后散花`confetti.start();`
+    - 函数刚开始，reload时停止散花`confetti.stop();`
 
 # JQuery
 - 引用jquery库文件
@@ -50,8 +55,7 @@ $submit.show();     // display 默认显示，不用设置
 $reload.hide();     // style="display: none;"
 $sink.empty();      // 清空
 ```
-4. pop()
-删除list中最后一个元素，并返回该元素
+4. pop()，删除list中最后一个元素，并返回该元素
 
 5. appendTo()
 ```javascript
