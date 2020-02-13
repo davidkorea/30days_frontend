@@ -17,10 +17,9 @@
 
 
 # JQuery
-window.onload()的三中jquery方式
-
 - 引用jquery库文件
 
+1. window.onload()的三中jquery方式
 ```javascript
 $(document).ready(function() {
     alert('hi');
@@ -35,7 +34,40 @@ $().ready(function() {
 $(function() {
     alert('hi');
 })
+``` 
+
+2. one()方法，元素绑定的事件执行一次后解绑，即一次使用后失效
+```javascript
+$('.click').one('click', function() {
+    alert('hi');
+});
+
+<div class="click btn">click</div>
 ```
+3. 元素显示，隐藏，清空
+```javascript
+$submit.show();     // display 默认显示，不用设置
+$reload.hide();     // style="display: none;"
+$sink.empty();      // 清空
+```
+4. pop()
+删除list中最后一个元素，并返回该元素
+
+5. appendTo()
+```javascript
+$char.click(function() { 
+    $(this).appendTo($sink);
+})
+```
+- 不能直接使用this，jquery中需要$(this)
+- 将$(this)中的元素删除掉，并添加执$sink元素内部
+- `$('.a').appendTo($('.b'));`，把a添加至b
+
+
+
+
+
+
 
 
 # CSS
