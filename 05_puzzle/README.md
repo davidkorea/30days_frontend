@@ -3,7 +3,16 @@
 2. 点击given中的字母元素后，given中删除该字母，并在sink中显示字母
 3. 单击submit，如果sink的文本和步骤一取出的文本一直，则在result div中显示结果
 4. 按钮，一开始只显示submit，不显示reload，提交后，只显示reload，不显示submit
+5. 单击reload后，重新执行上述4个步骤。需要将上述4个步骤封装成函数，并做相应代码优化
+    - 很多地方使用到同一个元素，都需要重新写`$('.sink')`，在函数开头将所有用到的元素先定义好
+    - 但是`var $char = $('.char')`不能在函数开头定义，因为页面此时还没有添加char元素，获取为空，下面不能使用$char这个变量
+        - 需要在given中被添加了字母char元素后再定义
+6. 单击reload后
+    - 清空上一次的sink
+    - 清空 result
+    - 重新显示submit，隐藏reload
 
+![Feb-13-2020 13-21-32](https://user-images.githubusercontent.com/26485327/74403890-cca02e80-4e63-11ea-9887-aaee0c7aedc8.gif)
 
 
 # JQuery
