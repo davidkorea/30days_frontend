@@ -8,8 +8,9 @@
     - 但是`var $char = $('.char')`不能在函数开头定义，因为页面此时还没有添加char元素，获取为空，下面不能使用$char这个变量
         - 需要在given中被添加了字母char元素后再定义
 6. 单击reload后
-    - 清空上一次的sink
-    - 清空 result
+    - 清空上一次的sink，`$sink.empty();`
+    - 清空 result，`$result.empty();`
+    - 清空上一次的given，`$given.empty();`
     - 重新显示submit，隐藏reload
 
 ![Feb-13-2020 13-21-32](https://user-images.githubusercontent.com/26485327/74403890-cca02e80-4e63-11ea-9887-aaee0c7aedc8.gif)
