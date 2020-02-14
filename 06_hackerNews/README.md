@@ -6,6 +6,9 @@
 - github-trending-2.html
 <img width="1094" src="https://user-images.githubusercontent.com/26485327/74530844-1113f300-4f66-11ea-902a-d5894fab70ce.png">
 
+- 3
+    - 除了做外层元素width 100vw，height 100vh之外，其他内层元素的长宽均使用相同的单位vw，可以跟随浏览器大小等比例缩放
+
 # 1. hacker news
 
 
