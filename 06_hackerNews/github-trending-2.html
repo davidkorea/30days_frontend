@@ -1,0 +1,212 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .centerframe {
+            /* height: 100vh; */
+            width: 100vw;
+            display: flex;
+            /* justify-content: center;
+            align-items: center; */
+        }
+        
+        .sidebar {
+            width: 20%;
+            /* height: 100%; */
+            background-color: rgb(190, 190, 190);
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+        
+        .logo {
+            height: 80px;
+            width: 80px;
+            /* background-color: red; */
+            background-image: url('//user-images.githubusercontent.com/26485327/74516894-3136b880-4f4c-11ea-9d22-b44d183aa49b.png');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            margin-top: 10px;
+        }
+        
+        .main {
+            width: 80%;
+            height: 100%;
+            background-color: whitesmoke;
+            display: flex;
+            flex-direction: column;
+            /* 超过当前显示界面，滚动 */
+            overflow: scroll;
+        }
+        
+        .title {
+            width: 500px;
+            height: 60px;
+            background-image: url('//user-images.githubusercontent.com/26485327/74516902-33007c00-4f4c-11ea-9649-f1f3bb02bb5e.png');
+            background-size: 100% 100%;
+            margin: 30px;
+        }
+        
+        .content {
+            height: 100%;
+            width: 100%;
+            /* background-color: yellow; */
+            display: flex;
+            justify-content: flex-start;
+            /* 全部横向散开 */
+            /* justify-content: space-between; */
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        
+        .item {
+            height: 150px;
+            width: 250px;
+            background-color: whitesmoke;
+            word-break: break-all;
+            /* padding: 20px; */
+            margin: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 20px -6px rgba(0, 0, 0, 0.4);
+            color: black;
+            /* justify-content: space-around; */
+            display: flex;
+        }
+        
+        .item:hover {
+            transition: transform 0.2s ease;
+            transform: scale(1.01);
+            border: 1px solid rgb(145, 148, 150);
+            box-shadow: 0px 0px 5px 0px rgb(107, 105, 105);
+            box-shadow: 0px 0px 20px -4px rgb(126, 126, 128);
+        }
+        
+        .bar {
+            width: 5%;
+            height: 100%;
+            background-color: red;
+            border-radius: 5px;
+        }
+        
+        .info {
+            width: 95%;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid whitesmoke;
+            overflow: scroll;
+        }
+        
+        .name {
+            height: 20%;
+            font-weight: bolder;
+            font-size: 18px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            /* background-color: khaki; */
+        }
+        
+        .language {
+            height: 20%;
+            font-weight: 200;
+            font-size: 12px;
+        }
+        
+        .desc {
+            height: 20%;
+            color: gray;
+            font-weight: 200;
+            font-size: 12px;
+        }
+        
+        .author {
+            height: 20%;
+            font-size: 14px;
+            /* margin-top: 20px; */
+        }
+        
+        .score {
+            height: 10%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+    </style>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(function() {
+            function addItem(data) {
+                var desc = data.description;
+                desc = desc.substr(0, 15);
+                // console.log(desc.substr(0, 20));
+
+                var color = data.languageColor;
+                if (data.language) {
+                    var language = data.language;
+                } else {
+                    var language = '';
+                }
+
+                return `<a style="text-decoration:none;" href="${data.url}">
+                        <div class="item">
+                            <div class="bar" style="background-color:${color};"></div>
+                             <div class="info">
+                            <div class="name">${data.name}
+                            </div>
+                            <div class="language" style="color:${color};">${language}</div>
+                            <div class="desc">${desc}...</div>
+                            <div class="author"><img src="https://user-images.githubusercontent.com/26485327/74511517-232f6a80-4f41-11ea-914d-66df609cabc5.png"> ${data.author}</div>
+                            <div class="score">
+                                <div class="fork"><img src="https://user-images.githubusercontent.com/26485327/74511526-26c2f180-4f41-11ea-804a-80a367e6c45d.png"> ${data.forks}</div>
+                                <div class="star"><img src="https://user-images.githubusercontent.com/26485327/74511529-288cb500-4f41-11ea-835e-aadc44e94116.png"> ${data.stars}</div>
+                            </div></div></div>
+                        </div></a>`
+            }
+
+            $.ajax({
+                // url: 'https://github-trending-api.now.sh/repositories?language=javascript&since=weekly',
+                url: 'https://github-trending-api.now.sh/repositories',
+                success: function(resp) {
+                    for (res of resp) {
+                        console.log(res);
+                        $('.content').append(addItem(res));
+
+                    }
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="centerframe">
+        <div class="sidebar">
+            <div class="logo"></div>
+        </div>
+        <div class="main">
+            <div class="title"></div>
+            <div class="content">
+                <!-- <div class="item">
+                    <div class="bar"></div>
+                    <div class="info">
+                        <div class="name">Lorem ipsum dolor</div>
+                        <div class="language">javascript</div>
+                        <div class="desc">asdfghjkl</div>
+                        <div class="author">david</div>
+                        <div class="score">
+                            <div class="fork"><img src="./resources/fork.png"> fork: 123</div>
+                            <div class="star">star: 8879</div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
