@@ -1,0 +1,193 @@
+<html>
+
+<head>
+    <style>
+        /* 内层子元素宽高单位一直使用vw，可保证等比例缩放 */
+        
+        body {
+            margin: 0;
+        }
+        
+        .centerframe {
+            display: flex;
+            height: 100vh;
+            width: 100vw;
+            background-color: black;
+        }
+        
+        .sidebar {
+            width: 20%;
+            /* height: 100%; */
+            background-color: red;
+            display: flex;
+            /* 水平居中 */
+            justify-content: center;
+        }
+        
+        .logo {
+            width: 5vw;
+            height: 5vw;
+            background-color: yellow;
+            margin: 1vh 1vw;
+        }
+        
+        .main {
+            width: 80%;
+            /* height: 100%; */
+            background-color: royalblue;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 不能右下面的居中，否则下面方框多了，会遮住标题 */
+            /* justify-content: center; */
+            /* 加给sidebar不管用，因为main里面的元素超过了边框 */
+            overflow: scroll;
+        }
+        
+        .title {
+            width: 60vw;
+            height: 5vw;
+            background-color: yellow;
+            /* font-size: 60px; */
+            margin: 1vh 1vw;
+            /* !!!!!被挤压时，元素收缩默认为1，设置为0表示不压缩 */
+            /* 而且上面的main 不能设置justify-content: center; */
+            flex-shrink: 0;
+        }
+        
+        .content {
+            width: 74vw;
+            /* height: 80%; */
+            background-color: yellowgreen;
+            display: flex;
+            flex-wrap: wrap;
+            /* 横向均匀分散开 */
+            justify-content: space-evenly;
+            /* justify-content: flex-start; */
+        }
+        
+        .item {
+            width: 22vw;
+            height: 14vw;
+            background-color: white;
+            display: flex;
+            margin: 1vh 1vw;
+            border-radius: 5px;
+        }
+        
+        .bar {
+            width: 2vw;
+            height: 100%;
+            background-color: tomato;
+            border-radius: 5px;
+        }
+        
+        .info {
+            display: flex;
+            flex-direction: column;
+            padding: 1vh 1vw;
+            justify-content: space-around;
+        }
+        
+        .name {
+            width: 12vw;
+            height: 2vw;
+            background-color: wheat;
+            /* margin: 1vh 1vw; */
+            font-weight: bolder;
+        }
+        
+        .language {
+            width: 8vw;
+            height: 1.2vw;
+            background-color: wheat;
+            /* margin: 1vh 1vw; */
+            font-size: 12px;
+        }
+        
+        .desc {
+            width: 8vw;
+            height: 1.2vw;
+            background-color: wheat;
+            /* margin: 1vh 1vw; */
+            font-size: 12px;
+        }
+        
+        .author {
+            width: 8vw;
+            height: 2vw;
+            background-color: wheat;
+            /* margin: 1vh 1vw; */
+        }
+        
+        .score {
+            display: flex;
+            justify-content: space-around;
+            /* margin: 2vh 1vw; */
+        }
+        
+        .fork,
+        .star {
+            width: 4vw;
+            height: 1.2vw;
+            background-color: thistle;
+        }
+    </style>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        $(function() {
+            function item() {
+                return `<div class="item">
+                            <div class="bar"></div>
+                            <div class="info">
+                                <div class="name">name</div>
+                                <div class="language">language</div>
+                                <div class="desc">description</div>
+                                <div class="author">author</div>
+                                <div class="score">
+                                    <div class="fork"></div>
+                                    <div class="star"></div>
+                                </div>
+                            </div>
+                        </div>`
+            }
+
+            var num = 17;
+            for (i = 0; i < num; i++) {
+                $('.content').append(item());
+            }
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="centerframe">
+        <div class="sidebar">
+            <div class="logo"></div>
+        </div>
+        <div class="main">
+            <div class="title"></div>
+            <div class="content">
+
+                <!-- <div class="item">
+                    <div class="bar"></div>
+                    <div class="info">
+                        <div class="name">name</div>
+                        <div class="language">language</div>
+                        <div class="desc">description</div>
+                        <div class="author">author</div>
+                        <div class="score">
+                            <div class="fork"></div>
+                            <div class="star"></div>
+                        </div>
+                    </div>
+                </div> -->
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
