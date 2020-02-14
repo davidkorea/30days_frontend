@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Muggle</title>
+    <style>
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+        }
+        
+        .sidebar {
+            width: 15%;
+            background-color: #F7F7F7;
+            padding: 1.5vw;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .logo {
+            width: 10vw;
+            height: 10vw;
+            background-image: url("//user-images.githubusercontent.com/26485327/74516894-3136b880-4f4c-11ea-9d22-b44d183aa49b.png");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .content {
+            width: 85%;
+            padding: 2vw 4vw;
+            background-color: white;
+            /* safari！！！！！ overflow: scroll; */
+            overflow: scroll;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .title {
+            width: 40vw;
+            height: 6vw;
+            margin: 1vw 0 3vw 0;
+            flex-shrink: 0;
+            font-size: 5vw;
+        }
+        
+        .articles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+        
+        .article {
+            margin: 1.5vw 0;
+            border-radius: 0.5vw;
+            display: flex;
+        }
+        
+        .article:hover {
+            cursor: pointer;
+            transform: scale(1.05);
+            transition: transform 0.2s ease;
+            box-shadow: 0 0 0.4vw 0 #9fcfe4, 0 0 0.7vw 0.3vw #acd5d6;
+        }
+        
+        .bar {
+            width: 1.2vw;
+            height: 15vw;
+            border-radius: 0.6vw;
+            background: orange;
+        }
+        
+        .article-info {
+            width: 19vw;
+            height: 15vw;
+            margin-left: 0.15vw;
+            padding: 0 1.8vw;
+            border-radius: 0.5vw;
+            box-shadow: 0 0 0.5vw 0 #c6c9cc;
+            overflow: scroll;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        
+        .article-title {
+            font-size: 1.4vw;
+            font-weight: 500;
+            color: #3b3b3b
+        }
+        
+        .language {
+            font-size: 1vw;
+            font-weight: 300;
+        }
+        
+        .description {
+            font-size: 0.3vw;
+            color: #727272
+        }
+        
+        .author,
+        .stars {
+            font-size: 1.1vw;
+            color: #3b3b3b
+        }
+    </style>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body style="margin: 0;">
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo"></div>
+        </div>
+        <div class="content">
+            <div class="title">Github Trending</div>
+            <div class="articles">
+                <!-- <div class="article" onclick="window.open('${article.url}')">
+                    <div class="bar" style="background: ${article.languageColor}"></div>
+                    <div class="article-info">
+                        <div style="display: flex; flex-direction: column;">
+                            <div class="article-title">${article.name}</div>
+                            <div class="language" style="color: ${article.languageColor}">${language}</div>
+                        </div>
+                        <div style="display: flex; flex-direction: column;">
+                            <div class="description">${article.description.slice(0, 10)}...</div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between;">
+                            <div class="author">👤by @${article.author}</div>
+                            <div class="stars">⭐️${article.stars}</div>
+                        </div>
+                    </div>
+                </div> -->
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var api = "https://github-trending-api.now.sh/repositories"
+
+        function items(articles) {
+            for (article of articles) {
+                if (!article.language) {
+                    var language = "None"
+                } else {
+                    var language = article.language
+                }
+                var article_temple = `<div class="article" onclick="window.open('${article.url}')">
+                                        <div class="bar" style="background: ${article.languageColor}"></div>
+                                        <div class="article-info">
+                                            <div style="display: flex; flex-direction: column;">
+                                                <div class="article-title">${article.name}</div>
+                                                <div class="language" style="color: ${article.languageColor}">${language}</div>
+                                            </div>
+                                            <div style="display: flex; flex-direction: column;">
+                                                <div class="description">${article.description.slice(0, 10)}...</div>
+                                            </div>
+                                            <div style="display: flex; justify-content: space-between;">
+                                                <div class="author">👤by @${article.author}</div>
+                                                <div class="stars">⭐️${article.stars}</div>
+                                            </div>
+                                        </div>
+                                    </div>`
+                $(".articles").append(article_temple)
+            }
+        }
+
+        (function() {
+            console.log("Ready to Ajax")
+            $.ajax({
+                url: api,
+                type: 'GET',
+                dataType: 'JSON',
+                success: function(resp, ) {
+                    console.log("Ajax success.")
+                    items(resp)
+                },
+            })
+        })()
+    </script>
+</body>
+
+</html>
