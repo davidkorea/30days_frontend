@@ -4,6 +4,13 @@
 - `box-shadow: 2px 2px 3px black`，左右偏移，上下便宜，羽化渐变半径，颜色。阴影不会挤压周围元素
 - `border-radius: 50%`，直接将等宽高元素设置为圆
 
+- `float:left`，控制当前元素在其父元素中的浮动位置，元素设置float后，水平布局的7元素等式将不再强制生效，即不再填充右margin边距
+    - 而且设置浮动后，该元素将脱离文档流，不在占用文档的位置，周围在文档流上的元素将填充上去
+
+
+
+
+
 ### 1. github-trending-1.html
 <img width="1245" src="https://user-images.githubusercontent.com/26485327/74530850-15401080-4f66-11ea-9b4c-03846ee5fe00.png">
 
