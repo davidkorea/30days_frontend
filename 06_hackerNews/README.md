@@ -17,8 +17,12 @@
         - `overflow: hidden`,hidden 或 auto，此方式也有副作用
         ![F2458314-11A6-4DB2-A835-9AC36398CE34](https://user-images.githubusercontent.com/26485327/74590156-c28a5580-5046-11ea-999f-cb5817d8ee1e.jpeg)
     - clear left、right，清除左边浮动元素、右边浮动元素对本元素的影响。其实是浏览器自动给该元素增加了margin-top属性，以免与上移后被浮动元素覆盖
-    
-    
+    - 完美解决方案，当子元素浮动，导致没有宽高的父元素塌陷时，可以在浮动元素后，在加一个div并设置clear，让这个div不受浮动元素影响，而在其默认的位置，即浮动元素下方，以此来撑开父元素
+        - div，真元素
+        - ::after，为元素，更适合
+        ![5AA9EE19-8A2F-4EEE-9EBB-E3A7498EC1A6](https://user-images.githubusercontent.com/26485327/74590494-e602cf80-5049-11ea-8816-173ebd4beec8.jpeg)
+        ![72D359E9-61CA-47B6-B579-ECC1B76187F7](https://user-images.githubusercontent.com/26485327/74590495-e602cf80-5049-11ea-8cfe-23d4afb941bf.jpeg)
+
     
     
 ### 1. github-trending-1.html
