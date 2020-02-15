@@ -1,6 +1,7 @@
 # Github Trending
 
 - `div:hover {outline:2px solid red}`，不会挤压周围元素，而border会
+- `box-shadow: 2px 2px 3px black`，左右偏移，上下便宜，羽化渐变半径，颜色
 
 
 ### 1. github-trending-1.html
