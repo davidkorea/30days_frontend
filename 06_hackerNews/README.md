@@ -15,13 +15,15 @@
     - bfc，block formatting content 块级格式化环境。开启后，元素变为独立布局区域
     - 开启bfc，父元素可以包裹着浮动的子元素，而不会造成没有宽高的父元素塌陷，开启方式有多种，下面的最好用
         - `overflow: hidden`,hidden 或 auto，此方式也有副作用
-        ![F2458314-11A6-4DB2-A835-9AC36398CE34](https://user-images.githubusercontent.com/26485327/74590156-c28a5580-5046-11ea-999f-cb5817d8ee1e.jpeg)
+![853F0D94-EAF8-4C76-9438-DBCAA50F24E8](https://user-images.githubusercontent.com/26485327/74590588-b0aab180-504a-11ea-9ec4-b0010ffbdb12.jpeg)
+
     - clear left、right，清除左边浮动元素、右边浮动元素对本元素的影响。其实是浏览器自动给该元素增加了margin-top属性，以免与上移后被浮动元素覆盖
     - 完美解决方案，当子元素浮动，导致没有宽高的父元素塌陷时，可以在浮动元素后，在加一个div并设置clear，让这个div不受浮动元素影响，而在其默认的位置，即浮动元素下方，以此来撑开父元素
         - div，真元素
         - ::after，为元素，更适合
-        ![5AA9EE19-8A2F-4EEE-9EBB-E3A7498EC1A6](https://user-images.githubusercontent.com/26485327/74590494-e602cf80-5049-11ea-8816-173ebd4beec8.jpeg)
-        ![72D359E9-61CA-47B6-B579-ECC1B76187F7](https://user-images.githubusercontent.com/26485327/74590495-e602cf80-5049-11ea-8cfe-23d4afb941bf.jpeg)
+
+![63089F82-F19F-4C37-AD9B-FEDB4F1C60D8](https://user-images.githubusercontent.com/26485327/74590590-b3a5a200-504a-11ea-8963-02a199d03d6a.jpeg)
+![F5B89890-6DEF-4032-8E9F-5724E6D67E2D](https://user-images.githubusercontent.com/26485327/74590592-b6a09280-504a-11ea-8bb8-30356c46c85e.jpeg)
 
     
     
