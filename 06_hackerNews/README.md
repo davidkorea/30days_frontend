@@ -16,8 +16,11 @@
     - 开启bfc，父元素可以包裹着浮动的子元素，而不会造成没有宽高的父元素塌陷，开启方式有多种，下面的最好用
         - `overflow: hidden`,hidden 或 auto，此方式也有副作用
         ![F2458314-11A6-4DB2-A835-9AC36398CE34](https://user-images.githubusercontent.com/26485327/74590156-c28a5580-5046-11ea-999f-cb5817d8ee1e.jpeg)
-
-
+    - clear left、right，清除左边浮动元素、右边浮动元素对本元素的影响。其实是浏览器自动给该元素增加了margin-top属性，以免与上移后被浮动元素覆盖
+    
+    
+    
+    
 ### 1. github-trending-1.html
 <img width="1245" src="https://user-images.githubusercontent.com/26485327/74530850-15401080-4f66-11ea-9b4c-03846ee5fe00.png">
 
