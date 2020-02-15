@@ -1,5 +1,8 @@
 # Github Trending
 
+- `div:hover {outline:2px solid red}`，不会挤压周围元素，而border会
+
+
 ### 1. github-trending-1.html
 <img width="1245" src="https://user-images.githubusercontent.com/26485327/74530850-15401080-4f66-11ea-9b4c-03846ee5fe00.png">
 
