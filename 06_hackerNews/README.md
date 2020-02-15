@@ -1,3 +1,4 @@
+
 # Github Trending
 
 - `div:hover {outline:2px solid red}`，不会挤压周围元素，而border会
@@ -13,7 +14,9 @@
 - 高度塌陷，外层元素没有固定宽高，靠内层元素撑起来，当内层设置浮动后，由于脱离文档流，则外层塌陷
     - bfc，block formatting content 块级格式化环境。开启后，元素变为独立布局区域
     - 开启bfc，父元素可以包裹着浮动的子元素，而不会造成没有宽高的父元素塌陷，开启方式有多种，下面的最好用
-        - `overflow: hidden`,hidden 或 auto
+        - `overflow: hidden`,hidden 或 auto，此方式也有副作用
+        ![F2458314-11A6-4DB2-A835-9AC36398CE34](https://user-images.githubusercontent.com/26485327/74590156-c28a5580-5046-11ea-999f-cb5817d8ee1e.jpeg)
+
 
 ### 1. github-trending-1.html
 <img width="1245" src="https://user-images.githubusercontent.com/26485327/74530850-15401080-4f66-11ea-9b4c-03846ee5fe00.png">
