@@ -88,7 +88,6 @@
             position: relative;
             height: 200px;
             width: 200px;
-            background-color: seagreen;
             border: 10px solid black;
             border-radius: 10px;
             box-shadow: 5px 5px 10px darkslategray;
@@ -107,8 +106,8 @@
             /* 无需设置尺寸，靠里面内容撑起来 */
             display: flex;
             position: absolute;
-            z-index: 4;
-            top: 85%;
+            z-index: 999;
+            top: 85%;   /*相对于父元素div.pic位置的绝对定位偏移量*/
             left: 10%;
         }
         
