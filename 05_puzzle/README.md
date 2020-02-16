@@ -6,7 +6,9 @@
 
 - pic-puzzel-2.html
     - 精确拿出图片的idx，再次放回时，匹配答案顺序
-    
+    - array.aplice(idx,length)
+    - Element.parent()[0].className
+    - Element.attr('id')
 ![Feb-16-2020 20-57-09](https://user-images.githubusercontent.com/26485327/74605026-fa54d400-50fe-11ea-86a6-271aa7cc454c.gif)
 
 
