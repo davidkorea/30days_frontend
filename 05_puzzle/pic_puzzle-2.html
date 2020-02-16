@@ -1,0 +1,120 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            background-color: darkblue;
+        }
+        
+        .background {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .frame {
+            height: 400px;
+            width: 300px;
+            background-image: url('./sunflower/frame.png');
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .inner {
+            height: 74%;
+            width: 70%;
+            background-color: salmon;
+            display: flex;
+            flex-wrap: wrap;
+            /* 自动换行后，不留行间距，附轴排列 */
+            align-content: flex-start;
+        }
+        
+        .fragments {
+            display: flex;
+            /* border: 2px solid red; */
+            margin-top: 10vh;
+        }
+        
+        .piece {
+            width: 70px;
+            height: 74px;
+            background-color: yellow;
+            background-size: 100% 100%;
+        }
+        
+        .result {
+            color: whitesmoke;
+            font-size: 30px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        $(function() {
+            var imgList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+            var $frame = $('.inner');
+            var $fragments = $('.fragments');
+            var $result = $('.result');
+            // var $piece = $('.piece'); 此时还没有加载piece
+
+            function addPiece(idx) {
+                // console.log(idx);
+                return `<div class="piece" id="${idx}"
+                style="background-image: url('./sunflower/${idx}.png');"></div>`
+            };
+
+            for (idx of imgList) {
+                // console.log(idx);
+                $fragments.append(addPiece(idx))
+            };
+
+            var imgOrder = [];
+            var $piece = $('.piece');
+            $piece.click(function() {
+                var parent = $(this).parent()[0].className;
+                // console.log(parent);
+                if (parent == 'fragments') {
+                    $(this).appendTo($frame);
+                    imgOrder.push($(this).attr('id'));
+                    console.log();
+                } else {
+                    $(this).appendTo($fragments);
+                    var imgidx = imgOrder.indexOf($(this).attr('id'))
+                    imgOrder.splice(imgidx, 1);
+                    $result.html('');
+                }
+                console.log(imgOrder.join());
+                if (imgOrder.length == imgList.length) {
+                    if (imgOrder.join() == imgList.join()) {
+                        $result.html('Yes');
+                    } else {
+                        $result.html('Sorry...');
+                    }
+                }
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="background">
+        <div class="frame">
+            <div class="inner">
+                <!-- <div class="piece"></div> -->
+            </div>
+        </div>
+        <div class="fragments">
+            <!-- <div class="piece"></div> -->
+        </div>
+        <div class="result"></div>
+    </div>
+</body>
+
+</html>
