@@ -1,4 +1,8 @@
 # 30days_frontend
+1. flex
+2. position
+3. float
+-----
 
 # 定位position
 - static，不开启定位
