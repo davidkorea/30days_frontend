@@ -25,7 +25,16 @@
 ![63089F82-F19F-4C37-AD9B-FEDB4F1C60D8](https://user-images.githubusercontent.com/26485327/74590590-b3a5a200-504a-11ea-8963-02a199d03d6a.jpeg)
 ![F5B89890-6DEF-4032-8E9F-5724E6D67E2D](https://user-images.githubusercontent.com/26485327/74590592-b6a09280-504a-11ea-8bb8-30356c46c85e.jpeg)
 
-    
+- 高度塌陷+边框重叠，解决方案
+
+![B14EC246-63E8-4A32-95EE-713C2323CC9A](https://user-images.githubusercontent.com/26485327/74597967-6b669e00-50a3-11ea-8c7b-89af22e34cf0.jpeg)
+
+
+
+
+
+
+
     
 ### 1. github-trending-1.html
 <img width="1245" src="https://user-images.githubusercontent.com/26485327/74530850-15401080-4f66-11ea-9b4c-03846ee5fe00.png">
