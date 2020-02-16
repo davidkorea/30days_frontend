@@ -1,6 +1,11 @@
 # 2. Pic puzzle
 
+- pic-puzzel-1.html
 ![Feb-13-2020 23-11-19](https://user-images.githubusercontent.com/26485327/74448827-9a6bec80-4eb6-11ea-9ca7-f2193222f711.gif)
+
+- pic-puzzel-2.html
+![Feb-16-2020 20-57-09](https://user-images.githubusercontent.com/26485327/74605026-fa54d400-50fe-11ea-86a6-271aa7cc454c.gif)
+
 
 
 # 1. Word puzzle
