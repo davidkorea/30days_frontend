@@ -12,13 +12,14 @@
 - 一个元素即可以弹性容器又可以是弹性元素，即直接父元素开启了flex，自己也开启了flex
 
 ## 1. 弹性容器属性
+> - **justify- 主轴属性**
+> - **align- 侧轴/附轴属性**
+
 #### 1.flex-direction
 1. row，默认值，从左向右水平排列，主轴就是从左向右，侧轴垂直于主轴
 2. row-reverse，从右向左水平排列，主轴就是从右向左
 3. column，从上向下纵向排列
 3. column-reverse，从下向上纵向排列
-
-主轴，侧轴
 
 #### 2. flex-wrap
 设置弹性元素是否在弹性容器中自动换行
@@ -38,9 +39,15 @@
 5. space-evenly，空白分配给每个子元素的单侧，各个元素之间的所有空白均相同
 6. space-between，空白均匀分配在元素之间，开始和结尾没有空白
 
+#### 5. align-content，侧轴剩余空间的排列
+所有参数功能同上
 
-
-
+#### 6. align-items，设置元素间侧轴排列
+1. stretch，默认值，设置相同行之内的元素长度相同，长度短的子元素会按照同行最长元素的长度设置
+2. flex-start，沿着侧轴起边对其排列
+3. flex-end，沿着侧轴终边对其排列
+4. center，居中对其
+5. baseline，基线对其
 
 
 ## 2. 弹性元素属性
@@ -50,7 +57,8 @@
 #### 2. flex-shrink 当父元素空间不足以容纳所有子元素时，弹性元素收缩系数，0为不收缩
 所以子元素同样按比例收缩
 
-
+#### 3. align-self
+和弹性容器的align-items作用一样，用来覆盖外层弹性容器align-items的设置，只为当前的单个子元素设置侧轴分布
 
 
 # 2. 定位 position
@@ -202,5 +210,28 @@
 - div.pic为什么不能头div.outer来代替，是因为outer的宽高是整个屏幕，而不是图片
 - 小圆点在图片内部布局，可以是用百分比，这样就能时刻保持小圆点和图片的相对位置不变
 
+更简单设置，使用flex！参考上面的flex
+```diff
+  .pic {
++     display: flex
+      position: relative;
+      height: 200px;
+      width: 200px;
+      border: 10px solid black;
+      border-radius: 10px;
+      box-shadow: 5px 5px 10px darkslategray;
+  }
 
+  .dots {
+      display: flex;
+      position: absolute;
+      z-index: 999;
+-     top: 85%;   /*相对于父元素div.pic位置的绝对定位偏移量*/
+-     left: 10%;
++     align-self: flex-end
+  }
+```
+- pic是父元素，弹性容器
+- dots是直接子元素，弹性元素
+  - align-self，用于覆盖父元素的align-items，只针对自己设置侧轴/附轴排列
 
