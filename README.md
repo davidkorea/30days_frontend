@@ -20,6 +20,29 @@
 
 主轴，侧轴
 
+#### 2. flex-wrap
+设置弹性元素是否在弹性容器中自动换行
+1. warp，沿主轴换行
+2. no-wrap
+3. wrap-reverse
+
+#### 3. flex-flow
+对flex-direction和wrap的简写属性
+- `flex-flow: flex wrap`
+
+#### 4. justify-content 分配主轴剩余空间
+1. flex-start，子元素沿着主轴起边排列
+2. flex-end，沿着主轴重边排列
+3. center，子元素沿主轴居中
+4. space-around，空白平均分配给每一个子元素两侧，两个元素之间空白多，其实元素左边和结尾元素右边空白少
+5. space-evenly，空白分配给每个子元素的单侧，各个元素之间的所有空白均相同
+6. space-between，空白均匀分配在元素之间，开始和结尾没有空白
+
+
+
+
+
+
 ## 2. 弹性元素属性
 适用于弹性容器的直接子元素
 #### 1. flex-grow 当父元素右多余空间时,弹性元素伸展系数，0为不伸展
