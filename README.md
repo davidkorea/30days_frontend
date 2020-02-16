@@ -11,7 +11,7 @@
 - 弹性元素：弹性容器的**直接子元素**，弹性元素也叫做弹性项
 - 一个元素即可以弹性容器又可以是弹性元素，即直接父元素开启了flex，自己也开启了flex
 
-## 1. 弹性容器属性
+## 1.1 弹性容器属性
 > - **justify- 主轴属性**
 > - **align- 侧轴/附轴属性**
 
@@ -53,7 +53,7 @@
 5. baseline，基线对其
 
 
-## 2. 弹性元素属性
+## 1.2 弹性元素属性
 适用于弹性容器的直接子元素
 #### 1. align-self
 和弹性容器的align-items作用一样，用来覆盖外层弹性容器align-items的设置，只为当前的单个子元素设置侧轴分布
@@ -74,7 +74,7 @@ flex-grow，flex-shrink，flex-basics，三个参数为一组
 2. auto = `1 1 auto`
 3. none = `0 0 auto`
 
-#
+#### 6. order，弹性元素的前后排列顺序
 
 
 
@@ -232,7 +232,8 @@ flex-grow，flex-shrink，flex-basics，三个参数为一组
 - div.pic为什么不能头div.outer来代替，是因为outer的宽高是整个屏幕，而不是图片
 - 小圆点在图片内部布局，可以是用百分比，这样就能时刻保持小圆点和图片的相对位置不变
 
-更简单设置，使用flex！参考上面的flex
+更简单设置，使用flex！参考上面的flex，万能flex
+- order 可以更换元素顺序
 ```diff
   .pic {
 +     display: flex
