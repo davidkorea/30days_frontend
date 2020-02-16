@@ -43,6 +43,9 @@
 所有参数功能同上
 
 #### 6. align-items，设置元素间侧轴排列
+
+可以被弹性元素上个align-self属性覆盖
+
 1. stretch，默认值，设置相同行之内的元素长度相同，长度短的子元素会按照同行最长元素的长度设置
 2. flex-start，沿着侧轴起边对其排列
 3. flex-end，沿着侧轴终边对其排列
@@ -52,13 +55,32 @@
 
 ## 2. 弹性元素属性
 适用于弹性容器的直接子元素
-#### 1. flex-grow 当父元素右多余空间时,弹性元素伸展系数，0为不伸展
-父元素的剩余空间，会按照其直接子元素的flex-grow数值大小按比例缩放，每个子元素可以右不同的flex-grow数值
-#### 2. flex-shrink 当父元素空间不足以容纳所有子元素时，弹性元素收缩系数，0为不收缩
-所以子元素同样按比例收缩
-
-#### 3. align-self
+#### 1. align-self
 和弹性容器的align-items作用一样，用来覆盖外层弹性容器align-items的设置，只为当前的单个子元素设置侧轴分布
+
+#### 2. flex-grow 当父元素右多余空间时,弹性元素伸展系数，0为不伸展
+父元素的剩余空间，会按照其直接子元素的flex-grow数值大小按比例缩放，每个子元素可以右不同的flex-grow数值
+#### 3. flex-shrink 当父元素空间不足以容纳所有子元素时，弹性元素收缩系数，0为不收缩，默认1
+所以子元素同样按比例收缩
+#### 4. flex-basics，元素在主轴方向的基础长度，默认auto
+- 主轴为横向，则代表宽度
+- 主轴为纵向，则代表高度
+将覆盖弹性容器中设置的宽或高
+
+flex-grow，flex-shrink，flex-basics，三个参数为一组
+
+#### 5. flex，替代flex-grow，flex-shrink，flex-basics的组合参数
+1. initial = `0 1 auto`，grow 0，shrink 1，basic auto
+2. auto = `1 1 auto`
+3. none = `0 0 auto`
+
+#
+
+
+
+
+
+
 
 
 # 2. 定位 position
@@ -228,7 +250,7 @@
       z-index: 999;
 -     top: 85%;   /*相对于父元素div.pic位置的绝对定位偏移量*/
 -     left: 10%;
-+     align-self: flex-end
++     align-self: flex-end;
   }
 ```
 - pic是父元素，弹性容器
