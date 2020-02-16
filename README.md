@@ -34,9 +34,9 @@
 - 如果9个之中没有auto，自动调整right，满足上述等式。之前时margin right
 - 存在auto（适用于margin，width，left，right），则自动将auto取匹配等式
 
-垂直方向，盒模型垂直等式以前无需满足，开启绝对定位后，则必须满足。没有auto设置botto，右auto则自动调整auto
+垂直方向，盒模型垂直等式以前无需满足，开启绝对定位后，9个属性的等式则必须满足。没有auto则优先设置bottom，有auto值的属性则自动调整auto
 
-> 开启定位的子元素居中，`margin: auto; left+right+top+bottom:0;`，必须设置定位偏移量=0，否则默认为auto，根据优先级，自动适应偏移量，而不是适应margin。因为偏移量在margin的外层
+> 父元素相对定位，让开启绝对定位的子元素居中，`margin: auto; left+right+top+bottom:0;`，必须设置定位偏移量=0，否则默认为auto，根据优先级，自动适应偏移量，而不是适应margin。因为偏移量在margin的外层
 
 
 
