@@ -9,6 +9,7 @@
     - array.aplice(idx,length)
     - Element.parent()[0].className
     - Element.attr('id')
+    
 ![Feb-16-2020 20-57-09](https://user-images.githubusercontent.com/26485327/74605026-fa54d400-50fe-11ea-86a6-271aa7cc454c.gif)
 
 
