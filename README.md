@@ -61,7 +61,94 @@
 1. 多张图片叠放在一起，配置absolute position，使得脱离文档流
 2. js改变每个元素的z-index数值，使其更换叠放层级
 
+<img width="826" src="https://user-images.githubusercontent.com/26485327/74600533-05434080-50ce-11ea-9bd2-5cada0673cc2.png">
 
+```html
+<head>
+    <style>
+        div {
+            font-size: 40px;
+        }
+        
+        .outer {
+            height: 100vh;
+            width: 100vw;
+            background-color: thistle;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .pic {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            background-color: seagreen;
+            border: 10px solid black;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px darkslategray;
+        }
+        
+        .box {
+            height: 200px;
+            width: 200px;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            z-index: 1;
+        }
+        
+        .dots {
+            /* 无需设置尺寸，靠里面内容撑起来 */
+            display: flex;
+            position: absolute;
+            z-index: 4;
+            top: 85%;
+            left: 10%;
+        }
+        
+        .point {
+            height: 15px;
+            width: 15px;
+            border-radius: 50%;
+            background-color: aliceblue;
+            margin: 5px;
+        }
+        
+        .point:hover {
+            background-color: lightblue;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('.box').click(function() {
+                $(this).css('z-index', '0');
+                console.log($(this));
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="pic">
+            <div class="box box1" style="background-image: url('./sunflower/1.png');">1</div>
+            <div class="box box2" style="background-image: url('./sunflower/2.png');">2</div>
+            <div class="box box3" style="background-image: url('./sunflower/3.png');">3</div>
+            <div class="dots">
+                <div class="point"></div>
+                <div class="point"></div>
+                <div class="point"></div>
+            </div>
+        </div>
+    </div>
+</body>
+```
+- 下面小圆点的布局，最好是能够在图片的范围之内定位，而不是相对于网页的边框。因此需要给所有图片外面加一个div来放所有的图片，这就是div.pic的由来
+- div.pic为什么不能头div.outer来代替，是因为outer的宽高是整个屏幕，而不是图片
+- 小圆点在图片内部布局，可以是用百分比，这样就能时刻保持小圆点和图片的相对位置不变
 
 
 
