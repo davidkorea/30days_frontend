@@ -1,8 +1,10 @@
-# 过渡
+# 过渡 transition
 1. transform，单一变化
 2. transition，过渡，单次循环变化
 3. animation，持续循环变化
 4. :hover，没有过度
+
+![1581856627404_15325346781052285](https://user-images.githubusercontent.com/26485327/74643933-7d823280-51b0-11ea-8be5-45cca86747ab.png)
 
 # 1. 过渡 transition
 当一个属性发生变化时的切换方式（一下子变换，逐渐变换）
