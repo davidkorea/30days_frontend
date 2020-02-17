@@ -1,6 +1,9 @@
-# 变形
+# 变形 transform
+
 - 当前元素变形，不会影响周围其他元素布局，即不会挤开其他元素
 - transform通过函数来实现效果
+
+![1581856692638_37384929069040007](https://user-images.githubusercontent.com/26485327/74643913-73f8ca80-51b0-11ea-90d2-634bcd323a41.png)
 
 # 1. translate() 沿轴平移
 有点像margin，但是不影响别人的布局，会覆盖其他元素
