@@ -45,7 +45,7 @@
 ## animation-play-state
 设置动画执行状态，控制动画停止播放
 - paused，动画暂停
-- 
+- running
 
 ## animation-fill-mode
 - none，默认值，动画执行完毕，元素回到原来位置
@@ -56,10 +56,47 @@
 
 
 
+# 2. 雪碧图小人跑
+![run](https://user-images.githubusercontent.com/26485327/74632696-ebbbfa80-519a-11ea-8b2f-de19a8d8864c.png)
+
+```html
+<head>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: aquamarine
+        }
+        
+        .frame {
+            /* 1536 × 256 */
+            height: 256px;
+            width: 256px;
+            background-image: url('./source/run.png');
+            animation-name: run;
+            animation-duration: 1s;
+            animation-timing-function: steps(6);
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes run {
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: -1536px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="frame"></div>
+</body>
+```
 
 
 
-
-
-
-## 
