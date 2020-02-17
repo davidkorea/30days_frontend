@@ -17,7 +17,7 @@
 .box1:hover .box2 {       // 鼠标停留在box1后，设置box1内部class为box2的样式
     margin-left: 600px;
 }
------
+-------------------------
 .box1:hover div {       // 鼠标停留在box1后，设置box1内部所有div的样式
     margin-left: 600px;
 }
@@ -53,14 +53,18 @@ $('.box1').click(function() {
     
 ## 1.3 transition-timing-function
 过渡的时序函数，在duration指定的动作时间内，过渡效果具体如何执行，如变化速度
+
+参数：
 - ease，默认，慢速开始，在加速，最后减速
 - linear，匀速运动
 - ease-in，慢速开始，一直加速到结束
 - ease-out，快速开始，一直减速到结束
 - ease-in-out，先加速，后减速，和ease差不多，但是加速比ease快
-- cubic-bezier贝塞尔曲线
+- cubic-bezier贝塞尔曲线 [https://cubic-bezier.com/](https://cubic-bezier.com/)
+    - linear = cubic-bezier(0,0,1,1)，前两个为起始点坐标，后两个为结束点坐标，红色绿色两个点
     
-    
+    <img width="333" src="https://user-images.githubusercontent.com/26485327/74624968-7134b000-5185-11ea-8c2a-709e0ad33626.png">
+
     
     
     
@@ -77,7 +81,7 @@ $('.box1').click(function() {
 
 
 
-##
+
 
 
 
