@@ -63,7 +63,7 @@ $('.box1').click(function() {
 - cubic-bezier贝塞尔曲线 [https://cubic-bezier.com/](https://cubic-bezier.com/)
     - linear = cubic-bezier(0,0,1,1)，前两个为起始点坐标，后两个为结束点坐标，红色绿色两个点
     - cubic-bezier(.36,1.07,.53,-0.46)，如下图，下加速向前，在往回倒一点，再次加速向前
-    ![](https://user-images.githubusercontent.com/26485327/74625124-2d8e7600-5186-11ea-9fe1-51685f2a8404.png)
+<img height="400" width="300" src="https://user-images.githubusercontent.com/26485327/74625124-2d8e7600-5186-11ea-9fe1-51685f2a8404.png">
 
 - steps(步数，start/end)，分步执行动画效果
     - duration按照步数分开后的时间，时间开始马上旧动作，还是时间结束在动作
