@@ -4,7 +4,7 @@
 3. animation，持续循环变化
 4. :hover，没有过度
 
-# 1. transition
+# 1. 过渡 transition
 当一个属性发生变化时的切换方式（一下子变换，逐渐变换）
 
 - `transition-property: all;`执行过度的属性，如果设置下面的属性，默认可以省略这一条
@@ -62,15 +62,19 @@ $('.box1').click(function() {
 - ease-in-out，先加速，后减速，和ease差不多，但是加速比ease快
 - cubic-bezier贝塞尔曲线 [https://cubic-bezier.com/](https://cubic-bezier.com/)
     - linear = cubic-bezier(0,0,1,1)，前两个为起始点坐标，后两个为结束点坐标，红色绿色两个点
-    
-    <img width="333" src="https://user-images.githubusercontent.com/26485327/74624968-7134b000-5185-11ea-8c2a-709e0ad33626.png">
+    - cubic-bezier(.36,1.07,.53,-0.46)，如下图，下加速向前，在往回倒一点，再次加速向前
+    ![](https://user-images.githubusercontent.com/26485327/74625124-2d8e7600-5186-11ea-9fe1-51685f2a8404.png)
 
+- steps(步数，start/end)，分步执行动画效果
+    - duration按照步数分开后的时间，时间开始马上旧动作，还是时间结束在动作
+    
+## 1.4 transition-delay
+过渡效果的延迟，等待响应时间后再执行动作
     
     
-    
-    
-    
-    
+## 1.5 transition
+- 可以直接设置以上4个属性，没有顺序要求
+- 但是，设置延迟delay时，第二个时间为延迟时间，第一个为duration持续时间
     
     
     
