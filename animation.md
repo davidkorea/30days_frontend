@@ -2,29 +2,10 @@
 
 - 过渡transition是一个交互效果，属性变化时，需要鼠标触发
 - 动画值加载页面后会直接运行，自动触发
-  - 关键帧，动画执行的每个步骤
-    ```css
-    .box2 {
-        animation-name: identifier;     // 给box2元素加一个动画，设置动画名字为identifier
-        animation-duration: infinite;
-    }
-        
-    @keyframes identifier { // identifier关键帧的名字
-        to {
-            transform: rotate(0deg);
-        }
-        from {
-            transform: rotate(720deg);
-        }
-    }
-    ```
-    - from = 0%，开始位置
-    - to = 100%，结束位置
-    - 中间可以加任何百分比位置
 
 1. animation-name: name
 2. @keyframes name {}
-3. animation-duration
+3. animation-duration，执行一起完整动画所需时间
 4. animation-delay
 5. animation-timing-function
 6. animation-iteration-count，重复执行次数，infinite，永远执行
@@ -32,22 +13,45 @@
 8. animation-play-state，设置动画执行状态
 9. animation-fill-mode，动画填充模式
 
-## animation-iteration-count
+## 1.1 通过关键帧，动画执行的每个步骤
+```css
+.box2 {
+    animation-name: identifier;     // 给box2元素加一个动画，设置动画名字为identifier
+    animation-duration: infinite;
+}
+
+@keyframes identifier { // identifier关键帧的名字
+    to {
+        transform: rotate(0deg);
+    }
+    from {
+        transform: rotate(720deg);
+    }
+}
+```
+- from = 0%，开始位置
+- to = 100%，结束位置
+- 中间可以加任何百分比位置
+
+## 1.2 animation-duration
+执行1次动画所需时间
+
+## 1.3 animation-iteration-count
 重复执行次数，可以infinite，永远执行
 
-## animation-direction，动画执行方向
+## 1.4 animation-direction，动画执行方向
 - normal，默认，从0%到100%执行，每次都是从头到尾执行
 - reverse，从100%到0%执行
 - alternate，先从0%到100%执行，多次执行时，回程动画为从后往前
 - alternate-reverse，先从0%到100%执行，多次执行时，回程动画为从前往后
 
 
-## animation-play-state
+## 1.5 animation-play-state
 设置动画执行状态，控制动画停止播放
 - paused，动画暂停
 - running
 
-## animation-fill-mode
+## 1.6 animation-fill-mode
 - none，默认值，动画执行完毕，元素回到原来位置
 - forwards，停止到元素的结束位置
 - backwards，延迟等待时，元素就已经处于开始位置，动画结束后回到初始位置
@@ -56,8 +60,10 @@
 
 
 
-# 2. 雪碧图小人跑
+# 2. 雪碧图小人跑 sprite running
 ![run](https://user-images.githubusercontent.com/26485327/74632696-ebbbfa80-519a-11ea-8b2f-de19a8d8864c.png)
+
+![Feb-17-2020 15-36-24](https://user-images.githubusercontent.com/26485327/74632835-4bb2a100-519b-11ea-90cb-ab7701932768.gif)
 
 ```html
 <head>
