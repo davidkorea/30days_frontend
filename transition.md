@@ -1,4 +1,4 @@
-# 过渡和动画
+# 过渡
 1. transform，单一变化
 2. transition，过渡，单次循环变化
 3. animation，持续循环变化
