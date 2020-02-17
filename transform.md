@@ -39,10 +39,17 @@
 
 
 
-# 3. scale()
+# 3. scale() 沿轴缩放
+不搭配transition使用，就是显示缩放之后的静态尺寸，搭配使用就是一个缩放动画
+
+- scale，双方向
+- scaleX
+- scaleY
+- scaleZ
 
 
-
+# 4. transform-origin() 原点缩放
+更改缩放的基准点/参考点，默认值是center，以中心点为基准缩放
 
 
 
