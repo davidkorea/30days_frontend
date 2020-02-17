@@ -78,10 +78,56 @@ $('.box1').click(function() {
     
     
     
-    
-    
-    
+# 2. 一图右多个分步动作，连成动画
+- 画面显示一张图片的一个动作的尺寸
+- 当触发时，背景图片移动一个动作尺寸的偏移量，实现动作切换
+    - 使用`transition-timing-function: steps(4);`，数值每分动作的个数
 
+![Feb-17-2020 14-23-09](https://user-images.githubusercontent.com/26485327/74628613-11440680-5191-11ea-82ac-37a0bda88568.gif)
+
+```html
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .outer {
+            width: 100vw;
+            height: 100vh;
+            background-color: cornflowerblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .frame {
+            height: 70vh;
+            width: 36vh;
+            border: 1px solid black;
+            border-radius: 3%;
+            box-shadow: 3px 3px 6px darkslateblue;
+            background-image: url('./source/0.png');
+            background-size: 400% 100%;
+            transition-duration: 2s;
+            transition-timing-function: steps(4);
+        }
+        
+        .frame:hover {
+            background-position: -400%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="frame"> </div>
+    </div>
+</body>
+</html>
+```
 
 
 
