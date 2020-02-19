@@ -1,0 +1,186 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .frame {
+            height: 600px;
+            width: 320px;
+            /* background-image: url('./source/iphone11.jpg'); */
+            background-image: url('//user-images.githubusercontent.com/26485327/74791364-381b4d80-52f5-11ea-9a09-e2d35d3d371f.jpg');
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .inner {
+            height: 500px;
+            width: 276px;
+            background-color: #232323;
+            border-radius: 3% 3%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        
+        .title {
+            color: lightgray;
+            margin: 20px;
+        }
+        
+        .result {
+            height: 100px;
+            width: 220px;
+            border: 2px solid #232323;
+            /* background-color: yellow; */
+            margin: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .number {
+            height: 50px;
+            width: 220px;
+            color: whitesmoke;
+            border: 2px solid whitesmoke;
+            margin: 20px;
+            font-weight: bolder;
+            font-size: 33px;
+            box-shadow: 0 0 10px darkslategrey;
+            overflow: scroll;
+        }
+        
+        .btn {
+            height: 40px;
+            width: 100px;
+            font-size: 28px;
+            color: floralwhite;
+            border: 2px solid floralwhite;
+            /* border-radius: 30% 30%; */
+            text-align: center;
+            opacity: .6;
+        }
+        
+        .btn:hover {
+            background-color: floralwhite;
+            color: #232323;
+        }
+        
+        .unicom {
+            height: 50px;
+            width: 200px;
+            /* background-image: url('./source/chinaunicom.png'); */
+            background-image: url('//res.cform.cn/unzip/1582007540266_8497434676253208/source/chinaunicom.png');
+            background-color: floralwhite;
+            background-size: 100% 100%;
+        }
+        
+        .telecom {
+            height: 50px;
+            width: 200px;
+            /* background-image: url('./source/chinatelecom.png'); */
+            background-image: url('//res.cform.cn/unzip/1582007540266_8497434676253208/source/chinatelecom.png');
+            background-color: floralwhite;
+            background-size: 100% 100%;
+        }
+        
+        .mobile {
+            height: 50px;
+            width: 200px;
+            /* background-image: url('./source/chinamobile.png'); */
+            background-image: url('//res.cform.cn/unzip/1582007540266_8497434676253208/source/chinamobile.png');
+            background-color: floralwhite;
+            background-size: 100% 100%;
+        }
+        /* .loading {
+            height: 50px;
+            width: 200px;
+            background-image: url('./source/loading.gif');
+            background-color: floralwhite;
+            background-size: 100% 100%;
+        } */
+        
+        .region {
+            color: floralwhite;
+            margin: 5px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            var dict = {
+                中国联通: 'unicom',
+                中国移动: 'mobile',
+                中国电信: 'telecom'
+            };
+
+            function show(catName, carrier) {
+                $('.result').empty();
+                catName = dict[catName];
+                return `<div class="${catName}"></div>
+                        <div class="region">${carrier}</div>`
+            }
+
+            function loading() {
+                return `<div class="region">查询中</div>`
+            }
+
+            $('.btn').click(function() {
+                var number = $('.number').text(); // 不能放click外面，因外刚加载页面还没有输入
+                // console.log(number);
+                $.ajax({
+                    url: `https://tcc.taobao.com/cc/json/mobile_tel_segment.htm?tel=` + number,
+                    dataType: 'JSONP',
+                    beforeSend: function(e) {
+                        // console.log('Before: ' + e);
+                        loading();
+                    },
+                    success: function(e) {
+                        console.log(e);
+                        var catName = e.catName;
+                        var carrier = e.carrier;
+                        if (!e.catName) {
+                            $('.result').empty();
+                            // console.log('no');
+                            $('.result').append('<div class="region">请输入有效手机号码</div>')
+                        } else {
+                            // console.log(dict[catName]);
+                            $('.result').append(show(catName, carrier));
+                        }
+
+                    }
+                })
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="inner">
+            <div class="title">手机号码归属地查询</div>
+            <div class="result">
+                <!-- <div class="mobile"></div>
+                <div class="region">山东联通</div> -->
+            </div>
+            <div class="number" contenteditable=""></div>
+            <div class="btn">查询</div>
+            <div class="status"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
