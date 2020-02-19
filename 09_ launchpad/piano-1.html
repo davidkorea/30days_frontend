@@ -1,0 +1,194 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle, rgba(0, 23, 140, 1) 0%, rgba(53, 16, 93, 1) 50%, rgba(36, 36, 36, 1) 90%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .frame {
+            width: 800px;
+            height: 300px;
+            border: 5px solid darkorange;
+            border-radius: 10px 10px;
+            display: flex;
+            position: relative;
+        }
+        
+        .white {
+            width: 90px;
+            height: 280px;
+            margin: 5px;
+            background-color: whitesmoke;
+            border-radius: 5px 5px;
+            /* box-shadow: 2px 2px 15px black */
+            box-shadow: 1px 2px 0 lightgray, 2px 3px 0 navajowhite, 3px 5px 0 navajowhite, 4px 8px 0 navajowhite, 5px 10px 0px navajowhite;
+        }
+        /* .white:hover {
+            background-color: lightgray;
+            box-shadow: 1px 2px 0 lightsteelblue, 2px 3px 0 whitesmoke, 3px 5px 0 whitesmoke, 4px 8px 0 whitesmoke, 5px 10px 0px whitesmoke;
+            transform: scale(0.98);
+        } */
+        
+        .whitepress {
+            background-color: lightgray;
+            box-shadow: 1px 2px 0 lightsteelblue, 2px 3px 0 whitesmoke, 3px 5px 0 whitesmoke, 4px 8px 0 whitesmoke, 5px 10px 0px whitesmoke;
+            transform: scale(0.98);
+        }
+        
+        .black {
+            width: 70px;
+            height: 180px;
+            margin: 5px;
+            border-radius: 5px 5px;
+            background-color: black;
+            position: absolute;
+            z-index: 999;
+        }
+        
+        .blackpress {
+            background-color: rgb(24, 23, 23);
+            /* box-shadow: 1px 2px 0 rgb(37, 38, 39), 2px 3px 0 darkslateblue, 3px 5px 0 darkslateblue, 4px 8px 0 darkslateblue, 5px 10px 0px darkslateblue; */
+            box-shadow: 0 0 1px 1px dimgray;
+            /* transform: scale(0.99); */
+            transform: translateY(-2px);
+        }
+        
+        .key1 {
+            left: 60px;
+        }
+        
+        .key2 {
+            left: 160px;
+        }
+        
+        .key3 {
+            left: 360px;
+        }
+        
+        .key4 {
+            left: 460px;
+        }
+        
+        .key5 {
+            left: 560px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.min.js"></script>
+    <script>
+        $(function() {
+            var soundMap = {
+                "1key": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/1do.mp4']
+                }),
+                "2key": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/2re.mp4']
+                }),
+                "3key": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/3mi.mp4']
+                }),
+                "4key": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/4fa.mp4']
+                }),
+                "5key": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/5sol.mp4']
+                }),
+                "6key": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/6la.mp4']
+                }),
+                "7key": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/7si.mp4']
+                }),
+                "8key": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/8do.mp4']
+                }),
+                "key1": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/black1_C%23.mp4']
+                }),
+                "key2": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/black2_D%23.mp4']
+                }),
+                "key3": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/black3_F%23.mp4']
+                }),
+                "key4": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/black4_G%23.mp4']
+                }),
+                "key5": new Howl({
+                    src: ['https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/black5_A%23.mp4']
+                }),
+            }
+
+            $('.white').click(function() {
+                var $this = $(this);
+                var key = $(this).attr('class').split(' ')[1];
+                console.log(key);
+                $this.toggleClass('whitepress');
+                var player = soundMap[key];
+                player.play();
+                window.setTimeout(function() {
+                    $this.toggleClass('whitepress');
+                }, 100);
+            })
+            $('.black').click(function() {
+                var $this = $(this);
+                var key = $(this).attr('class').split(' ')[1];
+                console.log(key);
+                $this.toggleClass('blackpress');
+                var player = soundMap[key];
+                player.play();
+                window.setTimeout(function() {
+                    $this.toggleClass('blackpress');
+                }, 100);
+            })
+
+            keyMap = {
+                "1": "1key",
+                "2": "2key",
+                "3": "3key",
+                "4": "4key",
+                "5": "5key",
+                "6": "6key",
+                "7": "7key",
+                "8": "8key",
+                "q": "key1",
+                "w": "key2",
+                "e": "key3",
+                "r": "key4",
+                "t": "key5",
+            }
+            $(document).keydown(function(e) {
+                console.log(e);
+                var key = keyMap[e.key];
+                console.log(key);
+                $(`.${key}`).click();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="black key1"></div>
+        <div class="black key2"></div>
+        <div class="black key3"></div>
+        <div class="black key4"></div>
+        <div class="black key5"></div>
+        <div class="white 1key"></div>
+        <div class="white 2key"></div>
+        <div class="white 3key"></div>
+        <div class="white 4key"></div>
+        <div class="white 5key"></div>
+        <div class="white 6key"></div>
+        <div class="white 7key"></div>
+        <div class="white 8key"></div>
+    </div>
+</body>
+
+</html>
