@@ -198,10 +198,66 @@ $('.hold').click(function() {
 ## 3. 迭代
 可以看出，使用数组创建所有64个按键实在不方便，需要写一个很大的obj。音乐播放对象字典也是很复杂，针对所有的64个按钮创建64个Howl对象
 
-为简化代码，也就是将维护的2个数组或是字典放到一个api中，从api给出的json中，获取音乐名字，执行类型，Howl对象
+- 为简化代码，也就是将维护的2个数组或是字典放到一个api中，从api给出的json中，获取音乐名字，执行类型，Howl对象
+- 不搞api，让程序读取本地的json格式的config文件也是可以
 
 
+```html
+var soundsDict = {}
+    $.ajax({
+        url: 'https://files-mpns4hihv.now.sh/data.json',
+        success: function(resp) {
+            console.log(resp); // resp is a list that same as keyList above
+            var keyList = resp;
+            for (var key of keyList) {
+                var music = key.name;
+                var type = key.type;
+                $('.frame').append(`<div class="key ${music} ${type}"></div>`);
+                if (music != 'none') {
+                    soundsDict[music] = new Howl({
+                        src: [`./sounds/${music}.m4a`]
+                    });
+                }
+            }
+            console.log(soundsDict);
+        }
+    });
 
 
+    // once属性请求回来的，那相当于是一开始加载页面，然后再去请求。
+    // 而绑定时一加载页面就已经生效了，它不会绑定还没有出现的东西。
+    // $('.once').click(function() {...} 不能使用
+    $(document).on('click', '.once', function() {
+        var $this = $(this); // 当前被按下的这个按钮，而不是所有class为key的按钮
+        $this.addClass('keyled');
+        var music = $this.attr('class').split(' ')[1];
+        if (music != 'none') {
+            var player = soundsDict[music];
+            player.play();
+        }
+        window.setTimeout(function() {
+            $this.removeClass('keyled')
+        }, 100)
+    });
 
+    $(document).on('click', '.hold', function() {
+        var $this = $(this); // 当前被按下的这个按钮，而不是所有class为key的按钮
+        $this.addClass('keyled');
+        var music = $this.attr('class').split(' ')[1];
+        // 字典里面定义的Howl唯一，每次开始停止都是针对字典里面的这个唯一的对象
+        // 不会每次点击每次播放一次！！
+        var holdPlayer = soundsDict[music];
+        if (holdPlayer.playing()) {
+            holdPlayer.stop();
+            $this.removeClass('keyled')
+        } else {
+            holdPlayer.play();
+        }
+    })
+```
+- `.once`属性请求回来的，首先一开始先加载页面，加载完成后再去请求api
+- 而绑定事件一加载页面就已经生效了，那时候还没有请求api，还没有生成带有class的div到页面中，因此无法绑定还没有出现的东西。导致点击按键没有反应
+    - `$('.once').click(function() {...}` 不能使用
+    - `$(document).on('click', '.once', function() {}`，需要使用时间委托
+        - 因为dociment一直存在，委托给`.once`元素绑定`click`事件
 
