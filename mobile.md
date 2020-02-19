@@ -34,9 +34,11 @@ html{
 - 设计图宽度全屏750px = 100vw
   - 算出设计图1px = 100/750 = 0.1333333vw
   - 但是 0.1333333vw 小于浏览器最小12pxfont-size
-  - 所以 0.133333vw * 40 约等于19px
+  - 所以 0.133333vw * 40 = 5.3333vw 约等于19px
   - 所以之后设计图中的像素需要除以40
 
+京东手机网站就是这么做的
+<img width="330" src="https://user-images.githubusercontent.com/26485327/74841168-2a9cac80-5363-11ea-90b8-edb514f4f6cd.png">
 
 
 
