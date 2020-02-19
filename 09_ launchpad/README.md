@@ -88,3 +88,21 @@
     <div class="bottom"></div>
 </body>
 ```
+
+## 2. 功能完善
+
+### 2.1 补全64个按键
+<img width="321" alt="截屏2020-02-19下午2 30 09" src="https://user-images.githubusercontent.com/26485327/74807808-56e50880-5324-11ea-8c73-6dc30e71cadc.png">
+
+```javascript
+var keys = new Array(64)；   // 创建64个空位的空数组
+for (var key of keys) {
+    $('.frame').append('<div class="key"></div>');
+}
+```
+
+## 2.2 每个按键不同音乐
+
+
+
+
