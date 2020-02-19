@@ -2,8 +2,14 @@
 
 ## 1.1 最小实现
 1. 搭建hmtl css框架
-2. background-color：radial-gradient（），渐变色
-3.
+    - background-color：radial-gradient（），渐变色
+    - 立体视角perspective，transform rotateX沿x轴转动
+2. js功能
+    - 按键后，出现按钮led按下效果，window.setTimeout延迟100ms自动取消led效果。注意window.setTimeout里面的this是window，不是按钮
+    - 按钮按下，播放音乐
+    
+![Feb-19-2020 14-16-48](https://user-images.githubusercontent.com/26485327/74807080-898e0180-5322-11ea-8160-1167576f2821.gif)
+
 ```html
 <head>
     <style>
