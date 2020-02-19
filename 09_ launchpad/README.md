@@ -146,3 +146,51 @@ $(function() {
     - once，音乐很短，按一下，很快就播放完成
     - hold，音乐很长，按下一直播放，再按一下停止播放，类似唱片圆盘的开始和停止
 
+```javascript
+var soundsDict = {
+    'workit': new Howl({src: ['./sounds/workit.m4a']}),
+    'makeit': new Howl({src: ['./sounds/makeit.m4a']}),
+    'doit': new Howl({src: ['./sounds/doit.m4a']}),
+    'makesus': new Howl({src: ['./sounds/makesus.m4a']}),
+    'beat': new Howl({src: ['./sounds/beat.m4a']}),
+}
+
+$('.once').click(function() {
+    var $this = $(this); // 当前被按下的这个按钮，而不是所有class为key的按钮
+    $this.addClass('keyled');
+    var music = $this.attr('class').split(' ')[1];
+    var player = soundsDict[music];
+    player.play();
+    window.setTimeout(function() {
+        $this.removeClass('keyled')
+    }, 100)
+});
+
+$('.hold').click(function() {
+    var $this = $(this); // 当前被按下的这个按钮，而不是所有class为key的按钮
+    $this.addClass('keyled');
+    var music = $this.attr('class').split(' ')[1];
+    // 字典里面定义的Howl唯一，每次开始停止都是针对字典里面的这个唯一的对象
+    // 不会每次点击每次播放一次！！
+    var holdPlayer = soundsDict[music]; // 每次都索引到dict的同一个对象！！！！！！！！
+    if (holdPlayer.playing()) {
+        holdPlayer.stop();
+        $this.removeClass('keyled')
+    } else {
+        holdPlayer.play();
+    }
+})
+```
+- **问题**：集合之前方块移动一样，按钮每点击一次，就多触发一次，导致方块运动速度超快
+    - 方块的解决方法是，在onlick时间函数之外声明变量，每次进入时间函数，先停止该变量，然后在重新开始
+        - [问题2](https://github.com/davidkorea/javascript_study/blob/master/22_BOM_timer_ex.md#改进提高函数通用性)
+    - 此处的解决方案是，单独搞出一个dict，将音乐播放对象**唯一的单独的**创建出来，由于是唯一的一个对象，所以每次的播放和停止操作都是针对这同一个对象
+        - 从而不会导致，每次点击按钮，每次都重新播放一遍音乐，导致无数音乐正在播放而无法停止
+    
+
+
+
+
+
+
+
