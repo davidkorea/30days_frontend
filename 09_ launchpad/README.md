@@ -106,7 +106,7 @@ for (var key of keys) {
 - 将每个音乐的名字，放到每个按键div元素的css中
 - 通过jq获取div的css name来匹配对应音乐
 - 需要设置一个obj字典数据结构，key=class上显示的音乐名，value=实际的音乐`Howl({src:['real mp3 file']})`
-- 这个obj一共需要右64个键值对
+- 这个obj一共需要右64个键值对，**借此创建64个div，而不是用上面的空数组方法创建**
 
 ```javascript
 $(function() {
@@ -145,8 +145,15 @@ $(function() {
 - 根据按键类型的class来获取按键，并执行不同操作，当然这些播放类型也要放到按键div的class中，就和歌名放到class中一样
     - once，音乐很短，按一下，很快就播放完成
     - hold，音乐很长，按下一直播放，再按一下停止播放，类似唱片圆盘的开始和停止
+    - 再次在根据按键数组创建64个按键时，一并将播放type加到按键div的class中
 
 ```javascript
+for (var key of keyList) {
+    var music = key.name;
+    var type = key.type;
+    $('.frame').append(`<div class="key ${music} ${type}"></div>`);
+}
+            
 var soundsDict = {
     'workit': new Howl({src: ['./sounds/workit.m4a']}),
     'makeit': new Howl({src: ['./sounds/makeit.m4a']}),
@@ -181,6 +188,7 @@ $('.hold').click(function() {
     }
 })
 ```
+- 再次在根据按键数组创建64个按键时，一并将播放type加到按键div的class中
 - **问题**：集合之前方块移动一样，按钮每点击一次，就多触发一次，导致方块运动速度超快
     - 方块的解决方法是，在onlick时间函数之外声明变量，每次进入时间函数，先停止该变量，然后在重新开始
         - [问题2](https://github.com/davidkorea/javascript_study/blob/master/22_BOM_timer_ex.md#改进提高函数通用性)
