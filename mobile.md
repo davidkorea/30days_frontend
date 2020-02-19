@@ -13,3 +13,7 @@
   - 那么设计图48px，是多少vw？100/750 * 48 = 6.4vw
 - vw适配方案
   - font-size + rem 
+
+## em & rem
+- em 相对于自身元素的字体大小 font-size * 10
+- rem 相对于根元素的字体大小，即html的font-size * 10
