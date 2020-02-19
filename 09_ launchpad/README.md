@@ -103,6 +103,43 @@ for (var key of keys) {
 
 ## 2.2 每个按键不同音乐
 
+- 将每个音乐的名字，放到每个按键div元素的css中
+- 通过jq获取div的css name来匹配对应音乐
+- 需要设置一个obj字典数据结构，key=class上显示的音乐名，value=实际的音乐`Howl({src:['real mp3 file']})`
+- 这个obj一共需要右64个键值对
 
+```javascript
+$(function() {
+    var keyList = [
+        {name:'workit', type:'once'},
+        {name:'makeit', type:'once'},
+        {name:'doit', type:'once'},
+        {name:'mqkesus', type:'once'},
+        {name:'beat', type:'hold'},
+    ];
 
+    // 1. 补全64按键，直接根据上面的按键列表中音乐的个数来补全按键，将音乐名字添加到对应按键的class中
+    for (var key of keyList) {
+        var music = key.name;
+        $('.frame').append(`<div class="key ${music}"></div>`);
+    }
+
+    function playMusic(music) {
+        var player = new Howl({
+            src: [`https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/${music}.m4a`]
+        });
+        player.play();
+    }
+
+    $('.key').click(function() {
+        var $this = $(this); // 当前被按下的这个按钮，而不是所有class为key的按钮
+        $this.addClass('keyled');
+        var music = $this.attr('class').split(' ')[1];
+        playMusic(music);
+        window.setTimeout(function() {
+            $this.removeClass('keyled')
+        }, 100)
+    })
+})
+```
 
