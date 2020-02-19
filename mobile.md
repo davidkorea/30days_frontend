@@ -20,7 +20,7 @@
 
 浏览器默认font-size=16px，最小12px。当设置font-size小于12px时，em和rem将自动10倍于12px，而不是设置的像素
 
-```html
+```css
 html{
   font-size: 5.333vw; // 注意是vw
 }
