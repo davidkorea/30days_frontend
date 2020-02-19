@@ -1,0 +1,139 @@
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* background: rgb(0, 23, 140); */
+            background: radial-gradient(circle, rgba(0, 23, 140, 1) 0%, rgba(53, 16, 93, 1) 50%, rgba(36, 36, 36, 1) 90%);
+        }
+        
+        .frame {
+            height: 480px;
+            width: 480px;
+            border-radius: 10px 10px;
+            background-color: #131313;
+            display: flex;
+            flex-wrap: wrap;
+            /* align-items: flex-start; */
+            padding: 10px;
+            transform: perspective(900px) rotateX(10deg);
+        }
+        
+        .bottom {
+            width: 500px;
+            height: 50px;
+            background-color: #1f1818;
+            opacity: .7;
+            border-radius: 2px 2px;
+            transform: perspective(900px) rotateX(-50deg);
+        }
+        
+        .key {
+            height: 50px;
+            width: 50px;
+            background-color: whitesmoke;
+            border-radius: 10% 10%;
+            margin: 5px;
+        }
+        
+        .keyled {
+            /* background: rgb(129, 245, 149); */
+            background: radial-gradient(circle, rgba(129, 245, 149, 1) 33%, rgba(181, 215, 153, 1) 80%);
+            transform: scale(0.96);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.3/howler.min.js"></script>
+    <script>
+        $(function() {
+            var soundsDict = {}
+
+            $.ajax({
+                url: 'https://files-mpns4hihv.now.sh/data.json',
+                success: function(resp) {
+                    console.log(resp); // resp is a list that same as keyList above
+                    var keyList = resp;
+                    // 1. 补全64按键
+                    for (var key of keyList) {
+                        var music = key.name;
+                        var type = key.type;
+                        $('.frame').append(`<div class="key ${music} ${type}"></div>`);
+                        if (music != 'none') {
+                            soundsDict[music] = new Howl({
+                                src: [`./sounds/${music}.m4a`]
+                            });
+                        }
+                    }
+                    // console.log(soundsDict);
+                }
+            });
+
+
+            // once属性请求回来的，那相当于是一开始加载页面，然后再去请求。
+            // 而绑定时一加载页面就已经生效了，它不会绑定还没有出现的东西。
+            // $('.once').click(function() {...} 不能使用
+            $(document).on('click', '.once', function() {
+                var $this = $(this); // 当前被按下的这个按钮，而不是所有class为key的按钮
+                $this.addClass('keyled');
+                var music = $this.attr('class').split(' ')[1];
+                if (music != 'none') {
+                    var player = soundsDict[music];
+                    player.play();
+                }
+                window.setTimeout(function() {
+                    $this.removeClass('keyled')
+                }, 100)
+            });
+
+            $(document).on('click', '.hold', function() {
+                var $this = $(this); // 当前被按下的这个按钮，而不是所有class为key的按钮
+                $this.addClass('keyled');
+                var music = $this.attr('class').split(' ')[1];
+                // 字典里面定义的Howl唯一，每次开始停止都是针对字典里面的这个唯一的对象
+                // 不会每次点击每次播放一次！！
+                var holdPlayer = soundsDict[music];
+                if (holdPlayer.playing()) {
+                    holdPlayer.stop();
+                    $this.removeClass('keyled')
+                } else {
+                    holdPlayer.play();
+                }
+            })
+
+            var keyMap = {
+                q: 'workit',
+                w: 'makeit',
+                e: 'doit',
+                r: 'makesus',
+                a: 'harder',
+                s: 'better',
+                d: 'faster',
+                f: 'stronger',
+                z: 'beat'
+            }
+            $(document).keydown(function(e) {
+                var music = keyMap[e.key];
+                $(`.${music}`).click();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="frame">
+        <!-- <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div>
+        <div class="key"></div> -->
+    </div>
+    <div class="bottom"></div>
+</body>
+
+</html>
