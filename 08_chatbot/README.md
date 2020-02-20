@@ -1,10 +1,14 @@
 
+- 移动端适配：[chatbot mobile page](http://www.davidkorea.com/chatbot-mobile.html)
+-----
 
-- `jquery-scrollTo` library: https://www.bootcdn.cn/jquery-scrollTo/
-  - scroll to the bottom of the div
-  
+## 1.
+`jquery-scrollTo` library: https://www.bootcdn.cn/jquery-scrollTo/
+- scroll to the bottom of the div
+## 2. 
 - `flex-direction: reverse-row;`，flex布局内的子元素横向倒序排列，前面的元素会被放到最右边
 
+## 3. 
 - 慎用preventDefault！！！否则已使用就出错，因为阻止了默认动作
   - 如果在contentEditable的Div上直接开启preventDefault，那么输入文字，删除文字会出现问题
   ```javascript
