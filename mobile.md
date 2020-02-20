@@ -14,7 +14,7 @@
 - vw适配方案
   - font-size + rem 
 
-## em & rem
+# 1. em & rem
 - em 相对于自身元素的字体大小 font-size * 10
 - rem 相对于根元素的字体大小，即html的font-size * 10
 
@@ -40,6 +40,20 @@ html{
 京东手机网站就是这么做的
 <img width="330" src="https://user-images.githubusercontent.com/26485327/74841168-2a9cac80-5363-11ea-90b8-edb514f4f6cd.png">
 
+# 2. less设置变量
+```css
+@design-width:100vw/750*40;
+
+html{
+    font-size: @design-width;
+}
+
+.frame{
+    width: 750/40rem;   
+    height: 1500/40rem;
+    background-image: url('./source/iphone11.jpg');
+}
+```
 
 
 
