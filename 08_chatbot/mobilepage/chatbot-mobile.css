@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 5.33333333vw;
+  background-color: black;
+}
+.frame {
+  width: 18.75rem;
+  height: 37.5rem;
+  background-image: url('source/iphone11.jpg');
+  background-size: 100% 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.frame .inner {
+  height: 32.5rem;
+  width: 16rem;
+  background-color: #232323;
+  border-radius: 25px 25px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.frame .inner .upper {
+  height: 10%;
+  width: 98%;
+  border-radius: 25px 25px 0 0;
+  box-shadow: 0 0 5px whitesmoke;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.frame .inner .upper .pic {
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50% 50%;
+  background-color: darkgray;
+  border: 2px solid white;
+  margin-left: 1rem;
+}
+.frame .inner .upper .title {
+  color: whitesmoke;
+  margin-left: 0.5rem;
+  font-weight: bolder;
+}
+.frame .inner .middle {
+  height: 80%;
+  width: 98%;
+  box-shadow: 0 0 5px whitesmoke;
+  overflow: scroll;
+}
+.frame .inner .middle .you {
+  width: 12rem;
+  margin: 0.5rem;
+  display: flex;
+}
+.frame .inner .middle .you .pic {
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 50% 50%;
+  background-color: gray;
+  flex-shrink: 0;
+}
+.frame .inner .middle .you .text {
+  background-color: lightgrey;
+  border-radius: 10px 10px;
+  margin: 0.2rem;
+  padding: 0.3rem;
+  font-size: 0.7rem;
+}
+.frame .inner .middle .me {
+  width: 12rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: row-reverse;
+  margin-left: 3.1rem;
+}
+.frame .inner .middle .me .pic {
+  height: 1.8rem;
+  width: 1.8rem;
+  border-radius: 50% 50%;
+  background-color: yellow;
+  flex-shrink: 0;
+}
+.frame .inner .middle .me .text {
+  background-color: lightgoldenrodyellow;
+  border-radius: 10px 10px;
+  margin: 0.2rem;
+  padding: 0.3rem;
+  font-size: 0.7rem;
+}
+.frame .inner .bottom {
+  height: 10%;
+  width: 98%;
+  box-shadow: 0 0 5px whitesmoke;
+  border-radius: 0 0 25px 25px;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.frame .inner .bottom .inputarea {
+  width: 78%;
+  height: 1.6rem;
+  border: 2px solid gray;
+  border-radius: 5px 5px;
+  box-shadow: 0 0 3px whitesmoke;
+  color: whitesmoke;
+  font-size: 0.7rem;
+  margin: 0.5rem;
+  padding: 0.2rem;
+  overflow: scroll;
+}
+.frame .inner .bottom .btn {
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50% 50%;
+  background-color: whitesmoke;
+  border: 0.1rem solid white;
+  font-size: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.frame .inner .bottom .btnclick {
+  background-color: snow;
+  box-shadow: 0 0 0.3rem yellow;
+  transform: scale(1.05);
+}
+/*# sourceMappingURL=./chatbot-mobile.css.map */

@@ -1,0 +1,99 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="chatbot-mobile.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+    <script>
+        $(function() {
+            var $show = $('#show');
+
+            function me(msg) {
+                return `<div class="me">
+                            <div class="pic"></div>
+                            <div class="text">${msg}</div>
+                        </div>`
+            }
+
+            function you(msg) {
+                return `<div class="you">
+                            <div class="pic"></div>
+                            <div class="text">${msg}</div>
+                        </div>`
+            }
+
+            $('.inputarea').keydown(function(e) {
+                if (e.key == 'Enter') {
+                    // 光标恢复位置，不能放在if外面
+                    // 否则时间一响应就被这个禁止，不能退格
+                    e.preventDefault();
+                    var $msg = $(this).text();
+                    // console.log($text);
+                    $show.append(me($msg));
+                    $show.scrollTo('100%');
+                    $(this).empty();
+                    $.ajax({
+                        url: 'https://chatbotapi.now.sh?msg=' + $msg,
+                        success: function(e) {
+                            console.log(e.content);
+                            var botmsg = you(e.content);
+                            $show.append(botmsg);
+                            $show.scrollTo('100%');
+                        }
+                    });
+                }
+            });
+
+            $('.btn').click(function() {
+                $(this).addClass('btnclick');
+                window.setTimeout(function() {
+                    $('.btn').removeClass('btnclick');
+                }, 100);
+                var $msg = $('.inputarea').text();
+                $show.append(me($msg));
+                $show.scrollTo('100%');
+                $('.inputarea').empty();
+                $.ajax({
+                    url: 'https://chatbotapi.now.sh?msg=' + $msg,
+                    success: function(e) {
+                        console.log(e.content);
+                        var botmsg = you(e.content);
+                        $show.append(botmsg);
+                        $show.scrollTo('100%');
+                    }
+                });
+            });
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="inner">
+            <div class="upper">
+                <div class="pic"></div>
+                <div class="title">chatbot</div>
+            </div>
+            <div id="show" class="middle">
+                <div class="me">
+                    <div class="pic"></div>
+                    <div class="text">你好</div>
+                </div>
+                <div class="you">
+                    <div class="pic"></div>
+                    <div class="text">你好啊，我是一个机器人，是个机器，不是人</div>
+                </div>
+            </div>
+            <div class="bottom">
+                <div class="inputarea" contenteditable="true"></div>
+                <div class="btn">&#9650</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
