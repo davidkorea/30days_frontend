@@ -42,14 +42,14 @@ html{
 
 # 2. less设置变量
 ```css
-@design-width:100vw/750*40;
+@design-width:100vw/750*40;       /* 约等于5.3333vw */
 
 html{
     font-size: @design-width;
 }
 
 .frame{
-    width: 750/40rem;   
+    width: 750/40rem;             /* 就相当于100vw，因为design-width就是750px */
     height: 1500/40rem;
     background-image: url('./source/iphone11.jpg');
 }
