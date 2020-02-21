@@ -18,4 +18,4 @@
   - `$('.__1').css('margin-left, function(i, v){}')`
     - `i`就是所选择的这个css属性margin-left的索引,
     - `v`是margin-left属性对应的当下的值
-  - 根据当前margin-left的数值来判断是否要进行下一轮的偏移
+  - **使用当前margin-left的数值减去600px即可**
