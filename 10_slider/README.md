@@ -15,6 +15,13 @@
    </body>
   ```
 
+# 2. Web-Ton
+![Feb-21-2020 21-58-15](https://user-images.githubusercontent.com/26485327/75040298-5fd90400-54f5-11ea-9b2d-400ed6efa1f7.gif)
+
+
+
+
+# 1. slider
 ## 如何根据图片数量，自动移动偏移量
 - `$('.__1').css('margin-left, function(i, v){}')`
   - `i`就是所选择的这个css属性margin-left的索引,
