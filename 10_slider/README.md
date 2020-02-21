@@ -4,7 +4,8 @@
 - https://cssgradient.io
 - https://feathericons.com
   ```html
-   <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+
    <body>
       <i data-feather="circle"></i>
      
