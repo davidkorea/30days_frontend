@@ -1,0 +1,234 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: lightsteelblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .frame {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .image {
+            height: 600px;
+            width: 400px;
+            box-shadow: 0 0 5px 5px grey;
+            display: flex;
+            overflow: hidden;
+        }
+        
+        .img {
+            height: 600px;
+            width: 400px;
+            background-image: url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/19.png');
+            background-size: cover;
+            min-width: 400px;
+            transition: 0.1s;
+        }
+        
+        .dots {
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+        
+        .dot {
+            width: 15px;
+            height: 15px;
+            border-radius: 50% 50%;
+            box-shadow: 0 0 3px 1px gray;
+            margin: 5px;
+            font-size: 12px;
+            color: darkslategray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .dot:hover,
+        .dotclick {
+            background-color: dimgray;
+            border: 1px solid ghostwhite;
+            color: whitesmoke;
+        }
+        
+        .nav {
+            width: 400px;
+            /* height: 50px; */
+            /* border: 2px solid red; */
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .next,
+        .prev {
+            transform: scale(1.2);
+        }
+        
+        .next:hover,
+        .prev:hover {
+            transform: scale(1.5);
+        }
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        $(function() {
+            feather.replace();
+            var imageList = [{
+                name: "page1",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/1.png')"
+            }, {
+                name: "page2",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/2.png')"
+            }, {
+                name: "page3",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/3.png')"
+            }, {
+                name: "page4",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/4.png')"
+            }, {
+                name: "page5",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/5.png')"
+            }, {
+                name: "page6",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/6.png')"
+            }, {
+                name: "page7",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/7.png')"
+            }, {
+                name: "page8",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/8.png')"
+            }, {
+                name: "page9",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/9.png')"
+            }, {
+                name: "page10",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/10.png')"
+            }, {
+                name: "page11",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/11.png')"
+            }, {
+                name: "page12",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/12.png')"
+            }, {
+                name: "page13",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/13.png')"
+            }, {
+                name: "page14",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/14.png')"
+            }, {
+                name: "page15",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/15.png')"
+            }, {
+                name: "page16",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/16.png')"
+            }, {
+                name: "page17",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/17.png')"
+            }, {
+                name: "page18",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/18.png')"
+            }, {
+                name: "page19",
+                src: "url('https://res.cform.cn/unzip/1582190953171_47492497684911905/comic/19.png')"
+            }];
+            for (var obj of imageList) {
+                $('.image').append(`<div class="img ${obj.name}" style="background-image: ${obj.src}"></div>`);
+                $('.dots').append(`<div id="${obj.name}" class="dot">${imageList.indexOf(obj)+1}</div>`);
+
+            }
+
+            $('#page1').addClass('dotclick');
+
+            $('.dot').click(function() {
+                $('.dot').removeClass('dotclick');
+                $(this).addClass('dotclick');
+                var imageId = $(this).attr('id');
+                console.log(imageId);
+                var offset = imageId.slice(4, 6);
+                console.log(offset);
+
+                $('.page1').css('margin-left', function() {
+                    return -400 * (offset - 1)
+                })
+            });
+
+            $('.next').click(function() {
+                var currentImgId;
+                $('.dot').each(function() {
+                    // var currentImg = $(this).hasClass('dotclick');
+                    if ($(this).hasClass('dotclick')) {
+                        // console.log($(this));
+                        currentImgId = $(this).attr('id').slice(4, 6);
+                    }
+                });
+                console.log(currentImgId);
+                if (Number(currentImgId) < imageList.length) {
+                    $('.page1').css('margin-left', function() {
+                        return -400 * currentImgId
+                    });
+
+                    $('.dot').removeClass('dotclick');
+                    var newImgId = Number(currentImgId) + 1;
+                    $(`#page${newImgId}`).addClass('dotclick');
+                }
+            })
+
+            $('.prev').click(function() {
+                var currentImgId;
+                $('.dot').each(function() {
+                    // var currentImg = $(this).hasClass('dotclick');
+                    if ($(this).hasClass('dotclick')) {
+                        // console.log($(this));
+                        currentImgId = $(this).attr('id').slice(4, 6);
+                    }
+                });
+                console.log(currentImgId);
+                if (currentImgId > 1) {
+                    var newImgId = Number(currentImgId) - 1;
+
+                    $('.page1').css('margin-left', function() {
+                        return -400 * (newImgId - 1)
+                    });
+                    $('.dot').removeClass('dotclick');
+                    $(`#page${newImgId}`).addClass('dotclick');
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="image">
+            <!-- <div class="img"></div>
+            <div class="img"></div> -->
+        </div>
+        <div class="dots">
+            <!-- <div class="dot"></div>
+            <div class="dot"></div> -->
+        </div>
+        <div class="nav">
+            <div class="prev"><i data-feather="chevron-left"></i></div>
+            <div class="next"><i data-feather="chevron-right"></i></div>
+        </div>
+    </div>
+</body>
+
+</html>
