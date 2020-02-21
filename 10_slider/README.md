@@ -45,7 +45,7 @@
 ![Feb-21-2020 11-51-03](https://user-images.githubusercontent.com/26485327/75002771-828cfd80-54a0-11ea-963e-a2020b4d84c7.gif)
 
 - 切换的时间为image元素的transition的秒数，在这个时间内多次点击按钮，会造成出现下一页空白
-
+- 如果margin-left的当前值不是600的倍数，则禁止操作。满足条件则偏移两增减
 ```javascript
 $('.prev').click(function() {
     if (parseInt($('.__1').css('margin-left')) % 600 != 0) {
