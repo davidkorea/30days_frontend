@@ -46,8 +46,19 @@
 
 - 切换的时间为image元素的transition的秒数，在这个时间内多次点击按钮，会造成出现下一页空白
 
-  
-  
+```javascript
+$('.prev').click(function() {
+    if (parseInt($('.__1').css('margin-left')) % 600 != 0) {
+        e.preventDefault();
+    } else {
+                    $('.__1').css('margin-left', function(i, v) {
+                        if (Math.abs(parseInt(v)) != 0) {
+                            return parseInt(v) + 600
+                        }
+                    })
+    }
+})
+```
   
   
   
