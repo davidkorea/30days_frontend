@@ -8,6 +8,8 @@
 
 
 # 2. AliExpress
+![Feb-22-2020 21-49-46](https://user-images.githubusercontent.com/26485327/75093503-4602f400-55bd-11ea-8a43-f4b9b367e8a4.gif)
+
 - jQuery阻止冒泡                
   - `e.stopPropagation();` 
 
