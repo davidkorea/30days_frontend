@@ -1,0 +1,224 @@
+<html>
+
+<head>
+    <style>
+        @font-face {
+            font-family: CREDC;
+            src: url("https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/CREDC___.ttf")
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: floralwhite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .frame {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .btn {
+            align-self: center;
+            font-size: 22px;
+            margin: 10px;
+            /* 鼠标不可点选 */
+            user-select: none;
+        }
+        
+        .card {
+            height: 300px;
+            width: 500px;
+            box-shadow: 0 0 5px 5px gainsboro;
+            border-radius: 3% 3%;
+            /* 重中之重，将反正面的外层元素设置3d转换 */
+            transform-style: preserve-3d;
+            transition: all 0.3s linear;
+        }
+        
+        .front,
+        .back {
+            height: 300px;
+            width: 500px;
+            background-image: url('https://res.cform.cn/unzip/1582118801470_6115906155709576/thatcard.png');
+            background-size: 100% 100%;
+            display: flex;
+            flex-direction: column;
+            backface-visibility: hidden;
+        }
+        
+        .back {
+            background-image: url('https://res.cform.cn/unzip/1582118801470_6115906155709576/cardback.png');
+            transform: rotateY(180deg);
+            /* 往上提300px，否则会看到一个空白面 */
+            margin-top: -300px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .flipper {
+            /* 点击按钮后，添加此class来反转 */
+            transform: rotateY(180deg);
+        }
+        
+        .bankname {
+            height: 40px;
+            /* width: 200px; */
+            /* border: 2px solid yellow; */
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            margin-top: 20px;
+            margin-right: 20px;
+            align-self: flex-end;
+        }
+        
+        .logo {
+            height: 30px;
+            width: 30px;
+            border-radius: 50% 50%;
+            background-image: url('https://res.cform.cn/unzip/1582118801470_6115906155709576/%E4%B8%AD%E5%9B%BD%E9%93%B6%E8%A1%8C.png');
+            background-size: cover;
+        }
+        
+        .name {
+            margin: 0px 10px;
+            font-size: 20px;
+        }
+        
+        .number {
+            height: 30px;
+            width: 80%;
+            align-self: center;
+            margin-top: 90px;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .num {
+            height: 30px;
+            width: 80px;
+            /* background-color: thistle; */
+            color: whitesmoke;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            font-size: 20px;
+            font-family: CREDC;
+            /* 重中之重！！字母间距！！ */
+            letter-spacing: 5px;
+            text-shadow: 1px 1px 1px rgb(202, 173, 5);
+        }
+        
+        .check {
+            border: 1px dotted silver;
+        }
+        
+        .details {
+            height: 50px;
+            width: 80%;
+            margin-top: 40px;
+            /* border: 2px solid yellow; */
+            display: flex;
+            justify-content: space-between;
+            align-self: center;
+        }
+        
+        .user,
+        .date {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            margin: 5px;
+            color: whitesmoke;
+        }
+        
+        .date {
+            font-weight: bolder;
+            font-size: 20px;
+            text-align: center;
+            font-family: CREDC;
+        }
+        
+        .unionpay {
+            height: 60px;
+            width: 80px;
+            background-image: url('https://res.cform.cn/unzip/1582118801470_6115906155709576/unionpay.png');
+            background-size: 100% 100%;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('.btn').click(function() {
+                $('.card').toggleClass('flipper');
+            });
+
+            $('.num').keypress(function(e) {
+                console.log($(this).text().length);
+                if ($(this).text().length == 4) {
+                    e.preventDefault();
+                }
+                // console.log(e);
+                if (e.which < 47 || e.which > 59) {
+                    console.log('no');
+                    e.preventDefault();
+                }
+
+            });
+
+            $('.number').keyup(function() {
+                var bankCode = $(this).children('.check').text();
+                console.log(bankCode);
+                $.ajax({
+                    url: 'https://mugglecoding-website.oss-cn-beijing.aliyuncs.com/fe/datalist.json',
+                    success: function(resp) {
+                        for (var e of resp) {
+                            if (bankCode == e.head) {
+                                console.log(e.name);
+                                $('.name').text(`${e.name}`);
+                                $('.logo').css({
+                                    'background-image': `url("https://res.cform.cn/unzip/1582118801470_6115906155709576/${e.name}.png")`
+                                })
+                            }
+                        }
+                    }
+                });
+
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="btn">⇆ flip</div>
+        <div class="card">
+            <div class="front">
+                <div class="bankname">
+                    <div class="logo"></div>
+                    <div class="name">中国银行</div>
+                </div>
+                <div class="number">
+                    <div class="num check" contenteditable></div>
+                    <div class="num check" contenteditable></div>
+                    <div class="num" contenteditable>0126</div>
+                    <div class="num" contenteditable>5302</div>
+                </div>
+                <div class="details">
+                    <div class="user">DAVID</div>
+                    <div class="date">01/31</div>
+                    <div class="unionpay"></div>
+                </div>
+            </div>
+            <div class="back">111
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
