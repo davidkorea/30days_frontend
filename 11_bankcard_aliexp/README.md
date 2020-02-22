@@ -2,6 +2,8 @@
 
 
 # 2. AliExpress
+- jQuery阻止冒泡                
+  - `e.stopPropagation();` 
 
 - text-decoration
 
