@@ -1,6 +1,12 @@
 
 
 
+
+# 1. Bank Card
+
+![Feb-22-2020 21-45-43](https://user-images.githubusercontent.com/26485327/75093445-b8270900-55bc-11ea-8ce0-740793dd5663.gif)
+
+
 # 2. AliExpress
 - jQuery阻止冒泡                
   - `e.stopPropagation();` 
