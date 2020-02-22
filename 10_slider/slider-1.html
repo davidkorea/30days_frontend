@@ -1,0 +1,249 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            /* background-color: darkorange; */
+            background: rgb(2, 0, 36);
+            background: linear-gradient(76deg, rgba(2, 0, 36, 1) 0%, rgba(9, 16, 121, 1) 35%, rgba(254, 0, 255, 1) 100%);
+            display: flex;
+            justify-content: center;
+        }
+        
+        .frame {
+            height: 400px;
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .nav {
+            width: 700px;
+            /* height: 100px; */
+            /* background-color: darkslategray; */
+            display: flex;
+            justify-content: space-between;
+            margin-top: 250px;
+            position: absolute;
+            /* transform: scale(1.2); */
+        }
+        
+        .prev,
+        .next {
+            transform: scale(2);
+        }
+        
+        .prev:hover,
+        .next:hover {
+            transform: scale(3);
+        }
+        
+        .slider {
+            height: 400px;
+            width: 600px;
+            /* background-color: darkorchid; */
+            box-shadow: 0 0 15px 2px whitesmoke;
+            border-radius: 10px 10px;
+            margin-top: 100px;
+            display: flex;
+            /* 边框外面的需要使用frame的overflow hidden来隐藏 */
+            overflow: hidden;
+        }
+        
+        .image {
+            height: 400px;
+            width: 600px;
+            background-image: url('./source/tokyo.jpg');
+            background-size: 100% 100%;
+            position: relative;
+            /* 设置最小宽度，不会被挤压 */
+            min-width: 600px;
+            /* margin-left: -580; */
+            transition: 0.5s;
+        }
+        
+        .dots {
+            height: 20px;
+            width: 200px;
+            /* background-color: whitesmoke; */
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .dot {
+            height: 10px;
+            width: 10px;
+            border-radius: 50% 50%;
+            background-color: whitesmoke;
+            margin: 2px;
+        }
+        
+        .dotSelect,
+        .dot:hover {
+            box-shadow: 0 0 3px lightyellow;
+            transform: scale(1.1);
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script>
+        $(function() {
+            feather.replace();
+
+            var imgList = [{
+                "name": "__1",
+                "src": "./source/tokyo.jpg'"
+            }, {
+                "name": "__2",
+                "src": "./source/fireworks.jpg'"
+            }, {
+                "name": "__3",
+                "src": "./source/buildings.jpg'"
+            }];
+
+            for (var obj of imgList) {
+                var imgClass = obj.name;
+                var imgSrc = obj.src;
+                var idx = imgList.indexOf(obj);
+                $('.slider').append(`<div class="image ${imgClass}" style="background-image: url('${imgSrc});"></div>`)
+                $('.dots').append(`<div class="dot" id="${idx+1}"></div>`)
+            }
+
+            var dotIdx = 1;
+            $(`#${dotIdx}`).addClass('dotSelect');
+
+            $('.next').click(function(e) {
+                if (parseInt($('.__1').css('margin-left')) % 600 != 0) {
+                    e.preventDefault();
+                } else {
+                    if (dotIdx < imgList.length) {
+                        $(`#${dotIdx}`).removeClass('dotSelect');
+                        dotIdx++;
+                        $(`#${dotIdx}`).addClass('dotSelect');
+                    } else {
+                        $(`#${dotIdx}`).removeClass('dotSelect');
+                    }
+                    // $('.__1').css('margin-left', -600);
+                    $('.__1').css('margin-left', function(i, v) {
+                        // return -600 怎么根据图片数量自动偏移-600 -1200 ...
+                        if (Math.abs(parseInt(v)) == (imgList.length - 1) * 600) {
+                            dotIdx = 1;
+                            $(`#${dotIdx}`).addClass('dotSelect');
+                            return 0
+                        } else {
+                            return parseInt(v) - 600
+                        }
+                    })
+                }
+            });
+
+            $('.prev').click(function(e) {
+                if (parseInt($('.__1').css('margin-left')) % 600 != 0) {
+                    e.preventDefault();
+                } else {
+                    if (dotIdx > 1) {
+                        $(`#${dotIdx}`).removeClass('dotSelect');
+                        dotIdx--;
+                        $(`#${dotIdx}`).addClass('dotSelect');
+                    }
+                    $('.__1').css('margin-left', function(i, v) {
+                        if (Math.abs(parseInt(v)) != 0) {
+                            return parseInt(v) + 600
+                        }
+                    })
+                }
+            })
+
+            $('.dot').click(function() {
+                $('.dot').removeClass('dotSelect');
+                var id = $(this).attr('id');
+                // console.log(id);
+                $(this).addClass('dotSelect');
+                var offset = 600 * id - 600;
+                $('.__1').css('margin-left', `-${offset}`);
+            })
+
+            // function slide(action) {
+            //     return function(e) {
+
+            //         if (parseInt($('.__1').css('margin-left')) % 600 != 0) {
+            //             e.preventDefault();
+            //         } else {
+
+            //             $('.__1').css('margin-left', function(i, v) {
+            //                 if (action == 'next') {
+            //                     var cond = Math.abs(parseInt(v)) == (imgList.length - 1) * 600;
+            //                     var offset = parseInt(v) - 600;
+            //                     if (dotIdx < imgList.length) {
+            //                         $(`#__${dotIdx}`).removeClass('dotSelect');
+            //                         dotIdx++;
+            //                         $(`#__${dotIdx}`).addClass('dotSelect');
+            //                     } else {
+            //                         $(`#__${dotIdx}`).removeClass('dotSelect');
+            //                     }
+            //                 }
+            //                 if (action == 'prev') {
+            //                     var cond = parseInt(v) == 0;
+            //                     var offset = parseInt(v) + 600;
+            //                     if (dotIdx > 1) {
+            //                         $(`#__${dotIdx}`).removeClass('dotSelect');
+            //                         dotIdx--;
+            //                         $(`#__${dotIdx}`).addClass('dotSelect');
+            //                     }
+            //                 }
+
+            //                 if (cond) {
+            //                     // $('#__1').addClass('dotSelect');
+            //                     // setTimeout(() => {
+            //                     //     $('#__1').removeClass('dotSelect');
+            //                     // }, 1000);
+            //                     return 0
+            //                 }
+            //                 // var dotIdx = Math.abs(offset) / 600 + 1;
+            //                 // console.log(dotIdx);
+            //                 // $(`#__${dotIdx}`).addClass('dotSelect');
+            //                 // setTimeout(() => {
+            //                 //     $(`#__${dotIdx}`).removeClass('dotSelect');
+            //                 // }, 1000);
+            //                 // console.log(offset);
+
+            //                 return offset
+            //             })
+            //         }
+            //     }
+            // }
+
+            // setInterval(slide('next'), 2000);
+            // $('.prev').click(slide('prev'));
+            // $('.next').click(slide('next'));
+
+        })
+    </script>
+</head>
+
+<body>
+    <div class="frame">
+        <div class="nav">
+            <div class="prev"> <i data-feather="chevron-left"></i></div>
+            <div class="next"> <i data-feather="chevron-right"></i></div>
+        </div>
+        <div class="slider">
+            <!-- <div class="image" style="background-image: url('./source/tokyo.jpg');"></div> -->
+        </div>
+        <div class="dots">
+            <!-- <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div> -->
+        </div>
+    </div>
+</body>
+
+</html>
