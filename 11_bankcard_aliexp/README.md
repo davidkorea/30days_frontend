@@ -1,6 +1,8 @@
 
 
-
+# 0. Tools
+- JavaScript Event KeyCodes http://keycode.info
+- Sets - Unicode® Character Table https://unicode-table.com/en/sets/
 
 # 1. Bank Card
 
