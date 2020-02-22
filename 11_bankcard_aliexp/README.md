@@ -21,8 +21,10 @@
 }
 
 .item-back {
-     /* 减去正面的高度，否则会上下显示正反面，正面外空，反面会显示在下面 */
-    margin-top: -250px;           
+    /* 减去正面的高度，否则会上下显示正反面，正面外空，反面会显示在下面 */
+    margin-top: -250px;   
+    /* 不用上面方法，就开启绝对定位，这样反正面之间贴合没有缝隙！！！ */
+    position: absolute;
     transform: rotateY(180deg);
     backface-visibility: hidden;
 }
