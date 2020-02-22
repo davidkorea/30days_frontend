@@ -4,6 +4,47 @@
 - JavaScript Event KeyCodes http://keycode.info
 - Sets - Unicode® Character Table https://unicode-table.com/en/sets/
 
+
+### 3d flip
+```html
+<style>
+.item {
+    transform-style: preserve-3d;
+    transition: all 0.3s linear;
+}
+  
+.item-front {
+    height: 250px;
+    width: 200px;
+    /* 隐藏背面，否则反转过来会显示正面图片的镜像图片*/
+    backface-visibility: hidden;  
+}
+
+.item-back {
+     /* 减去正面的高度，否则会上下显示正反面，正面外空，反面会显示在下面 */
+    margin-top: -250px;           
+    transform: rotateY(180deg);
+    backface-visibility: hidden;
+}
+</style>
+
+
+<div class="item">
+  
+    <div class="item-front">
+        <div class="pic"></div>
+        <div class="name">Microphone Kit</div>
+    </div>
+  
+    <div class="item-back">
+        <div class="heart">like</div>
+    </div>
+  
+</div>
+```
+
+
+
 # 1. Bank Card
 
 ![Feb-22-2020 21-45-43](https://user-images.githubusercontent.com/26485327/75093445-b8270900-55bc-11ea-8ce0-740793dd5663.gif)
