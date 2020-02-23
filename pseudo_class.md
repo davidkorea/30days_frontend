@@ -6,6 +6,9 @@
 - 被点击的元素
 - 鼠标移动入的元素
 
+
+
+## 1. 无论元素类型
 1. `:first-child`，`:last-child`，第一个，最后一个子元素，不用手动在li上添加class
   ```css
   ul > li.first-child{
@@ -16,3 +19,16 @@
   - odd 或 2n+1全部奇数子元素
   - even 或 2n全部偶数子元素
   - n表示全部子元素
+
+## 2. 相同元素类型
+- `first-of-type`
+- `last-of-type`
+- `nth-of-type`
+
+功能和上面的类似，但是同类型元素排序
+
+
+
+
+
+
