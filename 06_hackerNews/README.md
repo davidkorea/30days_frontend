@@ -4,7 +4,26 @@
 - `div:hover {outline:2px solid red}`，不会挤压周围元素，而border会
 - `box-shadow: 2px 2px 3px black`，左右偏移，上下便宜，羽化渐变半径，颜色。阴影不会挤压周围元素
 - `border-radius: 50%`，直接将等宽高元素设置为圆
-
+- 截取文字长度
+    ```css
+    .desc {
+        height: 20%;
+        color: gray;
+        font-weight: 200;
+        font-size: 12px;
+        
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    ```
+    - 设置好height或者width
+    - 在添加下面三个属性，text-overflow会根据div尺寸自动截取并在末尾添加三个点...
+        - `overflow: hidden;`
+        - `text-overflow: ellipsis;`
+        - `white-space: nowrap;`
+    - 使用css中鞥截取固定长度的文字，即使空间大了，也不会多显示
+    
 
 
 
