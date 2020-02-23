@@ -17,6 +17,8 @@
         white-space: nowrap;
     }
     ```
+    <img width="574" src="https://user-images.githubusercontent.com/26485327/75113770-74e79b80-568b-11ea-9439-7e16c120dd9b.png">
+
     - 设置好height或者width
     - 在添加下面三个属性，text-overflow会根据div尺寸自动截取并在末尾添加三个点...
         - `overflow: hidden;`
