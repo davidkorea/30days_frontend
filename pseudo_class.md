@@ -6,7 +6,7 @@
 
 实际上不存在的元素，页面中一些特殊的位置
 
-## 1. first-letter 第一个字母
+### 1. first-letter 第一个字母
 首字母下沉的效果
 ```css
 p::first-letter{
@@ -14,7 +14,7 @@ p::first-letter{
 }
 ```
 
-## 2. first-line 第一行
+### 2. first-line 第一行
 
 ```css
 p::first-line{
@@ -22,7 +22,7 @@ p::first-line{
 }
 ```
 
-## 3. selection 选择
+### 3. selection 选择
 给选中的内容添加样式，如电子书选中问题会出现背景色，或者下划线
 ```css
 p::selection{
@@ -30,7 +30,7 @@ p::selection{
 }
 ```
 
-## 4. before 元素起始位置
+### 4. before 元素起始位置
 **结合content属性一起用**，在第一个子元素的前面在凭空添加一个内容
 ```css
 div::before{
@@ -41,7 +41,7 @@ div::before{
 - 这个文字不是直接写在div标签里面的
 - 该内容**无法被选中**，因为不是实际存在在div里的，而是凭空添加的
 
-## 5. after 元素末尾位置
+### 5. after 元素末尾位置
 **结合content属性一起用**
 ```css
 div::before{
@@ -76,7 +76,7 @@ div::before{
 
 
 
-## 1. 无论元素类型
+### 1. 无论元素类型
 1. `:first-child`，`:last-child`，第一个，最后一个子元素，不用手动在li上添加class
   ```css
   ul > li.first-child{
@@ -88,14 +88,14 @@ div::before{
   - even 或 2n全部偶数子元素
   - n表示全部子元素
 
-## 2. 相同元素类型
+### 2. 相同元素类型
 - `first-of-type`
 - `last-of-type`
 - `nth-of-type`
 
 功能和上面的类似，但是同类型元素排序
 
-## 3. 否定
+### 3. 否定
 将符合条件的元素，在选择器中去除
 ```css
 li > li:not(nth-child(3)){
@@ -108,7 +108,7 @@ li > li:not(nth-of-type(3)){
 }
 ```
 
-## 4. 超链接伪类
+### 4. 超链接伪类
 
 1. 访问过的链接
   ```css
@@ -127,7 +127,7 @@ li > li:not(nth-of-type(3)){
   - link表示没访问过的链接，或者叫正常的链接
   - 可以更改字体大小等其他属性
 
-## 5. 鼠标
+### 5. 鼠标
 1. 移入效果 :hover
 2. 点击效果 :active
 
