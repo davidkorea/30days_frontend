@@ -119,6 +119,9 @@
             color: gray;
             font-weight: 200;
             font-size: 12px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
         
         .author {
@@ -140,7 +143,8 @@
         $(function() {
             function addItem(data) {
                 var desc = data.description;
-                desc = desc.substr(0, 15);
+                // 这里写死的长度，可以使用css的text-overflow设置ellipsis来自动截断
+                // desc = desc.substr(0, 15); 
                 // console.log(desc.substr(0, 20));
 
                 var color = data.languageColor;
