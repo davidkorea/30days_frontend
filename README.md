@@ -4,6 +4,16 @@
 - JavaScript Event KeyCodes http://keycode.info
 - Sets - Unicode® Character Table https://unicode-table.com/en/sets/
 
+## Tips
+
+- body设置min-width，防止无限被压缩没出现布局错乱
+
+
+
+
+
+
+
 
 -----
 
