@@ -7,9 +7,7 @@
 ## Tips
 
 - body设置min-width，防止无限被压缩没出现布局错乱
-
-
-
+- `display: none;`  -> `display: block` 隐藏显示菜单，当点击时显示的非js方法
 
 
 
