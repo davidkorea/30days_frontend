@@ -1,6 +1,74 @@
 
 
-# 伪类
+
+
+# 2. 伪元素
+
+实际上不存在的元素，页面中一些特殊的位置
+
+## 1. first-letter 第一个字母
+首字母下沉的效果
+```css
+p::first-letter{
+  font-size: 30px;
+}
+```
+
+## 2. first-line 第一行
+
+```css
+p::first-line{
+  background-color: lightblue;
+}
+```
+
+## 3. selection 选择
+给选中的内容添加样式，如电子书选中问题会出现背景色，或者下划线
+```css
+p::selection{
+  background-color: lightblue;
+}
+```
+
+## 4. 元素起始位置
+**结合content属性一起用**，在第一个子元素的前面在凭空添加一个内容
+```css
+div::before{
+  content:'hello world';
+  color:red;
+}
+```
+- 这个文字不是直接写在div标签里面的
+- 该内容**无法被选中**，因为不是实际存在在div里的，而是凭空添加的
+
+## 5. 元素末尾位置
+**结合content属性一起用**
+```css
+div::before{
+  content:'bye bye';
+  color:blue;
+}
+```
+
+> 其实，q标签会自动出现双引号`<q>hello</q>` "hello"，而且引号不能被选中，确实就是通过before和after添加上的
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# 1. 伪类
 
 不是元素上真正加上去的class，而是虚拟的，用于描述元素的特殊状态
 - 被点击的元素
