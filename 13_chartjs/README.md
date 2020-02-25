@@ -1,6 +1,6 @@
 # Chartjs
 
-#### 1. 最小实现
+### 1. 最小实现
 
 ```html
 <link rel="stylesheet" href="./tailwind.min.css">
@@ -31,7 +31,7 @@
   - `var chart = new Chart(ctx, {type: 'line'});`
 
 
-#### 2. Chart属性和选项
+### 2. Chart属性和选项
 ```javascript
 var chart = new Chart(ctx, {
     type: 'line',
@@ -42,6 +42,7 @@ var chart = new Chart(ctx, {
     options: {}
 })
 ```
+- 添加数据
 ```javascript
 var chart = new Chart(ctx, {
     type: 'line',
@@ -60,7 +61,39 @@ var chart = new Chart(ctx, {
 ```
 <img width="700" src="https://user-images.githubusercontent.com/26485327/75257502-0a1b9900-5820-11ea-9b49-f3c7715d50f5.png">
 
+- 更改颜色
+```javascript
+data: {
+    labels: ['x1', 'x2', 'x3', 'x4', 'x5'],
+    datasets: [{
+        label: 'first',
+        backgroundColor: 'skyblue',
+        borderColor: 'royalblue',
+        data: [22, 35, 28, 32, 34]
+    }, {
+        label: 'second',
+        backgroundColor: 'whitesmoke',
+        borderColor: 'aliceblue',
+        data: [26, 25, 38, 26, 41]
+    }]
+},
+```
+- canvas中的渐变色背景，与background-color的gradient不同
+```javascript
+var grad = ctx.createLinearGradient(0,200,200,0);
 
+grad.addColorStop(0, 'rgba(184,42,162,1)');
+grad.addColorStop(1, 'rgba(105,117,255,1)');
+
+data: {
+    labels: ['x1', 'x2', 'x3', 'x4', 'x5'],
+    datasets: [{
+        label: 'first',
+        backgroundColor: grad,
+        borderColor: 'royalblue',
+        data: [22, 35, 28, 32, 34]
+    },]}
+```
 
 
 
