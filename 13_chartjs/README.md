@@ -24,6 +24,31 @@
 <img width="700" src="https://user-images.githubusercontent.com/26485327/75256393-5ebe1480-581e-11ea-8aae-b56f1559cbf5.png">
 
 - 最小系统
-- `canvas`
-- `var ctx = document.getElementById('chart').getContext('2d');`
-- `var chart = new Chart(ctx, {type: 'line'});`
+  - `canvas`
+  - `var ctx = document.getElementById('chart').getContext('2d');`
+  - `var chart = new Chart(ctx, {type: 'line'});`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
