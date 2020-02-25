@@ -1,5 +1,7 @@
 # Chartjs
 
+#### 1. 最小实现
+
 ```html
 <link rel="stylesheet" href="./tailwind.min.css">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
@@ -23,13 +25,40 @@
 ```
 <img width="700" src="https://user-images.githubusercontent.com/26485327/75256393-5ebe1480-581e-11ea-8aae-b56f1559cbf5.png">
 
-- 最小系统
+- 最小实现
   - `canvas`
   - `var ctx = document.getElementById('chart').getContext('2d');`
   - `var chart = new Chart(ctx, {type: 'line'});`
 
 
-
+#### 2. Chart属性和选项
+```javascript
+var chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: [],
+        datasets: [{}, {}]
+    },
+    options: {}
+})
+```
+```javascript
+var chart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['x1', 'x2', 'x3', 'x4', 'x5'],
+        datasets: [{
+            label: 'first',
+            data: [22, 35, 28, 32, 34]
+        }, {
+            label: 'second',
+            data: [26, 25, 38, 22, 41]
+        }]
+    },
+    options: {}
+})
+```
+<img width="700" src="https://user-images.githubusercontent.com/26485327/75257502-0a1b9900-5820-11ea-9b49-f3c7715d50f5.png">
 
 
 
