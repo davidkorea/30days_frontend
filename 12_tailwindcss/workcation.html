@@ -1,0 +1,39 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./tailwind.min.css">
+    <style>
+        .show {
+            display: block;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $('.icon').click(function() {
+                // $(this).text('…')
+                $('.menu').toggleClass('show');
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="frame h-screen bg-gray-900">
+        <div class="header flex bg-gray-800 h-12 w-screen justify-between">
+            <div class="title m-2 tracking-wider text-2xl text-gray-200 font-extrabold">Workcation</div>
+            <!-- <div class="menuicon hidden m-2 text-gray-200 text-2xl font-extrabold">×</div> -->
+            <div class="menuicon m-1 mr-6 flex flex-col relative">
+                <div class="icon text-gray-200 font-extrabold">…</div>
+                <div class="menu hidden absolute flex flex-col pl-8 pr-8 pt-2 mt-8 -ml-20 text-gray-200 text-lg bg-gray-800">
+                    <div class="block m-2 hover:text-gray-500">Home</div>
+                    <div class="block m-2 hover:text-gray-500">Profile</div>
+                    <div class="block m-2 hover:text-gray-500">About</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
