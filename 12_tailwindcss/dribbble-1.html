@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./tailwind.min.css">
+    <style>
+        .w-600px {
+            width: 600px;
+        }
+        
+        .h-300px {
+            height: 400px;
+        }
+        
+        .bg-left {
+            background: rgb(8, 242, 237);
+            background: linear-gradient(126deg, rgba(8, 242, 237, 1) 0%, rgba(0, 255, 164, 1) 100%);
+        }
+        
+        .bg-btn {
+            background: rgb(242, 92, 8);
+            background: linear-gradient(0deg, rgba(242, 92, 8, 1) 0%, rgba(255, 0, 140, 1) 100%);
+        }
+        
+        .sneaker {
+            background-image: url('https://res.cform.cn/unzip/1582531654483_27649088174039127/sneaker.png');
+            width: 300px;
+            height: 300px;
+            background-size: cover;
+            margin-left: -100px;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="centerframe flex justify-center items-center h-screen ">
+        <div class="shoes flex w-600px h-300px bg-gray-100 rounded-md">
+            <div class="left w-1/3 h-full bg-left rounded-l-md">
+                <div class="sneaker"></div>
+            </div>
+            <div class="right w-2/3 h-full flex-col rounded-r-md">
+                <div class="right__title pt-6 pl-6">
+                    <div class="font-bold text-2xl">NIKE ROSHEN RUN</div>
+                    <div class="text-gray-500">MINT GREEN</div>
+                    <div class="pricre flex">
+                        <div class="font-bold line-through">150</div>
+                        <div class="text-orange-500 font-bold ml-2">114.99</div>
+                    </div>
+                </div>
+                <div class="right__descriotion p-6">
+                    <div class="desc text-gray-700 font-bold text-lg">DESCRIPTION</div>
+                    <div class="content text-gray-600 font-thin text-xs">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur voluptas unde officiis nulla neque repellendus odit quibusdam aliquam praesentium ipsa atque, id, molestias voluptates ex labore accusantium doloremque nesciunt porro.
+                    </div>
+                </div>
+                <div class="right__options flex ml-6">
+                    <div class="color flex flex-col border-r-2 pr-6">
+                        <div class="text-gray-800 font-bold text-sm">COLOR</div>
+                        <div class="dots flex">
+                            <div class="bg-red-700 mr-2 w-4 h-4 rounded-full"></div>
+                            <div class="bg-blue-700 mr-2 w-4 h-4 rounded-full"></div>
+                            <div class="bg-green-700 mr-2 w-4 h-4 rounded-full"></div>
+                            <div class="bg-purple-700 mr-2 w-4 h-4 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div class="size flex flex-col ml-6 pr-6 border-r-2">
+                        <div class="text-gray-800 font-bold text-sm">SIZE</div>
+                        <div class="text-gray-500 font-bold">UK(8)</div>
+                    </div>
+                    <div class="qty flex flex-col ml-6">
+                        <div class="text-gray-800 font-bold text-sm">QTY</div>
+                        <div class="text-gray-500 font-bold">(1)</div>
+                    </div>
+                </div>
+                <div class="right__btn">
+                    <div class="btn bg-btn ml-6 mt-6 w-48 p-3 rounded-md text-white text-xl font-bold text-center align-middle">Add to Cart</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
