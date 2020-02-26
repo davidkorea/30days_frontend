@@ -1,3 +1,25 @@
+
+# [解决]input上传文件选择同一文件change事件不生效
+```html
+<input id="file" class="hidden" type="file">
+```
+```javascript
+
+$('#file').change(function() {
+    ...
+    // console.log('onchange: ', $('#file')[0].value);
+    $('#file')[0].value = null;
+    // console.log('onchange - same file: ', $('#file')[0].value);
+})
+```
+- 由于input file可以一次性上传多个文件，$('#file')返回一个列表，选中一个文件时需要[0]来获取
+- input控件的value为上传文件的文件名
+- 将input空间的value清空
+
+# [解决]生成新chart之前，清除已有chart
+
+
+
 # canvas
 
 > **语法小课堂**
