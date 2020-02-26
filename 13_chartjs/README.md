@@ -1,4 +1,17 @@
-# Chartjs
+# canvas
+
+> **语法小课堂**
+> - ES6 新增了let命令，用来声明局部变量。只在let命令所在的**代码块内有效**，块外无法访问，而且有暂时性死区的约束。
+> - var的作用域只有全局作用域和函数作用域，没有块内作用域
+
+- canvas跨平台动画和游戏的标准解决方案，目前只支持2d
+- 绘图需要借助js，固定套路代码
+    - `var ctx = document.getElementById('.canvas').getContext('2d');`
+    - `ctx` - contect缩写
+
+
+
+# 1. Chartjs
 
 ### 1. 最小实现
 
@@ -97,7 +110,7 @@ data: {
 ```
 
 
-# 2. 文件上传
+### 3. 文件上传
 
 ```html
  <div class="btn mt-6 p-2 text-gray-200 ...">Load CSV</div>
@@ -131,7 +144,7 @@ FileList {0: File, length: 1}
     __proto__: FileList
 ```
 
-# 3. 表单事件绑定
+### 4. 表单事件绑定
 js - onchange， jq - change
 
 ```javascript
@@ -153,7 +166,7 @@ $('#file').change(function() {
     - 不影响原数组
 
 
-# 4. 更新 chart.update()
+### 5. 更新 chart.update()
 ```javascript
 function updateScale(chart) {
     chart.options.scales.yAxes[0] = {
