@@ -79,6 +79,7 @@ data: {
 },
 ```
 - canvas中的渐变色背景，与background-color的gradient不同
+- toolhttp://angrytools.com/gradient/
 ```javascript
 var grad = ctx.createLinearGradient(0,200,200,0);
 
