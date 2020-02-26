@@ -133,6 +133,18 @@ FileList {0: File, length: 1}
 # 3. 表单事件绑定
 js - onchange， jq - change
 
+```javascript
+$('#file').change(function() {
+    var file = $('#file').prop('files')[0];
+    Papa.parse(file, {
+        complete: function(results) {
+            console.log("Finished:", results.data);
+        }
+    });
+})
+```
+- csv解析器 https://www.papaparse.com
+
 **语法小课堂**
 - https://github.com/davidkorea/javascript_study/blob/master/07_Array.md#slice
 - 数组slice(start,end)，不指定end时，表示从start索引开始一直到数组最后
@@ -150,7 +162,31 @@ function updateScale(chart) {
 }
 ```
 
-
+```javascript
+$('#file').change(function() {
+    var file = $('#file').prop('files')[0];
+    Papa.parse(file, {
+        complete: function(results) {
+            console.log("Finished:", results.data);
+            chart.data.labels = results.data[0].slice(1);
+            for (var row of results.data.slice(1)) {
+                // chart.data.datasets.label = row[0];
+                // chart.data.datasets.data = row.slice(1);
+                // datasets[{},{}] 列表需要push
+                chart.data.datasets.push({
+                    label: row[0],
+                    backgroundColor: grad,
+                    borderColor: 'skyblue',
+                    data: row.slice(1)
+                })
+            }
+            chart.update();
+        }
+    });
+})
+```
+- 更新一个键值对，直接赋值
+- 更新一个数组需要树勇push()方法
 
 
 
