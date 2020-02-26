@@ -98,10 +98,57 @@ data: {
 
 # 2. 文件上传
 
+```html
+ <div class="btn mt-6 p-2 text-gray-200 ...">Load CSV</div>
+<input id="file" class="hidden" type="file">
+```
+```javascript
+$('.btn').click(function() {
+    $('#file').click();
+})
+```
+- 将文件上传的原生input隐藏
+- 单击按钮时，调用原生input的点击事件
+- 文件选中单击确定之后，文件会保存在input元素的prpo('files')中
+```javascript
+var files = $('#file').prop('files');
+var file = $('#file').prop('files')[0];
+
+console.log(files);
+```
+```javascript
+FileList {0: File, length: 1}
+    length: 1
+    0: File
+        name: "1.jpg"
+        lastModified: 1580650170208
+        lastModifiedDate: Sun Feb 02 2020 21:29:30 GMT+0800 (中国标准时间) {}
+        webkitRelativePath: ""
+        size: 13412
+        type: "image/jpeg"
+        __proto__: File
+    __proto__: FileList
+```
+
+# 3. 表单事件绑定
+js - onchange， jq - change
+
+**语法小课堂**
+- https://github.com/davidkorea/javascript_study/blob/master/07_Array.md#slice
+- 数组slice(start,end)，不指定end时，表示从start索引开始一直到数组最后
+    - 返回由取出的元素组成的新数组
+    - 不影响原数组
 
 
-
-
+# 4. 更新 chart.update()
+```javascript
+function updateScale(chart) {
+    chart.options.scales.yAxes[0] = {
+        type: 'logarithmic'
+    };
+    chart.update();
+}
+```
 
 
 
