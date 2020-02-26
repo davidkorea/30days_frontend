@@ -1,0 +1,127 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="./tailwind.min.css">
+    <style>
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            var ctx = document.getElementById('chart').getContext('2d');
+            Chart.defaults.global.defaultFontColor = 'aliceblue';
+
+            var grad = ctx.createLinearGradient(600, 0, 100, 0);
+            grad.addColorStop(0, 'rgba(184,42,162,0.3)');
+            grad.addColorStop(0.7, 'rgba(105,117,255,0.5)');
+            grad.addColorStop(1, 'rgba(105,117,255,0.5)');
+
+            var chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    // labels: ['x1', 'x2', 'x3', 'x4', 'x5'],
+                    // datasets: [{
+                    //     label: '2019',
+                    //     backgroundColor: grad,
+                    //     borderColor: 'skyblue',
+                    //     data: [22, 35, 28, 32, 34]
+                    // }, {
+                    //     label: '2020 ',
+                    //     backgroundColor: grad,
+                    //     borderColor: 'skyblue',
+                    //     data: [26, 25, 38, 26, 41]
+                    // }]
+                },
+                options: {}
+            })
+            $('.btn').click(function() {
+                $('#file').click();
+            })
+
+
+            function updateChart() {
+                var parseCSV = Papa.parse(sessionStorage.csvFile);
+                console.log('parseCSV.data: ');
+
+                chart.data.labels = parseCSV.data[0].slice(1);
+                for (var row of parseCSV.data.slice(1)) {
+                    // chart.data.datasets.label = row[0];
+                    // chart.data.datasets.data = row.slice(1);
+                    // datasets[{},{}] 列表需要push
+                    chart.data.datasets.push({
+                        label: row[0],
+                        backgroundColor: grad,
+                        borderColor: 'skyblue',
+                        data: row.slice(1)
+                    })
+                }
+                chart.update();
+            }
+
+            function removeChart() {
+                chart.data.labels = [];
+                chart.data.datasets = [];
+                chart.update();
+            }
+
+            console.log('sessionStorage: ', sessionStorage.csvFile)
+            if (sessionStorage.csvFile) {
+                updateChart();
+            }
+
+            $('#file').change(function() {
+                // chart.reset();   根本不管用
+                removeChart();
+                var uploadFile = $('#file').prop('files')[0];
+                var reader = new FileReader();
+                reader.readAsText(uploadFile);
+                reader.onload = function() {
+                    // console.log(this.result);
+                    // 直接打印reader.result 打印不出来，需要在onload事件下面打印                    
+                    sessionStorage.setItem('csvFile', this.result);
+
+                    console.log('change: ', sessionStorage.csvFile);
+                    updateChart();
+                };
+                // 相同文件名，再次上传无法触发onchange事件
+                console.log('onchange: ', $('#file')[0].value);
+                $('#file')[0].value = null;
+                console.log('onchange - same file: ', $('#file')[0].value);
+            })
+
+            // Papa.parse(uploadFile, {
+            //     complete: function(results) {
+            //         // console.log("Finished:", results.data);
+            //         console.log(results.data[0].slice(1));
+            //         chart.data.labels = results.data[0].slice(1);
+            //         for (var row of results.data.slice(1)) {
+            //             // chart.data.datasets.label = row[0];
+            //             // chart.data.datasets.data = row.slice(1);
+            //             // datasets[{},{}] 列表需要push
+            //             chart.data.datasets.push({
+            //                 label: row[0],
+            //                 backgroundColor: grad,
+            //                 borderColor: 'skyblue',
+            //                 data: row.slice(1)
+            //             })
+            //         }
+            //         chart.update();
+            //     }
+            // });
+        })
+    </script>
+</head>
+
+<body>
+    <div class="frame flex flex-col justify-center items-center bg-gray-800 w-screen h-screen">
+        <div class="chart bg-gray-700">
+            <canvas id="chart" width="600" height="400"></canvas>
+        </div>
+        <div class="btn mt-6 p-2 text-gray-200 bg-blue-600 hover:text-gray-100 hover:bg-blue-800 select-none rounded shadow-2xl">Load CSV</div>
+        <input id="file" class="hidden" type="file">
+    </div>
+</body>
+
+</html>
