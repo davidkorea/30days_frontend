@@ -23,7 +23,7 @@
     </div>
 </body>
 ```
-<img width="700" src="https://user-images.githubusercontent.com/26485327/75256393-5ebe1480-581e-11ea-8aae-b56f1559cbf5.png">
+<img width="500" src="https://user-images.githubusercontent.com/26485327/75256393-5ebe1480-581e-11ea-8aae-b56f1559cbf5.png">
 
 - 最小实现
   - `canvas`
@@ -59,7 +59,7 @@ var chart = new Chart(ctx, {
     options: {}
 })
 ```
-<img width="700" src="https://user-images.githubusercontent.com/26485327/75257502-0a1b9900-5820-11ea-9b49-f3c7715d50f5.png">
+<img width="500" src="https://user-images.githubusercontent.com/26485327/75257502-0a1b9900-5820-11ea-9b49-f3c7715d50f5.png">
 
 - 更改颜色
 ```javascript
@@ -96,6 +96,7 @@ data: {
 ```
 
 
+# 2. 文件上传
 
 
 
