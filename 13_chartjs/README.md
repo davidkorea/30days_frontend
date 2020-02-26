@@ -19,8 +19,21 @@ $('#file').change(function() {
 - 将input控件的value清空
 
 # [解决]生成新chart之前，清除已有chart
+```javascript
+function removeChart() {
+    chart.data.labels = [];
+    chart.data.datasets = [];
+    chart.update();
+}
+```
+- 尝试了官网给出的 .reset, .clear, .destroy 都不能满足要求
+- 只有将现有chart的坐标和数据设置为空列表[ ]，update后，实现清除已有数据
+- 然后在加载新数据，再update
 
 
+-----
+
+-----
 
 # canvas
 
