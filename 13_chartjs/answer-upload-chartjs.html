@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.1.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.js"></script>
+</head>
+
+<body>
+    <div class="flex flex-col items-center justify-center h-screen bg-gray-800">
+        <div class="bg-gray-700 rounded-lg chart">
+            <canvas width="600" height="400" id="chart"></canvas>
+        </div>
+        <div class="w-32 p-2 mt-12 font-bold text-center text-white bg-purple-600 rounded select-none load">LOAD CSV
+        </div>
+        <input class="hidden actual-load" type="file">
+    </div>
+
+    <script>
+        var ctx = document.getElementById('chart').getContext('2d')
+        Chart.defaults.global.defaultFontColor = 'aliceblue'
+
+        var gradientFill = ctx.createLinearGradient(600, 0, 100, 0);
+        gradientFill.addColorStop(0, "rgba(69, 18, 204, 0.3)");
+        gradientFill.addColorStop(1, "rgba(177, 0, 255, 0.5)");
+
+        var chart = new Chart(ctx, {type: 'line', })
+        $('.load').click(function () {
+            $('.actual-load').click()
+        })
+        $('.actual-load').change(function () {
+            var csv = $(this).prop('files')[0]
+            Papa.parse(csv, {
+                complete: function (results) {
+                    console.log(results.data)
+                    chart.data.labels = results.data[0].slice(1)
+                    for (var row of results.data.slice(1)) {
+                        console.log(row)
+                        chart.data.datasets.push({
+                            label: row[0],
+                            backgroundColor: gradientFill,
+                            borderColor: 'rgba(177, 0, 255)',
+                            data:row.slice(1)
+                        })
+                    }
+                    chart.update()
+                }
+            });
+        })
+    </script>
+</body>
+
+</html>
