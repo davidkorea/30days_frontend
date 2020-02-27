@@ -1,4 +1,13 @@
 
+# [解决]上传文件后刷新页面，需要再次上传文件，sessionStoraage解决
+- sessionStorge 关闭页面之前有效，关闭页面则自动清除
+- localStorge 持续存储，直到手动删除
+
+将已上传的文件再input file控件中取出存入sessionStorage
+- sessionStorage。setitem('key', file)
+- sessionStorage。getitem('key', file)
+
+
 # [解决]input上传文件选择同一文件change事件不生效
 ```html
 <input id="file" class="hidden" type="file">
