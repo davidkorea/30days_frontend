@@ -112,7 +112,7 @@ li > li:not(nth-of-type(3)){
 
 1. 访问过的链接
   ```css
-  a.visited{
+  a:visited{
     color: orange;
   }
   ```
@@ -120,12 +120,19 @@ li > li:not(nth-of-type(3)){
 
 2. 没有访问过的链接
   ```css
-  a.link{
+  a:link{
     color: red;
   }
   ```
   - link表示没访问过的链接，或者叫正常的链接
   - 可以更改字体大小等其他属性
+
+3. 取消超链接下划线
+```css
+a {
+  text-decoration: none;
+}
+```
 
 ### 5. 鼠标
 1. 移入效果 :hover
