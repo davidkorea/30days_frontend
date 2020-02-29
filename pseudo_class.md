@@ -133,6 +133,14 @@ a {
   text-decoration: none;
 }
 ```
+4. 无序列表<li>不显示点
+```
+li {
+   list-style: none;
+}
+```
+
+
 
 ### 5. 鼠标
 1. 移入效果 :hover
