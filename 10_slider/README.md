@@ -1,6 +1,6 @@
 
 
-
+- [**获取元素css某一属性的当前值 #1**](https://github.com/davidkorea/30days_frontend/issues/1#issue-573448607)
 - https://cssgradient.io
 - https://feathericons.com
   ```html
