@@ -158,8 +158,8 @@
             $('#page1').addClass('dotclick');
 
             $('.dot').click(function() {
-                $('.dot').removeClass('dotclick');
-                $(this).addClass('dotclick');
+                $('.dot').removeClass('dotclick'); // 所有dot上的被点击样式全部取消掉
+                $(this).addClass('dotclick');      // 给当前被点击的dot添加被点击样式
                 var imageId = $(this).attr('id');
                 console.log(imageId);
                 var offset = imageId.slice(4, 6);
