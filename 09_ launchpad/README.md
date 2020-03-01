@@ -1,3 +1,27 @@
+一个元素由多个class，通过其中一个class获取了该元素，并绑定了事件，那么通过该元素上的其他class过去该元素后，可以执行之前绑定的同样的事件
+```html
+<div class="btn click">click</div>
+<div class="testbtn">testbtn</div>
+```
+```javascript
+$('.btn').click(function() {          // 通过元素的第一个class获取元素并绑定事件
+    $('.box1').css('margin-left', function(i, v) {
+        console.log(i);
+        console.log(v);
+    })
+})
+
+$('.testbtn').click(function() {      // 通过元素的第二个class获取该元素  
+    $('.click').click()               // 可以直接调用 通过btn绑定的事件
+})
+```
+- 因为第一个div既有btn又有click，一共2各class
+    - 当通过btn这个class获取该元素，并绑定click事件后
+    - 在通过click这个class获取这个元素，可以直接调用这个元素的click事件
+- 无论通过这个元素的哪个class获取该元素，绑定的事件都是给这个元素的
+    - 因此，之后也是不论通过什么class获取到该元素，其已经被绑定的方法可以直接使用
+
+
 # 1. DJ LaunchPad
 
 ## 1.1 最小实现
