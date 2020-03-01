@@ -11,7 +11,7 @@
 
 - body设置min-width，防止无限被压缩没出现布局错乱
 - `position: absolute; display: none;`  -> `display: block` 隐藏显示菜单，当点击时显示的非js方法
-
+- `text-overflow: ellipsis;`，文字根据div宽度，自动截取，并在末尾显示... [Github Trending 小卡片](https://github.com/davidkorea/30days_frontend/tree/master/06_hackerNews)
 
 
 
