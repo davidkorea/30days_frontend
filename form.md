@@ -49,9 +49,12 @@ $(function() {
     })
 })
 ```
-1. 获取到input元素，使用val()方法
-2. 获取到form元素，使用`$('#form').serializeArray()`，一次性获取表单内所有input的数据
 
+1. 获取到input元素，使用val()方法
+<img width="544" src="https://user-images.githubusercontent.com/26485327/75663191-614fbc80-5cab-11ea-9975-ce987c60479e.png">
+
+2. 获取到form元素，使用`$('#form').serializeArray()`，一次性获取表单内所有input的数据
+<img width="644" src="https://user-images.githubusercontent.com/26485327/75663245-77f61380-5cab-11ea-8760-f527bbd29432.png">
 
 
 # Form Basic
