@@ -1,7 +1,62 @@
 # 表单
 
+# Jquery get Form Values
+```html
+<div>
+    <form id="form" action="" autocomplete="off" method="POST">
+        <table>
+            <tbody>
+                <tr>
+                    <td>Name: </td>
+                    <td>
+                        <input type="text" name="name" id="name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>Author: </td>
+                    <td>
+                        <input type="text" name="author" id="author">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" value="submit" id="submit">
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
 
+<script>
+    $(function() {
+        $('#submit').click(function() {
+            // var formData = $('#form').serializeArray()
+            // console.log(formData);
+            var name = $('#name').val()
+            var author = $('#author').val()
+            console.log(name, author);
+        })
+    })
+</script>
+```
+```javascript
+$(function() {
+    $('#submit').click(function() {
+        var formData = $('#form').serializeArray()
+        console.log(formData);
+    })
+})
+```
+1. 获取到input元素，使用val()方法
+2. 获取到form元素，使用`$('#form').serializeArray()`，一次性获取表单内所有input的数据
+
+
+
+# Form Basic
 > **！！！每个input元素必须指定name值！！！**
+
 
 ## 1. action
 ```html
