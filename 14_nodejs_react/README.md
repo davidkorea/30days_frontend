@@ -6,7 +6,7 @@
 
 
 
-# 创建一个react组件
+### 1. 创建一个react组件
 
 - `Phone.js`
   - import React first
@@ -44,3 +44,34 @@ import Phone from './phone'
 
 <Phone />
 ```
+
+
+### 2. 组件中引入图片
+- 之前是将image的scr写死
+```html
+<div className="phone p-3 bg-gray-100 text-white shadow-xl">
+    <img src="./header.png" alt=""/>
+</div>
+```
+- react中引用图片，就想引入css一样，需要import
+  - `import $Name from './$filePath'`
+```javascript
+import React from "react"
+import './Phone.css'
+import header from './header.png'   // 引入图片
+
+function Phone(){
+    return (
+        <div className="phone p-3 bg-gray-100 text-white shadow-xl">
+            <img src={header} />    // src后面不加双引号，直接花括号引入变量
+        </div>
+    )
+}
+```
+
+
+
+
+
+
+
