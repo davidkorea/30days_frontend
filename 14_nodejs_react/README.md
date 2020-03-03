@@ -68,7 +68,9 @@ function Phone(){
     )
 }
 ```
+如此引入的图片，在实际编译后的代码中，图片名显示为一串乱码。包括引入的css文件名也是一串乱码
 
+<img width="900" src="https://user-images.githubusercontent.com/26485327/75751625-e2698b00-5d61-11ea-8e07-0476d7bde627.png">
 
 
 
