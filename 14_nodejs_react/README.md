@@ -3,13 +3,15 @@
   - App.js
     - Phone.js
     - Phone.css
+      - Card.js
+
+<img width="500" src="https://user-images.githubusercontent.com/26485327/75755152-0bd9e500-5d69-11ea-82f4-a9ddc76b46ee.png">
 
 
-
-### 0。start a react project
+### 0. start a react project
 - use template which has a `package.json`
 - `npm install` will install all packages that `package.json` mentioned
-
+- `npm start` **运行项目**
 
 
 
