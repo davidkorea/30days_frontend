@@ -1,4 +1,12 @@
 
+
+
+react中不是很好操作<img>标签，图片的大小很难设置
+- 还是使用div的背景图片来设置，但是需要单图使用一个css文件来控制
+- 和组件js文件卸载一起还是困难，我不会？`<img style={{backgroundImage:url(???}}>`
+
+-----
+
 - index.js
   - App.js
     - Phone.js
