@@ -1,6 +1,13 @@
 
 # 创建一个react组件
-```javascritp
+
+- Phone.js
+  - import React first
+  - export this function out for other file to use
+
+```javascript
+// Phone.js
+
 import React from 'react'
 
 function Phone(){
@@ -11,5 +18,13 @@ function Phone(){
 
 export default Phone
 ```
-- import React first
-- export this function out for other file to use
+
+- 在App.js中引用上述模块
+
+```javascript
+// App.js
+
+import Phone from './phone'
+
+<Phone />
+```
