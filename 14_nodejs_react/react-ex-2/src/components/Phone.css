@@ -1,0 +1,6 @@
+.phoneImg {
+    height: 600px;
+    width: 320px;
+    background-image: url('./phone.png');
+    background-size: 100% 100%;
+}

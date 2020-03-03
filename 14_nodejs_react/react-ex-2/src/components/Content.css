@@ -1,0 +1,5 @@
+.pic {
+    height: 120px;
+    background-image: url('./1.jpg');
+    background-size: 100% 100%;
+}
