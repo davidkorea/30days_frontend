@@ -6,6 +6,13 @@
 
 
 
+### 0。start a react project
+- use template which has a `package.json`
+- `npm install` will install all packages that `package.json` mentioned
+
+
+
+
 ### 1. 创建一个react组件
 
 - `Phone.js`
@@ -45,8 +52,39 @@ import Phone from './phone'
 <Phone />
 ```
 
+### 2. 样式引入
+- 除了上面import外部的css文件之外
+- 还可以在组件的js文件中直接写样式，但是由于react中不支持解析css样式结尾的分号;，因此需要创建一个对象，再把对象对胃变量放到标签的style中
+  - 对象中的key不能加双引号
+```javascript
 
-### 2. 组件中引入图片
+function Phone(){
+  const newStyle = {
+    marginTop: -40,
+    marginLeft: -20
+  }
+  
+  <div style={newStyle} className="card">
+    card
+  </div>
+}
+
+export default Phone
+```
+但是，当然也可以不单独创建一个样式的对象，而是直接把样式对象放到style变量的花括号里面，注意，并不是双花括号{{}}有其他特殊含义
+```javascript
+function Phone(){
+  <div style={{marginTop:-40, marginLeft:-20}} className="card">
+    card
+  </div>
+}
+```
+ 
+
+
+
+
+### 3. 组件中引入图片
 - 之前是将image的scr写死
 ```html
 <div className="phone p-3 bg-gray-100 text-white shadow-xl">
