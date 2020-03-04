@@ -12,6 +12,7 @@ react中不是很好操作<img>标签，图片的大小很难设置
 - 和组件js文件卸载一起还是困难，我不会？`<img style={{backgroundImage:url(???}}>`
 
 -----
+# React App
 
 - index.js
   - App.js
