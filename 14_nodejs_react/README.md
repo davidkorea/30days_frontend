@@ -1,5 +1,11 @@
 
-
+- fackbook cdn works well, but doesn't work when use a local js lib file
+```html
+<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+```
+---
 
 react中不是很好操作<img>标签，图片的大小很难设置
 - 还是使用div的背景图片来设置，但是需要单图使用一个css文件来控制
