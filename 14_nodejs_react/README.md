@@ -1,5 +1,5 @@
 
-- fackbook cdn works well, but doesn't work when use a local js lib file
+- fackbook cdn works well, but doesn't work when use a local js lib file which you `npm install` the node modules
 ```html
 <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
