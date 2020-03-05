@@ -1,0 +1,11 @@
+.phone {
+    height: 600px;
+    width: 320px;
+    background-image: url('./iphone-frame.png');
+    background-size: 100% 100%;
+}
+
+.inner {
+    height: 550px;
+    width: 280px;
+}
