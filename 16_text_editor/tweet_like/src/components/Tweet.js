@@ -5,27 +5,17 @@ class Tweet extends Component{
     constructor(props){
         super(props)
         this.state = {
-            like:Math.floor(Math.random()*100),
-            liked:true
+            num:Math.floor(Math.random()*100),
+            like:false
         }
     }
 
     handleLike(){
         this.setState({
-            liked: !this.state.liked
+            like: !this.state.like
         })
-        if(this.state.liked){
-            this.setState({
-                like: this.state.like + 1,
-                color:'tomato'
-            })
-        }else{
-           this.setState({
-                like:this.state.like - 1,
-                color:'black'
-           })
-        }
     }
+    
     render(){
         return (
             <div className="box flex justify-start border-b-2 mb-2">
@@ -37,10 +27,10 @@ class Tweet extends Component{
                         <div className="comment w-12 mr-1"># 18</div>
                         <div className="retweet w-12 mr-1">Ⓒ 9</div>
                         <div onClick={()=>{this.handleLike()}} 
-                        style={{color:this.state.color}}
+                        style={this.state.like? {color:'red'} : {color:'black'}}
                         className="like flex w-12 mr-1">
                             ♡ 
-                            <div style={{color:'black'}} className="ml-1">{this.state.like}</div>
+                            <div className="ml-1">{this.state.like? this.state.num+1 : this.state.num}</div>
                         </div>
                         <div className="share w-12 mr-1">↻ 33</div>
                     </div>
