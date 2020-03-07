@@ -1,0 +1,18 @@
+.avatar {
+    width: 40px;
+    height: 40px;
+    background-image: url('/avatar.17e0b7e5.png');
+    background-size: cover;
+}
+.phone {
+    width: 320px;
+    height: 600px;
+    background-image: url('/iphone-frame.06145cd6.png');
+    background-size: 100% 100%;
+}
+
+.inner {
+    height: 550px;
+}
+
+/*# sourceMappingURL=/src.e31bb0bc.css.map */
