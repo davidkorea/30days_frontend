@@ -1,6 +1,7 @@
 # 30days_frontend
 
 ## Tools
+- Random Face Phone https://i.pravatar.cc/100 ，https://i.pravatar.cc/[$Size]?u=123 
 - JavaScript Event KeyCodes http://keycode.info
 - Sets - Unicode® Character Table https://unicode-table.com/en/sets/
 - VScode css auto-complete https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css
