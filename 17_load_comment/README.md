@@ -150,8 +150,13 @@ class App extends Component{
 ## 2.3 评论加载完成
 评论全部加载完成后，显示加载完成，不再显示Load more
 
-```javascript
+<img width="348"  src="https://user-images.githubusercontent.com/26485327/76192502-ed6a6280-621c-11ea-8c18-142bfd317476.png">
 
+
+```javascript
+// App.js
+
+...
 
 render(){
     return (
@@ -161,7 +166,8 @@ render(){
                    <Comment name={v.name} comment={v.comment} key={i} />
               ) ) }
 
-              <div onClick={ ()=>this.handleClick() }>Load more</div>
+           // <div onClick={ ()=>this.handleClick() }>Load more</div>
+              { this.state.idx > this.state.dataList.length ? 'No more comments' : 'Load more'}
           </Page>
         </div>
     )
