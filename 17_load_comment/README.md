@@ -6,6 +6,7 @@
 
 ```html
 // App.js
+
 <div>
   <Page>
     <Comment name={} comment={} key={} />
@@ -41,6 +42,37 @@
 
 - 点击 load more后，多显示3条评论内容
 - 也就是每次点击load more，自动多加载3个<Comment />组件
+
+### 2.1 循环列表
+- react 中不建议使用for循环，将列表中数据取出
+- 强烈建议使用map()函数，将列表中的数据取出
+
+```javascript
+// App.js
+
+<div>
+  <Page>
+      { dataList.map( (v, i)=>(
+           <Comment name={v.name} comment={v.comment} key={i} />
+      ) ) }
+  </Page>
+</div>
+
+```
+```
+dataList.map(function(v, i){
+    return <Comment name={v.name} comment={v.comment} key={i} />  // 上面箭头函数的等价ES5形式
+})
+```
+
+### 2.2 点击按钮，加载评论
+
+
+
+
+
+
+
 
 
 
