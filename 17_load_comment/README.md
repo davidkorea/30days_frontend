@@ -147,8 +147,26 @@ class App extends Component{
   
 
 
+## 2.3 评论加载完成
+评论全部加载完成后，显示加载完成，不再显示Load more
+
+```javascript
 
 
+render(){
+    return (
+        <div>
+          <Page>
+              { dataList.map( (v, i)=>(
+                   <Comment name={v.name} comment={v.comment} key={i} />
+              ) ) }
+
+              <div onClick={ ()=>this.handleClick() }>Load more</div>
+          </Page>
+        </div>
+    )
+}
+```
 
 
 
