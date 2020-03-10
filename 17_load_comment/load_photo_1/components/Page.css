@@ -1,0 +1,18 @@
+.phone {
+    width: 320px;
+    height: 600px;
+}
+
+.header,
+.profile,
+.photolist {
+    width: 300px;
+}
+
+.figures {
+    width: 160px;
+}
+
+.photolist {
+    height: 320px;
+}
