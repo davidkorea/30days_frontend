@@ -2,12 +2,14 @@
   - [tailwindcss: Align Content](https://tailwindcss.com/docs/align-content/#app)
   - 🌻puzzle
   
+- react中使用`map()`循环列表时，只在元素标签上传递参数时添加`key`属性，而元素本身无需接收这个参数`this.props.key`
+
+
+# 2. Instagram load photos
 
 
 
-
-
-# load comment
+# 1. Weibo load comments
 
 ### 1. 静态结构 
 <img width="200" src="https://user-images.githubusercontent.com/26485327/76190184-5ea71700-6217-11ea-8d5b-93bfe4bc86d6.png">
