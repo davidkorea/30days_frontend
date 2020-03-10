@@ -103,6 +103,9 @@ dataList.map(function(v, i){
   - 不可以在类里面定义变量，如 `var idx = 1`，会报错
   - 因此**只能在类的这些函数内部定义变量**，因此dataList只能定义在`constructor()`里面
 
+- map()函数的key，只是在传递参数的时候写上，实际在**子组件中并不接收`this.props.key`这个参数**
+
+
 
 ### 2.2 点击按钮，加载评论
 - 分片用的idx
@@ -138,7 +141,7 @@ class App extends Component{
         return (
             <div>
               <Page>
-                  { dataList.map( (v, i)=>(
+                  { this.state.dataListSlice.map( (v, i)=>(
                        <Comment name={v.name} comment={v.comment} key={i} />
                   ) ) }
                   
@@ -152,6 +155,7 @@ class App extends Component{
 - 动态加载评论，就是不能一次性全部显示所有评论，而是每次显示一部分
 - 需要对全部的数据数组进行分片`slice(startIdx, length)`（从几号开始取，取几个），每次只取出几条，用来显示
   - 因此需要一个idx用来每次指定取出几条数据，还有一个分片之后的新的子数组，用来展示评论
+- 用于展示的列表是切片后的`this.state.dataListSlice`，而不是`this.state.dataList`
   
 
 
@@ -170,7 +174,7 @@ render(){
     return (
         <div>
           <Page>
-              { dataList.map( (v, i)=>(
+              { this.state.dataListSlice.map( (v, i)=>(
                    <Comment name={v.name} comment={v.comment} key={i} />
               ) ) }
 
