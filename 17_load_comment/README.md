@@ -66,6 +66,48 @@
   - map函数传递两个参数，第一个时列表中的每个元素，第二个是每个元素对应的索引号
 - 循环列表时，每个子组件必须传递`key`参数，用于唯一标识一个元素，一般是从数据库中拿到的uuid等信息，不推荐直接使用循环列表的索引0，1，2...
 
+
+> - **Function Hook**
+> ```javascript
+  import React, {useState} from 'react'
+import Page from './Page'
+import Comment from './Comment'
+
+function App(){
+    const dataList = [
+        {name:'david', comment:'very good'},
+        {name:'joyce', comment:'wow awesome!!!'}, 
+        {name:'Mathew', comment:'can you send iot to me ?'},
+        {name:'Honol', comment:'interesting'}, 
+        {name:'Hawai', comment:'how to get the code'},
+        {name:'John', comment:'lol'}]
+
+    const [loadComment, setloadComment] = useState([]);
+    const [idx, setidx] = useState(3);
+    const handleClick = ()=>{
+        setloadComment(dataList.slice(0,idx))
+        setidx(idx+3)
+    }
+
+    return (
+        <div className='flex items-center justify-center h-screen bg-gray-100'>
+            <Page length={dataList.length}>
+                { loadComment.map((v,i)=>{
+                    return <Comment key={i} name={v.name} comment={v.comment}></Comment>
+                })}
+                <div 
+                onClick={()=>handleClick()}
+                className="loadmore select-none text-center font-light text-sm text-gray-600 mt-2 border-t-2">
+                { idx>dataList.length ? 'No more comments' : 'Load More'}
+                </div>
+            </Page>
+        </div>
+    )
+}
+
+export default App
+  ```
+ 
 ```javascript
 // App.js
 
