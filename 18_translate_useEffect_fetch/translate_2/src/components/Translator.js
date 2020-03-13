@@ -11,6 +11,7 @@ function Translator(){
             const input = e.target.value // 获取输入之后，需要将获取到的输入内容放到state中用于render
             // console.log(input);   
             setinput(input)  
+            setresult('translating...')
         }
     }
 
