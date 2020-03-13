@@ -8,6 +8,22 @@
       document.title = `You clicked ${count} times`;
     }, [count]); // 仅在 count 更改时更新
     ```
+    ```
+    useEffect(()=>{
+        fetch(url).then(res=>res.json()).then(data=>{
+            setimage(data.image)
+            setname(data.name)
+            setloading(false)
+        })
+    },[url])  // 仅在 url 更改时更新
+    ```
+    ```
+    useEffect(() => {
+        fetch(url+chapterId).then(res=>res.json()).then(data=>{
+           setcharacters(data.characters)
+        })
+    },[chapterId])  // 仅在 chapterId 更改时更新
+    ```
 
 - 函数组件中的useEffect，相当于类组件中的生命周期函数（didMount，didUpdate）的合成
   - 也就是说，虽然函数组件中没有声明周期函数，但是可以使用`useEffect`一并代替第一次加载组件和每次更新组件时的操作
