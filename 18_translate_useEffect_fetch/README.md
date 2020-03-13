@@ -5,3 +5,5 @@
   - 也就是说，虽然函数组件中没有声明周期函数，但是可以使用`useEffect`一并代替第一次加载组件和每次更新组件时的操作
 
 - `<textarea readOnly ></textarea> `只读输入框
+
+![Mar-13-2020 09-58-58](https://user-images.githubusercontent.com/26485327/76582485-539f0000-6511-11ea-8aa8-e1ef70148eda.gif)
