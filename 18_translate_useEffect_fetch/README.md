@@ -6,4 +6,14 @@
 
 - `<textarea readOnly ></textarea> `只读输入框
 
+- 自定义元素没有`onClick`事件，html原生标签才有
+
+
+
+
+
+
+
+-----
+
 ![Mar-13-2020 09-58-58](https://user-images.githubusercontent.com/26485327/76582485-539f0000-6511-11ea-8aa8-e1ef70148eda.gif)
