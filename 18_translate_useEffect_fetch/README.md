@@ -8,7 +8,7 @@
       document.title = `You clicked ${count} times`;
     }, [count]); // 仅在 count 更改时更新
     ```
-    ```
+    ```javascript
     useEffect(()=>{
         fetch(url).then(res=>res.json()).then(data=>{
             setimage(data.image)
@@ -17,7 +17,7 @@
         })
     },[url])  // 仅在 url 更改时更新
     ```
-    ```
+    ```javascript
     useEffect(() => {
         fetch(url+chapterId).then(res=>res.json()).then(data=>{
            setcharacters(data.characters)
