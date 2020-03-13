@@ -109,7 +109,7 @@
 > ⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲⩲
  
 ```javascript
-// App.js
+// App.js, class props state
 
 class App extends Component{
     constructor(props){
