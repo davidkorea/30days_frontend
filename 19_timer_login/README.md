@@ -1,5 +1,8 @@
 # Mac Login
 
+![Mar-21-2020 21-52-46](https://user-images.githubusercontent.com/26485327/77227884-5c9d6a80-6bbe-11ea-89e9-ca46e6668d1c.gif)
+
+
 <img width="1234" src="https://user-images.githubusercontent.com/26485327/77227921-a8501400-6bbe-11ea-8034-b98a0d491984.png">
 
 # Timer
