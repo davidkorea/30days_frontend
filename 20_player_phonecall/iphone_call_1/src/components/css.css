@@ -1,0 +1,47 @@
+.phone {
+    height: 600px;
+    width: 320px;
+    min-width: 320px;
+    background-image: url('./iphone-frame.png');
+    background-size: 100% 100%;
+}
+
+.pad {
+    height: 560px;
+    width: 270px;
+}
+
+.show {
+    height: 100px;
+}
+
+.keys {
+    height: 480px;
+}
+
+.key {
+    height: 55px;
+    width: 55px;
+}
+
+.nums>.key:active {
+    /* border: 2px solid black; */
+    box-shadow: 0 0 2px black;
+    background-color: #d5dee4;
+}
+
+.footer {
+    border-top: 1px solid lightgray;
+}
+
+.item>.name {
+    transform: scale(0.7);
+}
+
+.del:active {
+    transform: scale(1.1);
+}
+
+input {
+    width: 200px;
+}
