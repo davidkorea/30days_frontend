@@ -12,7 +12,7 @@
 
 
 ### 1. 使用react-feather图标
-1. 项目`package.json`
+1. 安装方法1：空项目`package.json`
 ```javascript
   "dependencies": {
     "react": "^16.10.2",
@@ -21,7 +21,10 @@
     "tailwind": "^4.0.0"
   }
 ```
-2. 直接安装
+```
+cnpm install
+```
+2. 安装方法1：已有项目直接安装
 ```
 cnpm install --save react-feather
 ```
@@ -30,8 +33,6 @@ cnpm install --save react-feather
 import *  as Icon  from 'react-feather'
 
 <div>
-<Icon.PauseCircle 
-                                onClick={pause}
-                                size={40} className="cursor-pointer" />
+  <Icon.PauseCircle  onClick={pause} size={40} className="cursor-pointer" />
 </div>
 ```
