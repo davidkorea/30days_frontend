@@ -1,0 +1,28 @@
+.frame {
+    width: 300px;
+    height: 500px;
+    overflow: hidden;
+    box-shadow: 0 0 5px thistle;
+}
+
+.img {
+    height: 400px;
+    background-image: url('https://i.picsum.photos/id/321/500/500.jpg');
+    background-size: 100% 100%;
+}
+
+.song {
+    height: 100px;
+}
+
+.player {
+    height: 200px;
+}
+
+.bar {
+    width: 260px;
+}
+
+.btn {
+    width: 200px;
+}
