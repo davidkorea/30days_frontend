@@ -2,4 +2,4 @@
 
 # Todo List
 
-![Mar-23-2020 21-27-53](https://user-images.githubusercontent.com/26485327/77321499-407c0380-6d4d-11ea-8d49-32a6367961dd.gif)
+![Mar-23-2020 21-32-25](https://user-images.githubusercontent.com/26485327/77321910-d9ab1a00-6d4d-11ea-8a7b-ce7144bfaf1a.gif)
