@@ -6,3 +6,7 @@
 
 
 ![Mar-23-2020 21-40-33](https://user-images.githubusercontent.com/26485327/77322630-f72cb380-6d4e-11ea-93be-04ce374b7080.gif)
+
+# Typing
+
+<img width="700" src="https://user-images.githubusercontent.com/26485327/77384900-8f638080-6dc1-11ea-8de0-a47020debada.png">
