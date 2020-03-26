@@ -1,13 +1,11 @@
 # 30days_frontend
 
-
 ## Tools
 - Random Face photos https://i.pravatar.cc/100 ，`https://i.pravatar.cc/<$Size>?u=123` 
 - Random pictures https://picsum.photos ， https://i.picsum.photos/id/827/200/200.jpg , `https://i.picsum.photos/id/<$int>/200/200.jpg`
 - JavaScript Event KeyCodes http://keycode.info
 - Sets - Unicode® Character Table https://unicode-table.com/en/sets/
 - VScode css auto-complete https://marketplace.visualstudio.com/items?itemName=ecmel.vscode-html-css
-
 
 
 ## Tips
