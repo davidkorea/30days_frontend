@@ -1,0 +1,8 @@
+.frame {
+    width: 500px;
+}
+
+.del:hover,
+.check:hover {
+    transform: scale(1.1);
+}
