@@ -1,0 +1,26 @@
+.frame {
+    width: 500px;
+    /* height: 500px; */
+}
+
+.content {
+    width: 400px;
+}
+
+.item {
+    /* background-color: rgb(91, 84, 136); */
+}
+
+.check:active {
+    transform: scale(1.1);
+}
+
+.del:hover {
+    transition: .3s;
+    transform: scale(1.5);
+    color: turquoise;
+}
+
+textarea {
+    width: 480;
+}
