@@ -1,0 +1,23 @@
+.page {
+    width: 400px;
+    min-height: 100px;
+}
+
+.todolist,
+.finishlist,
+.deletelist {
+    width: 390px;
+    min-height: 100px;
+}
+
+.add {
+    width: 390px;
+}
+
+.item>.content {
+    width: 82%;
+}
+
+.delicon:hover {
+    transform: scale(1.2);
+}
