@@ -30,5 +30,10 @@
   }
   ```
 
+- 居中对齐
+  - 当前组件内部，先设置一个div作为外层frame，width：100%
+  - 再在这个frame设置flex justify-center item-center
+  - 这样元素内部的标签可以居中
 
------
+
+
