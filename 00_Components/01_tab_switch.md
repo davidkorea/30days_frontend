@@ -1,6 +1,10 @@
 
 # switch tab selected
 
+![Apr-05-2020 21-36-14](https://user-images.githubusercontent.com/26485327/78499823-82616c80-7785-11ea-9ab7-043740d519ca.gif)
+
+
+
 ```javascript
 import React, { Component, useState } from 'react'
 
@@ -29,7 +33,6 @@ function Tab(){
                  key={v.id}>{v.name}</div>
                 })
             }
-            
         </div>
 
     )
