@@ -171,9 +171,67 @@ export default Content
 根据Tab上绑定的路由的不同，在内容位置上显示不同的组件
 
 ## 3.1 父组件Page
+```javascript
+import React, { useState } from 'react'
+// import Tab from './Tab'
+import Content from './Content'
+import List from './List'
+import About from './About'
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
+function Page(){
+    const [tabList, setTabList] = useState([
+        {name:'index', id:1, path:'/'},
+        {name:'list', id:2, path:'/list/'},
+        {name:'about', id:3, path:'/about/'},
+    ]);
 
+    // const [contentList, setContentList] = useState([
+    //     {id:1,content:'index content'},
+    //     {id:2,content:'list content'},
+    //     {id:3,content:'about content'},
+    // ]);
 
+    const [selected, setSelected] = useState('');
+
+    const handleClick = (item)=>{
+        if(selected.id != item.id){
+            setSelected(item)
+        }
+    }
+
+    return (
+        <div className="page flex ">
+            <Router>
+                <div className="tabs">
+                {
+                    tabList.map((v,i)=>{
+                        return (
+                            <Link to={v.path} key={i}>
+                            <div onClick={()=>handleClick(v)}
+                            style={selected.id==v.id?{color:'white',backgroundColor:'lightgray'}:{}}
+                            className="item w-24 pt-2 pb-2 shadow text-center" 
+                            key={v.id}>{v.name}</div>
+                            </Link>
+                        )
+                    })
+                }
+                </div>
+                <Route path='/' exact component={Content}></Route>
+                <Route path='/list/' exact component={List}></Route>
+                <Route path='/about/' exact component={About}></Route>
+            </Router>
+
+            {/* <Tab tabList={tabList} selected={selected} handleClick={handleClick}></Tab>
+            <Content selectedId={selected.id} contentList={contentList}></Content> */}
+        </div>
+    )
+}
+
+export default Page
+```
+
+- 更改tabList，添加path字段
 - 每个tab小标签，绑定一个`<Link to={url}>`路径url
 - `<Route path={url} component={different child component}>`中设置每个url路径，对应的实际组件
 
@@ -182,12 +240,55 @@ export default Content
 
 
 ## 3.3 子组件Content，作为首页
+```jaavascript
+import React, { useState,useEffect } from 'react'
 
+function Content(props){
+    // const [id, setId] = useState(0);
+    // useEffect(() => {
+    //     props.selectedId&&setId(props.selectedId-1)
+    // });
+
+    return (
+        <div className="content p-2 w-32 h-48 border-2">
+            {/* <div className="id">{props.selectedId} - {id}</div> */}
+            {/* <div className="content">{props.contentList[id].content}</div> */}
+            index content
+        </div>
+    )
+}
+
+export default Content
+```
 
 ## 3.4 子组件List，作为list首页
+```javascript
+import React from 'react'
 
+function List(){
+    return (
+        <div className="list p-2 w-32 h-48 border-2">
+            list content
+        </div>
+    )
+}
+
+export default List
+```
 
 
 ## 3.5 子组件About，作为about首页
 
+```javascript
+import React from 'react'
 
+function About(){
+    return (
+        <div className="about p-2 w-32 h-48 border-2">
+            about content
+        </div>
+    )
+}
+
+export default About
+```
