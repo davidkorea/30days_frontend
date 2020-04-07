@@ -93,6 +93,9 @@ function Page(){
 
 export default Page
 ```
+- 在父组件中，新添加`const [contentList, setContentList] = useState([])`状态
+- 当Tab子组件中的某各tab被选中后，其会设置selected的状态，再将改选中的状态传递给另一个子组件Content
+- Content子组件，根据传递进来的选中id`SelectedId`，再从contentList状态中选出相对于该id的内容，并展示
 
 ## 2.2 子组件Tab
 
@@ -106,14 +109,13 @@ function Tab(props){
     //     {name:'list', id:2},
     //     {name:'about', id:3},
     // ]);
-
     // const [selected, setSelected] = useState('');
-
     // const handleClick = (item)=>{
     //     if(selected.id != item.id){
     //         setSelected(item)
     //     }
     // }
+    // 之前写在该组件内的状态和方法，上移至其父组件，以便多个子组件共享状态
     
     return (
         <div className="tabs">
