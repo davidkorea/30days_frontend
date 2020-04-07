@@ -240,7 +240,7 @@ export default Page
 
 
 ## 3.3 子组件Content，作为首页
-```jaavascript
+```javascript
 import React, { useState,useEffect } from 'react'
 
 function Content(props){
