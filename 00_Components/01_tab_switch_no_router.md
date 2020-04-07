@@ -41,6 +41,22 @@ function Tab(){
 export default Tab
 ```
 
+# switch tab with page changed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
