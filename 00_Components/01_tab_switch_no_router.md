@@ -55,7 +55,7 @@ export default Tab
 3. Content组件根据变更后的父组件的状态来判断组件如何显示
 
 
-## 2.1 父组件Page
+### 2.1 父组件Page
 
 ```javascript
 import React, { useState } from 'react'
@@ -97,7 +97,7 @@ export default Page
 - 当Tab子组件中的某各tab被选中后，其会设置selected的状态，再将改选中的状态传递给另一个子组件Content
 - Content子组件，根据传递进来的选中id`SelectedId`，再从contentList状态中选出相对于该id的内容，并展示
 
-## 2.2 子组件Tab
+### 2.2 子组件Tab
 
 ```javascript
 import React, { Component, useState } from 'react'
@@ -136,7 +136,7 @@ function Tab(props){
 export default Tab
 ```
 
-## 2.3 子组件Content
+### 2.3 子组件Content
 
 
 ```javascript
@@ -170,7 +170,10 @@ export default Content
 
 根据Tab上绑定的路由的不同，在内容位置上显示不同的组件
 
-## 3.1 父组件Page
+![Apr-07-2020 14-05-32](https://user-images.githubusercontent.com/26485327/78635579-227bda80-78d9-11ea-8116-0a5cc55caa61.gif)
+
+
+### 3.1 父组件Page
 ```javascript
 import React, { useState } from 'react'
 // import Tab from './Tab'
@@ -235,11 +238,11 @@ export default Page
 - 每个tab小标签，绑定一个`<Link to={url}>`路径url
 - `<Route path={url} component={different child component}>`中设置每个url路径，对应的实际组件
 
-## 3.2 ~~子组件Tab~~
+### 3.2 ~~子组件Tab~~
 1. 原Tab组件中的代码，全部迁移至父组件中，用于循环生成每个tab标签
 
 
-## 3.3 子组件Content，作为首页
+### 3.3 子组件Content，作为首页
 ```javascript
 import React, { useState,useEffect } from 'react'
 
@@ -261,7 +264,7 @@ function Content(props){
 export default Content
 ```
 
-## 3.4 子组件List，作为list首页
+### 3.4 子组件List，作为list首页
 ```javascript
 import React from 'react'
 
@@ -277,7 +280,7 @@ export default List
 ```
 
 
-## 3.5 子组件About，作为about首页
+### 3.5 子组件About，作为about首页
 
 ```javascript
 import React from 'react'
