@@ -2,8 +2,8 @@
 
 ## Component
 1. switch tab and change page
-  - with router
-  - with no router
+    - with router
+    - with no router
 
 
 ## Tools
