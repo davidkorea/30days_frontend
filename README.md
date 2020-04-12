@@ -1,7 +1,5 @@
 # 30days_frontend
 
-
-
 ## Component
 1. switch tab and change page
     - with router
