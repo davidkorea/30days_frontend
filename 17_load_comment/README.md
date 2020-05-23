@@ -13,7 +13,7 @@
 # 1. Weibo load comments
 #  Weibo load comments - version3
 
-![](https://user-images.githubusercontent.com/26485327/82730645-315d0600-9d3c-11ea-8027-7a2252207f79.png)
+<img width="300" src="https://user-images.githubusercontent.com/26485327/82730645-315d0600-9d3c-11ea-8027-7a2252207f79.png">
 
 ![chrome-capture](https://user-images.githubusercontent.com/26485327/82730673-6e28fd00-9d3c-11ea-83b6-18916d22e445.gif)
 
