@@ -1,0 +1,13 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+.weibopage{
+    height: 600px;
+    width: 330px;
+}
+
+.image{
+    background-image: url("https://i.picsum.photos/id/13/200/200.jpg");
+    background-size: 100% 100%;
+}
