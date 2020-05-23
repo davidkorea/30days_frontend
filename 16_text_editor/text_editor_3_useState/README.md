@@ -1,6 +1,6 @@
 # text_editor useState
 
-
+## version1
 ```javascript
 import React, {useState} from 'react'
 import './Editor.css'
@@ -27,3 +27,36 @@ const Editor = ()=>{
 
 export default Editor
 ```
+
+## version2
+```javascript
+import React, { useState } from 'react';
+import {AlignCenter, AlignLeft, AlignRight} from 'react-feather'
+function Editor(){
+    const [size, setSize] = useState(20);
+    const [align, setAlign] = useState('left');
+    return(
+        <div className="editor w-64 h-64 shadow">
+            <div className="input h-56 p-1 font-thin">
+                <textarea 
+                    style={{fontSize:size,textAlign:align}}
+                    className="text h-56 w-full p-2 resize-none outline-none"></textarea>
+            </div>
+            <div className="actions mt-1 border-t-2 cursor-pointer select-none flex justify-around">
+                <div className="sm" onClick={()=>setSize(20)}>aa</div>
+                <div className="md" onClick={()=>setSize(30)}>aA</div>
+                <div className="lg" onClick={()=>setSize(40)}>AA</div>
+                <div className="left" onClick={()=>setAlign('left')}><AlignLeft /></div>
+                <div className="center" onClick={()=>setAlign('center')}><AlignCenter /></div>
+                <div className="right" onClick={()=>setAlign('right')}><AlignRight /></div>
+            </div>
+        </div>
+    )
+}
+
+export default Editor
+```
+
+
+
+
