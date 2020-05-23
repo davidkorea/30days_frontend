@@ -43,6 +43,11 @@
       outline: none;
   }
   ```
+- 取消输入框，输入文本框，选中边框效果
+    ```css
+    // tailwindcss
+    outline-none
+    ```
 - 页面滚动，但是不显示滚动条
   ```css
   ::-webkit-scrollbar {
