@@ -20,7 +20,7 @@
     　　"javascript": "javascriptreact"
     }
     ```
-- **react-feather**: `npm install react-feather`
+- **[react-feather图标库](https://bit.dev/feathericons/react-feather)**: `npm install react-feather`
     ```javascript
     import {BatteryCharging, Wifi} from 'react-feather'
 
