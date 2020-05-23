@@ -20,7 +20,12 @@
     　　"javascript": "javascriptreact"
     }
     ```
+- **react-feather**: `npm install react-feather`
+    ```javascript
+    import {BatteryCharging, Wifi} from 'react-feather'
 
+    <div className="battary"><BatteryCharging size="18" /></div>
+    ```
 
 ## Tips
 
