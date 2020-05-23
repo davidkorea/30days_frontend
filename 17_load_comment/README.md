@@ -14,6 +14,9 @@
 #  Weibo load comments - version3
 
 - WeiboPage
+  - 直接在评论列表上进行列表的取子集合slice操作，较之前版本，少使用一个状态变量。此版本思路更直观
+  - 直接在单击事件上面，改变状态，没有在单独写一个函数
+
 ```javascript
 import React, { useState } from 'react';
 import './style.css'
@@ -59,9 +62,10 @@ function WeiboPage(){
                 <div className="list mt-2 h-40 overflow-scroll">
                     {
                         commentList.slice(0,pointer).map(v=><Comment value={v} key={v.id}></Comment>)
+                        // 直接在评论列表上取子集合
                     }
      
-                    <div onClick={()=>setPointer(pointer+3)}
+                    <div onClick={()=>setPointer(pointer+3)} // 直接将指针+3，没有单独写一个函数
                         className="btn mt-2 text-center text-gray-500">
                         {pointer>=commentList.length? '': 'Load more...'}
                     </div>
