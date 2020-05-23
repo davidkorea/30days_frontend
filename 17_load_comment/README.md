@@ -12,7 +12,10 @@
 
 # 1. Weibo load comments
 #  Weibo load comments - version3
-<img width="353" src="https://user-images.githubusercontent.com/26485327/82730645-315d0600-9d3c-11ea-8027-7a2252207f79.png">
+
+![](https://user-images.githubusercontent.com/26485327/82730645-315d0600-9d3c-11ea-8027-7a2252207f79.png)
+
+![chrome-capture](https://user-images.githubusercontent.com/26485327/82730673-6e28fd00-9d3c-11ea-83b6-18916d22e445.gif)
 
 - WeiboPage
   - 直接在评论列表上进行列表的取子集合slice操作，较之前版本，少使用一个状态变量。此版本思路更直观
