@@ -11,7 +11,7 @@
 
 
 # 1. Weibo load comments
-#  Weibo load comments - version2
+#  Weibo load comments - version3
 
 - WeiboPage
 ```javascript
