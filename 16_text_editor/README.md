@@ -9,3 +9,8 @@
 ### text-editor-2
 
 ![Mar-07-2020 22-52-27](https://user-images.githubusercontent.com/26485327/76145651-5db2a000-60c6-11ea-8395-8be4856f4e88.gif)
+
+
+### text_editor_3_useState version2
+
+![chrome-capture](https://user-images.githubusercontent.com/26485327/82728259-429d1700-9d2a-11ea-9614-54eb918f6b62.gif)
