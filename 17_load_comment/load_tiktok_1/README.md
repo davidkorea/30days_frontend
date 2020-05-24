@@ -4,3 +4,7 @@
 
 ![chrome-capture](https://user-images.githubusercontent.com/26485327/82748127-7d5e8800-9dda-11ea-839f-dcf1057b2548.gif)
 
+
+# 重点总结：[useEffect中fetch请求数据后，setState将数据保存到状态变量](https://github.com/davidkorea/30days_frontend/blob/master/00_Tips/useEffect中fetch请求数据后，setState将数据保存到状态变量.md)
+
+
