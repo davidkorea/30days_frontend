@@ -28,7 +28,10 @@
     ```
 
 ## Tips
-
+- **useEffect中fetch请求得到数据后，如何通过setState将数据保存到本地状态变量中？**，将所有数据拼接成一个字符串，再把字符串解析为json对象，在set到状态变量中
+    1. `fetch(url).then(res=>res.json()).then(data=>data.map( ... ))`，循环拿到每一条数据
+    2. 现将数据保存到一个字符串中，字符串最后用”反斜线“作为分隔符
+    3. 
 - **npm**
     - **--save / -S**: `npm install --save react-router-dom`, --save可以在项目中的package.json文件中`dependencies`增加依赖，下次使用该配置文件直接`npm install`就可以
     - **--save-dev**: 安装到package.json文件的`devDependencies`中
