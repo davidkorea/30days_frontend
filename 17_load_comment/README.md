@@ -6,6 +6,8 @@
   
 - react中使用`map()`循环列表时，只在元素标签上传递参数时添加`key`属性，而元素本身无需接收这个参数`this.props.key`
 
+# 3. Tiktok load photos
+
 
 # 2. Instagram load photos
 
