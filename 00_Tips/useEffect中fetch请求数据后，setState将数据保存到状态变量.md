@@ -1,6 +1,8 @@
 
 # useEffect中fetch请求数据后，setState将数据保存到状态变量
 
+> ### 仅适用于fetch中包含map循环的形式（tiktok），~~map循环里面嵌套来fetch不适用（Rick and Morty）!!!!!~~
+
 参考项目：[load_tiktok](https://github.com/davidkorea/30days_frontend/tree/master/17_load_comment/load_tiktok_1)
 
 ![chrome-capture](https://user-images.githubusercontent.com/26485327/82748127-7d5e8800-9dda-11ea-839f-dcf1057b2548.gif)
