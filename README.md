@@ -1,6 +1,9 @@
 
 # 30days_frontend
 
+> - **React自定义元素没有`onClick`事件，html原生标签才有**
+> - **自定义元素可以自定义属性来传递参数，但是原生html标签不能使用自定义属性传递参数**
+
 
 ## Component
 1. switch tab and change page
