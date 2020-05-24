@@ -1,0 +1,27 @@
+.phone{
+    width: 360px;
+    height: 760px;
+}
+
+.top{
+    height: 380px;
+}
+.middle{
+    height: 340px;
+}
+.top-bg{
+    background-image: url(https://i.picsum.photos/id/871/500/300.jpg);
+    background-size: 100% 100%;
+}
+
+.menuicon{
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.videoslist{
+    height: 300px;
+}
+.videoitem{
+    width: 120px;
+    height: 150px;
+    border-width: 1px;
+}
