@@ -1,5 +1,11 @@
 # translate
 
+## version-3
+随输入，随检测翻译，无需手动回车
+
+![chrome-capture](https://user-images.githubusercontent.com/26485327/82749709-121ab300-9de6-11ea-977b-65845bab2e4d.gif)
+
+
 ## React Hook useEffect
 - **useEffect, 在每次执行useState中的setState函数后`[state, setState] = useState()`，自动被调用**
   - 函数组件中的useEffect，相当于类组件中的生命周期函数（didMount，didUpdate）的合成
