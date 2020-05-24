@@ -4,8 +4,8 @@
 
 ## Component
 1. switch tab and change page
-    - with router
-    - with no router
+    - [with router](https://github.com/davidkorea/30days_frontend/blob/master/00_Components/01_tab_switch_no_router.md#3-switch-tab-with-page-changed-with-router)
+    - [with no router](https://github.com/davidkorea/30days_frontend/blob/master/00_Components/01_tab_switch_no_router.md#2-switch-tab-with-page-changed-no-router)
 
 
 ## Tools
