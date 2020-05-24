@@ -40,7 +40,7 @@ useEffect(() => {
 a = "{id:722, src:'url(https://picsum.photos/id/722/120/150)', count:588}\\{id:810, src:'url(https://picsum.photos/id/810/120/150)', count:654}\\"
 ```
 ```
-{id:722, src:'url(https://picsum.photos/id/722/120/150)', count:588}\{id:810, src:'url(https://picsum.photos/id/810/120/150)', count:654}\
+"{id:722, src:'url(https://picsum.photos/id/722/120/150)', count:588}\{id:810,src:'url(https://picsum.photos/id/810/120/150)', count:654}\"
 ```
 
 2. `old_string_list`将字符串通过反斜线分隔开，分割后，数组最后一个空元素需要清洗掉
