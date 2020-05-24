@@ -37,9 +37,10 @@
 
 ## HTML Tag
 - `<textarea readOnly ></textarea> `只读输入框
+- `<textarea disabled ></textarea> `只读输入框
 
-- 自定义元素没有`onClick`事件，html原生标签才有
-  - 自定义元素可以自定义属性用来传递参数，但是原生html标签不能使用自定义属性传递参数
+- **自定义元素没有`onClick`事件，html原生标签才有**
+  - **自定义元素可以自定义属性用来传递参数，但是原生html标签不能使用自定义属性传递参数**
 
 - 取点按钮元素点击边框
   ```css
