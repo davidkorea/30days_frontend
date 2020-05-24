@@ -1,6 +1,12 @@
 
 # useEffect中fetch请求数据后，setState将数据保存到状态变量
 
+参考项目：[load_tiktok](https://github.com/davidkorea/30days_frontend/tree/master/17_load_comment/load_tiktok_1)
+
+![chrome-capture](https://user-images.githubusercontent.com/26485327/82748127-7d5e8800-9dda-11ea-839f-dcf1057b2548.gif)
+
+-----
+
 - **useEffect中fetch请求得到数据后，如何通过setState将数据保存到本地状态变量中？**，将所有数据拼接成一个字符串，再把字符串解析为json对象，在set到状态变量中
 - **但是不通过字符串转换，直接setState赋值状态变量会赋值失败**
 
@@ -34,6 +40,7 @@ useEffect(() => {
 }, []);
 ```
 
+步骤分解
 
 1. `all`字符串，由于需要转义字符，代码中使用两个反斜杠
 ```javascript
