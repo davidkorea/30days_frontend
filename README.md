@@ -28,10 +28,16 @@
     ```
 
 ## Tips
-- **useEffect中fetch请求得到数据后，如何通过setState将数据保存到本地状态变量中？**，将所有数据拼接成一个字符串，再把字符串解析为json对象，在set到状态变量中
+- **useEffect中fetch请求得到数据后，如何通过setState将数据保存到本地状态变量中？**，将所有数据拼接成一个字符串，再把字符串解析为json对象，在set到状态变量中。**但是不通过字符串转换，直接setState赋值状态变量会赋值失败**
     1. `fetch(url).then(res=>res.json()).then(data=>data.map( ... ))`，循环拿到每一条数据
     2. 现将数据保存到一个字符串中，字符串最后用”反斜线“作为分隔符
-    3. 
+    3. 清洗上面的字符串slice（返回为列表格式），需要时在添加其他字符，以用于构造出一个json对象形式的字符串
+    4. 遍历上述清洗后的数组的每一个元素map，并将每一个元素`json.parse()`成对象，再赋值给新的数组
+    5. 将上述新数组setState给状态变量即可
+    
+    
+    
+    
 - **npm**
     - **--save / -S**: `npm install --save react-router-dom`, --save可以在项目中的package.json文件中`dependencies`增加依赖，下次使用该配置文件直接`npm install`就可以
     - **--save-dev**: 安装到package.json文件的`devDependencies`中
