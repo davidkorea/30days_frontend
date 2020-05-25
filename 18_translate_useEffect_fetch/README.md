@@ -4,6 +4,12 @@
 
 # 2. Role Map
 
+<img width="300"  src="https://user-images.githubusercontent.com/26485327/82781077-d9d1ae00-9e93-11ea-8c58-ace5350028c1.png">
+
+![chrome-capture](https://user-images.githubusercontent.com/26485327/82781066-d63e2700-9e93-11ea-9652-980f45872901.gif)
+
+
+
 # 1. translate
 
 ## version-3
