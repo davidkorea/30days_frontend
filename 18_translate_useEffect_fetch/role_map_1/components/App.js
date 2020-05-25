@@ -31,9 +31,13 @@ function App() {
         })
     }, []);
 
+    const [selected, setSelected] = useState();
+
     const [avatarList, setAvatarList] = useState([]);
     const handleChapter = id => {
-        console.log(id);
+        // console.log(id);
+        setSelected(id)
+
         let avatar_urls = chapters[id-1].avatar_url_list
         setAvatarList(avatar_urls)
         // var temp = ''
@@ -54,13 +58,14 @@ function App() {
         // 根据不同人物的URL，给到不同任务卡片子组件，在子组件内部请求url，并将数据保存到子组件本地状态变量，直接使用
     }
 
+
     return (
         <div className='flex items-center justify-center h-screen bg-gray-100'>
             <Phone>
                 <Intros></Intros>
                 <Chapters>
                     {
-                        chapters.map(v=><ChapterItem chapter_id={v.id} handleChapter={handleChapter} key={v.id} />)
+                        chapters.map(v=><ChapterItem chapter_id={v.id} selected_id={selected} handleChapter={handleChapter} key={v.id} />)
                     }
 
                 </Chapters>
