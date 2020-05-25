@@ -3,9 +3,11 @@
 > 还一个很好的例子，无路由切换页面+选中效果：选集+选中效果 [R&M角色图鉴效果](https://github.com/davidkorea/30days_frontend/blob/master/18_translate_useEffect_fetch/role_map_1/README.md)
 
 ### version 2
+
+1. **选中效果**
 ![chrome-capture (2)](https://user-images.githubusercontent.com/26485327/82783757-143e4980-9e9a-11ea-8344-860bc6ffe00b.gif)
 
-选中效果
+
 ```javascript
 import React, { useState } from 'react'
 
@@ -36,7 +38,9 @@ function App() {
 export default App
 ```
 
-选中效果+切换标签
+2. **选中效果+切换标签**
+![chrome-capture (5)](https://user-images.githubusercontent.com/26485327/82784578-c9253600-9e9b-11ea-9e59-d03db624989d.gif)
+
 ```javascript
 import React, { useState } from 'react'
 
