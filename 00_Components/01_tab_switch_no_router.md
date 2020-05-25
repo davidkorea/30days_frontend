@@ -2,9 +2,43 @@
 # 1. switch tab selected effect
 > 还一个很好的例子，无路由切换页面+选中效果：选集+选中效果 [R&M角色图鉴效果](https://github.com/davidkorea/30days_frontend/blob/master/18_translate_useEffect_fetch/role_map_1/README.md)
 
+### version 2
+![chrome-capture (2)](https://user-images.githubusercontent.com/26485327/82783757-143e4980-9e9a-11ea-8344-860bc6ffe00b.gif)
+
+```javascript
+import React, { useState } from 'react'
+
+function App() {
+    const [list, setList] = useState([
+        {id:1, name:'Index'},
+        {id:2, name:'Order'},
+        {id:3, name:'About'},
+    ])
+    const [selectedId, setSelectedId] = useState(1)
+    const handleClick = id => {
+        console.log(id);
+        setSelectedId(id)
+    }
+    
+    return (
+        <div className='flex items-center justify-center h-screen bg-gray-100'>
+            <div className="list w-20 text-center shadow">
+                {
+                    list.map(v=><div onClick={()=>handleClick(v.id)} key={v.id} 
+                    className={`h-8 border-2 ${selectedId==v.id? 'bg-gray-300':''}`}
+                    >{v.name}</div>)
+                }
+            </div>
+        </div>
+    )
+}
+export default App
+```
+
+
+### version 1
 
 ![Apr-05-2020 21-36-14](https://user-images.githubusercontent.com/26485327/78499823-82616c80-7785-11ea-9ab7-043740d519ca.gif)
-
 
 ```javascript
 import React, { Component, useState } from 'react'
