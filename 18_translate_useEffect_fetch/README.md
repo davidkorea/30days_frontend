@@ -1,4 +1,10 @@
-# translate
+> 1. fetch请求到数据后，map函数遍历数据后，生成字符串，再parse成json，最后setState保存数据到状态变量
+> 2. map函数中需要遍历每一个url进行fetch请求，将每一个url的fetch传送给一个子组件来处理，子组件内部请求该url的所有数据，保存在自组建的本地状态变量中，由子组件直接使用
+
+
+# 2. Role Map
+
+# 1. translate
 
 ## version-3
 随输入，随检测翻译，无需手动回车
