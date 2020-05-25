@@ -87,8 +87,58 @@ function App() {
 }
 export default App
 ```
+3. **选中效果+切换标签 父子组件**
 
+```javascript
+// 父组件
+import React, { useState } from 'react'
+import Son from './Son'
 
+function App() {
+    const [list, setList] = useState([
+        {id:1, name:'Index', url:'https://i.pravatar.cc/50?u=11'},
+        {id:2, name:'Order', url:'https://i.pravatar.cc/50?u=222'},
+        {id:3, name:'About', url:'https://i.pravatar.cc/50?u=333'},
+    ]);
+    const [selectedId, setSelectedId] = useState(1);
+    const [content, setContent] = useState('');
+    const handleClick = id => {
+        console.log(id);
+        setSelectedId(id)
+        setContent(list[id-1])
+    }
+    return (
+        <div className='flex items-center justify-center h-screen bg-gray-100'>
+            <div className="list w-20 text-center shadow">
+                {
+                    list.map(v=><div onClick={()=>handleClick(v.id)} key={v.id} 
+                    className={`h-8 border-2 ${selectedId==v.id? 'bg-gray-300':''}`}
+                    >{v.name}</div>)
+                }
+            </div>
+            <div className="content w-20 h-24 text-center shadow">
+                {/* {content&&content.name} */}
+                <Son content={content}></Son>
+            </div>
+        </div>
+    )
+}
+export default App
+```
+```javascript
+// 子组件
+import React from 'react';
+
+function Son(props){
+    return(
+        <div className="son">
+            {props.content.name}
+            <img src={props.content.url} className="ml-4" />
+        </div>
+    )
+}
+export default Son
+```
 
 ### version 1
 
