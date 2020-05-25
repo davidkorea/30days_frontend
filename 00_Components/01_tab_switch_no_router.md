@@ -43,6 +43,16 @@ export default App
 
 ![chrome-capture (5)](https://user-images.githubusercontent.com/26485327/82784578-c9253600-9e9b-11ea-9e59-d03db624989d.gif)
 
+
+- 两个状态变量
+    - 原始状态变量，包含全部数据信息
+    - 选中状态变量，仅存储当前被选中的数据
+- 单击事件触发后
+    - 获取当前元素id
+    - 这只selected状态为当前元素id
+    - 根据当前元素id，选择原来状态中的对应条目数据，set到新的状态变量中
+- 内容显示区域，根据选中状态变量中的数据进行展示
+
 ```javascript
 import React, { useState } from 'react'
 
