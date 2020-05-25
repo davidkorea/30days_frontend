@@ -1,0 +1,19 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+.phone{
+    width: 330px;
+    height: 600px;
+}
+
+.cover-img{
+    /* width: 100px;
+    height: 150px; */
+    background-image: url('../statics/cover.jpg'); 
+    background-size: 100% 100%;
+}
+
+.avatar-img{
+    background-size: 100% 100%;
+}
