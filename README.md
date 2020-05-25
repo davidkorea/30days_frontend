@@ -33,6 +33,8 @@
 ## Tips
 - **useEffect中fetch请求得到数据后，如何通过setState将数据保存到本地状态变量中？**，将所有数据拼接成一个字符串，再把字符串解析为json对象，在set到状态变量中。**但是不通过字符串转换，直接setState赋值状态变量会赋值失败**
     > **仅适用于fetch中包含map循环的形式（tiktok）**，~~map循环里面嵌套来fetch不适用（Rick and Morty）!!!!!~~
+    > 1. fetch请求到数据后，map函数遍历数据后，生成字符串，再parse成json，最后setState保存数据到状态变量
+    > 2. map函数中需要遍历每一个url进行fetch请求，将每一个url的fetch传送给一个子组件来处理，子组件内部请求该url的所有数据，保存在自组建的本地状态变量中，由子组件直接使用
     
     1. `fetch(url).then(res=>res.json()).then(data=>data.map( ... ))`，循环拿到每一条数据
     2. 现将数据保存到一个字符串中，字符串最后用”反斜线“作为分隔符
