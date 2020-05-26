@@ -10,6 +10,8 @@
 <img width="1235" src="https://user-images.githubusercontent.com/26485327/82867517-f9d1a200-9f65-11ea-8431-449f60857897.png">
 
 
+![chrome-capture (7)](https://user-images.githubusercontent.com/26485327/82868005-c93e3800-9f66-11ea-9140-08e2366059f6.gif)
+![chrome-capture (8)](https://user-images.githubusercontent.com/26485327/82868026-d3f8cd00-9f66-11ea-9690-1b8c01c7785c.gif)
 
 ### Todo List 3
 
