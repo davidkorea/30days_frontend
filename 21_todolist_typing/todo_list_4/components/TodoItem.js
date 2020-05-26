@@ -7,6 +7,7 @@ function TodoItem(props){
         <div className={`todoitem mb-3 rounded-lg shadow-md p-2 flex items-center justify-center 
              ${props.value.finished? 'text-gray-500 bg-gray-200':' text-gray-700'}`}
              onClick={()=>{props.handleFinish(props.value.id)}}
+             // 由于外层设置点击finished事件，因此点击删除按钮时，也会同步出发finish事件，因为冒泡！
         >
             <div className="todo-check mr-4 select-none"
                 // onClick={()=>{props.handleFinish(props.value.id)}}
