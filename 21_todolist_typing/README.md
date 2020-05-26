@@ -4,9 +4,8 @@
 
 ### Todo List version 4
 
-<img width="300" alt="截屏2020-05-26 15 24 23" src="https://user-images.githubusercontent.com/26485327/82867040-0acde380-9f65-11ea-8b4d-e8561bcecb91.png">
-<img width="300" alt="截屏2020-05-26 15 24 31" src="https://user-images.githubusercontent.com/26485327/82867044-0bff1080-9f65-11ea-9a08-d42a08829b79.png">
-<img width="300" alt="截屏2020-05-26 15 24 39" src="https://user-images.githubusercontent.com/26485327/82867049-0dc8d400-9f65-11ea-940b-1bd43234954b.png">
+<img width="1235" src="https://user-images.githubusercontent.com/26485327/82867517-f9d1a200-9f65-11ea-8431-449f60857897.png">
+
 
 
 ### Todo List 3
