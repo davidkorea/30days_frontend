@@ -9,6 +9,9 @@
 <img width="1235" src="https://user-images.githubusercontent.com/26485327/82867517-f9d1a200-9f65-11ea-8431-449f60857897.png">
 
 # 1. Switch Menu Tab
+
+> 参考其他示例：[switch tab selected effect](https://github.com/davidkorea/30days_frontend/blob/master/00_Components/01_tab_switch_no_router.md#1-switch-tab-selected-effect)
+
 切换菜单 + 选中效果
 
 1. 创建菜单列表状态，包含序号id和菜单名称。其中id用于实现选中效果。通过map函数，将每一个标签项对应一个子组件`TabItem`
