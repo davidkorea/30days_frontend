@@ -9,9 +9,9 @@ import AddNew from './AddNew'
 function App() {
     // 1. tab switch and selected effect
     const [tabList, setTabList] = useState([
-        {id:1,name:'Open',path:'/'},
-        {id:2,name:'Finished',path:'/finished'},
-        {id:3,name:'Deleted',path:'/deleted'},
+        {id:1,name:'Open'},
+        {id:2,name:'Finished'},
+        {id:3,name:'Deleted'},
     ]);
     const [selectedTabId, setSelectedTabId] = useState(1);
     const handleTabClick = id => {
