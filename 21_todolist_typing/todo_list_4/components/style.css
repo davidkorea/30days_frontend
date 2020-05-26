@@ -1,0 +1,25 @@
+.tabbar,.todolist,.addnew{
+    width: 400px;
+}
+
+.todolist{
+    min-height: 200px;
+    max-height: 500px;
+}
+
+.todoitem:hover{
+    text-shadow: 0 0 1px lightgrey;
+}
+
+.todo-text{
+    width: 300px;
+}
+
+.todo-del:hover{
+    transform: scale(1.1);
+    color: tomato;
+}
+
+.addbtn:hover{
+    transform: scale(1.1);
+}
