@@ -7,7 +7,14 @@
 > ##### 1. 哪怕仅一个共享变量，`value={{ }}`双层花括号，否则报错
 > ##### 2. GlobalContextProvider子组件中，不能直接使用自己共享出来的变量，需要中间再使用一个子组件来隔离？？ ！！！ `const {menuList} = useContext(GlobalContext);`反正有这句话就报错找不到menuList
 
-
+```
+- /src
+    - /conponents
+        - App.js
+        - Page.js
+    - /contexts
+        - GlobalContext.js
+```
 
 # 1. createContext子组件
 
