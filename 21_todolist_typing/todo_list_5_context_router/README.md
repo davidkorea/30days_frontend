@@ -30,4 +30,29 @@ export default function TabItem(props){
 - 用于显示等内容，依然是map后等子组件属性传递
 - 方法函数则通过context来使用
 
+# 3. router
 
+- 由于使用了路由，因此每个标签页对应一个url，也即对应一个不同的子组件
+- 每个子组件还是想version4一样，使用同一个`todoList`变量，根据其中不同状态来判断条件并展示数据
+
+```javascript
+import React, { useContext } from 'react';
+import {GlobalContext} from '../contexts/GlobalContext'
+import TodoItem from './TodoItem'
+
+export default function Finishlist(){
+    const {todoList} = useContext(GlobalContext);
+
+    return(
+        <div className="finishlist border-2 p-3">
+        {
+            todoList.map(v=>{
+                if(v.finished && !v.deleted){
+                    return <TodoItem key={v.id} id={v.id} item={v}></TodoItem>
+                }
+            })
+        }            
+        </div>
+    )
+}
+```
