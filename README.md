@@ -51,6 +51,7 @@
     - **--save-dev**: 安装到package.json文件的`devDependencies`中
 
 - **react-router-dom** 
+    - `yarn add react-router-dom`
     - `import {BrowserRouter as Router, Route, Link} from 'react-router-dom'`
 
 
