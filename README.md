@@ -27,7 +27,7 @@
     ```javascript
     import {BatteryCharging, Wifi} from 'react-feather'
 
-    <div className="battary"><BatteryCharging size="18" /></div>
+    <div className="battary"><BatteryCharging size="18" color={'red'} /></div>
     ```
 
 ## Tips
