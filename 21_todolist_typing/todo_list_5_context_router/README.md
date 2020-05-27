@@ -9,6 +9,7 @@
 - [React hooks - createContext useContext](https://github.com/davidkorea/30days_frontend/blob/master/00_Tips/useContext_router.md)
 
 > ### Comtext.Provider里面不能使用自己共享出去的数据，会报错！！！！！！！！！！
+> 需要在App.js里面先嵌套一层Page.js组件，再在Page中使用context共享出来的变量
 
 # 2. context
 
