@@ -44,9 +44,7 @@
     5. 将上述新数组setState给状态变量即可
     
     
-    
-    
-- **npm**
+- **NPM**
     - **--save / -S**: `npm install --save react-router-dom`, --save可以在项目中的package.json文件中`dependencies`增加依赖，下次使用该配置文件直接`npm install`就可以
     - **--save-dev**: 安装到package.json文件的`devDependencies`中
 
@@ -54,6 +52,8 @@
     - `yarn add react-router-dom`
     - `import {BrowserRouter as Router, Route, Link} from 'react-router-dom'`
 
+- **Comtext.Provider** 里面不能使用自己共享出去的数据，会报错！！！！！！！！！！
+    - 需要在App.js里面先嵌套一层Page.js组件，再在Page中使用context共享出来的变量
 
 - body设置min-width，防止无限被压缩没出现布局错乱
 - `position: absolute; display: none;`  -> `display: block` 隐藏显示菜单，当点击时显示的非js方法
