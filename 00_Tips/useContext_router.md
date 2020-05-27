@@ -83,3 +83,40 @@ function Page(){
 
 export default Page
 ```
+
+
+# 3. Router
+
+- Page.js
+
+```javascript
+import React, { useContext } from 'react';
+import {BrowserRouter as Router, Route ,Link} from 'react-router-dom'
+import {GlobalContext} from '../contexts/GlobalContext'
+import OpenList from './Openlist'
+import FinishList from './FinishList'
+import DeleteList from './DeleteList'
+
+export default function Page(){
+    const {menuList} = useContext(GlobalContext);
+    return(
+        <div className="page">
+            <Router>
+                {
+                    menuList.map(v=><Link to={v.path} key={v.id}><div>{v.name}</div></Link>)
+                }
+                <Route path='/' exact component={OpenList}></Route>
+                <Route path='/finish' exact component={FinishList}></Route>
+                <Route path='/delete' exact component={DeleteList}></Route>
+            </Router>
+        </div>
+    )
+}
+```
+
+
+
+
+
+
+
