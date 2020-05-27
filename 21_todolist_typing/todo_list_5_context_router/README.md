@@ -1,5 +1,10 @@
 # todo_list_5 with context & router
 
+<img width="300" alt="截屏2020-05-27 17 06 22" src="https://user-images.githubusercontent.com/26485327/82993983-67500200-a03c-11ea-91c5-b052a2e83812.png">
+<img width="300" alt="截屏2020-05-27 17 06 58" src="https://user-images.githubusercontent.com/26485327/82994044-7cc52c00-a03c-11ea-9d2f-1f988402e4e2.png">
+<img width="300" alt="截屏2020-05-27 17 07 11" src="https://user-images.githubusercontent.com/26485327/82994057-83ec3a00-a03c-11ea-9fc2-c3bf7af9574a.png">
+
+
 # 1. createContext & useContext & Router
 - [React hooks - createContext useContext](https://github.com/davidkorea/30days_frontend/blob/master/00_Tips/useContext_router.md)
 
