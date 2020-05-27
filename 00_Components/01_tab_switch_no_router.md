@@ -4,6 +4,8 @@
 > 还一个很好的例子，无路由切换页面+选中效果：
 > 1. 选集+选中效果 [R&M角色图鉴效果](https://github.com/davidkorea/30days_frontend/blob/master/18_translate_useEffect_fetch/role_map_1/README.md)
 > 2. 切换todolist状态标签 [todolist version 4](https://github.com/davidkorea/30days_frontend/blob/master/21_todolist_typing/todo_list_4/README.md#1-switch-menu-tab)
+> 3. 一个切换标签选中效果的超级笨的方法，给每一个标签单独写来一个状态 [todo_list_3/src/components/Page.js](https://github.com/davidkorea/30days_frontend/blob/master/21_todolist_typing/todo_list_3/src/components/Page.js)
+
 
 ## version 2
 
