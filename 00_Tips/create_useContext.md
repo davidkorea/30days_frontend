@@ -4,8 +4,8 @@
 1. 可以在父组件App.js里面创建上下文context然后共享给其他子组件使用
 2. 将上下文context单独创建成一个子组件，引入到App.js中，然后让该context子组件去包含其他子组件，来给被包含的子组件提供共享数据，router可以被包含在里面
 
-> ### 1. 哪怕仅一个共享变量，`value={{ }}`双层花括号，否则报错
-> ### 2. GlobalContextProvider子组件中，不能直接使用自己共享出来的变量，需要中间再使用一个子组件来隔离？？ ！！！
+> ##### 1. 哪怕仅一个共享变量，`value={{ }}`双层花括号，否则报错
+> ##### 2. GlobalContextProvider子组件中，不能直接使用自己共享出来的变量，需要中间再使用一个子组件来隔离？？ ！！！ `const {menuList} = useContext(GlobalContext);`反正有这句话就报错找不到menuList
 
 
 
