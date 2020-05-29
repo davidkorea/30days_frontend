@@ -5,7 +5,6 @@
 > - **自定义元素可以自定义属性来传递参数，但是原生html标签不能使用自定义属性传递参数**
 
 
-
 ## Component
 1. switch tab and change page
     - [with router](https://github.com/davidkorea/30days_frontend/blob/master/00_Components/01_tab_switch_no_router.md#3-switch-tab-with-page-changed-with-router)
