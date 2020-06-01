@@ -1,4 +1,6 @@
 react record？
+- mideaRecored
+- mediaDevices.getUsermedia
 
 
 # 30days_frontend
