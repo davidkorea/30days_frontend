@@ -5,6 +5,10 @@ WebRTC
 - mediaDevices.getUsermedia
 - enumute
 
+```
+npm install faker -g
+pip install faker
+```
 
 # 30days_frontend
 
