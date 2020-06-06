@@ -1,5 +1,7 @@
  공과금
  
+word_spell ok
+ 
 WebRTC
 - mideaRecored
 - mediaDevices.getUsermedia
