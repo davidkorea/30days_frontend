@@ -1,4 +1,4 @@
- 공과금
+공과금
  
 word_spell ok
  
